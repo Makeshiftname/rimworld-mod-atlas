@@ -20,6 +20,7 @@
 - `mods/collected/` 与现有 `收集/`：第三方供应内容，默认只读；不要改 About/C#/Defs/资源。
 - `records/`：分析档案；保留证据与纠错，不删除反面发现。
 - `docs/knowledge/`：只放经审核的通用结论；单 mod 专属信息留在记录。
+- 许可边界见 [`docs/LICENSING.md`](docs/LICENSING.md)；不要把第三方内容误标为 MIT。
 - `mods/registry.json` 是稳定 ID 唯一权威；schema v4 使用 `origin + code + record`，
   该文件人工维护，不能由脚本覆盖。
 

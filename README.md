@@ -31,5 +31,7 @@ python tools/kb/check_all.py
 
 ## 许可
 
-本仓库中的第三方样本和知识材料保留各自许可，仅供学习与本地审计，不擅自再发布。
-Makeshiftname 的原创生产 mod 位于 `rimworld-mod-forge`，使用该仓库自己的 MIT 许可。
+本仓库混合了第三方代码、原创分析记录和知识文档，不能用一个许可证一概而论。
+具体边界见 [`docs/LICENSING.md`](docs/LICENSING.md)。第三方样本保留各自许可，
+仅供学习与本地审计；Makeshiftname 的原创生产 mod 位于
+`rimworld-mod-forge`，使用该仓库自己的 MIT 许可。
