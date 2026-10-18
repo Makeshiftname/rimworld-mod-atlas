@@ -17,7 +17,7 @@
 | 新建 C# mod 骨架、日志模板 | [guides/project-templates.md](guides/project-templates.md) |
 | 发布、软链接、工坊版权红线 | [guides/publishing-and-release.md](guides/publishing-and-release.md) |
 | 静态审计一个 mod 的依赖、程序集、翻译、贴图、多版本 | [guides/mod-static-audit.md](guides/mod-static-audit.md) |
-| 查某个 mod 的具体分析记录 | [indexes/mods.md](indexes/mods.md) + [`records/`](../../records/README.md) |
+| 查某个 mod 的具体分析记录 | [indexes/mods.md](indexes/mods.md) + [`records/`](../../records/README.md)；先看“档”列判断初步/深度 |
 
 ## 四层内容
 
@@ -42,4 +42,6 @@
 
 ## 内容边界
 
-`guides/reference/mechanics` 只接收**审核后的通用结论**。如果结论只适用于某一 mod，或还带有未验证的推断，保留在 `records/<id>/`；提炼时在知识页和被引用的记录之间保留稳定 ID 链接。
+`guides/reference/mechanics` 只接收**审核后的通用结论**，且来源记录必须是
+`analysis_tier: deep` + `status: analyzed`。如果结论只适用于某一 mod，或还带有未验证的推断，
+保留在 `records/<id>/`；提炼时在知识页和被引用的记录之间保留稳定 ID 链接。

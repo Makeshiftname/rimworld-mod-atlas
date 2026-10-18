@@ -6,7 +6,8 @@
 ## 开始前
 
 1. 先读根 [`ARCHITECTURE.md`](ARCHITECTURE.md) 与 [`docs/knowledge/README.md`](docs/knowledge/README.md)。
-2. 单 mod 调查先读 [`records/STANDARD.md`](records/STANDARD.md)。
+2. 单 mod 调查先读 [`records/STANDARD.md`](records/STANDARD.md)，按任务选择
+   `tools/kb/templates/record/initial/` 或 `deep/`。
 3. 开始迁移或审查结构前先看 [`docs/STATUS.md`](docs/STATUS.md)。
 4. 需要游戏机制/实现背景时，按知识库主入口选择 `guides/`、`reference/` 或 `mechanics/`。
 5. 不读取整个大目录做无差别审阅；先查索引、注册表和目标记录。
@@ -41,6 +42,7 @@ python tools/kb/migrate_mods.py --apply      # 确认后移动并重写第一方
 
 - 生成物由脚本重建，不手改：`indexes/mods.md`、`indexes/mods.json`、`records/index.json`。
 - `indexes/mods-notes.md` 是人工笔记；`registry.json` 和 `record.json` 是身份/证据文件。
+- 记录用 `analysis_tier: initial | deep` 分档；初步记录禁止提炼和修改建议。
 - 修改结构后运行 `check_all.py`；链接、记录身份、目录卫生、索引漂移都必须通过。
 - 第三方 mod 的 `packageId` 应进入 `<loadAfter>` 而非 `<modDependencies>`（仅当它是补丁前置而非硬依赖）。
 - 改动 `About.xml` 后同步对应描述与记录。

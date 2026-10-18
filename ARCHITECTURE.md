@@ -21,7 +21,7 @@ docs/knowledge/                       跨 mod 通用知识
 | 区域 | 职责 | 是否可直接改 |
 |---|---|---|
 | `mods/` | 可运行代码样本；`owned/` 原创，`collected/` 第三方 | 只改 `owned/`；`collected/` 视为只读 |
-| `records/` | 单个 mod 的分析，保留“它是什么 / 怎么验的 / 可复用结论 / 修改建议” | 可以追加调查与纠错 |
+| `records/` | 单个 mod 的分析；初步档做分流，深度档保留“它是什么 / 怎么验的 / 可复用结论 / 修改建议” | 可以追加调查与纠错 |
 | `docs/knowledge/` | 经审核提炼的通用知识 | 可以维护，但必须能追溯来源 |
 | `tools/` | 生成索引、迁移路径、运行门禁的 Python 标准库工具 | 可以改，但必须保留 dry-run 与验收 |
 
@@ -34,8 +34,8 @@ manifest 预览，确认后再 `--apply`。
 | 产物 | 只负责 |
 |---|---|
 | `mods/registry.json` | 稳定 ID、`origin`、别名、代码与记录的关联 |
-| `records/<id>/record.json` | 来源、作者、许可、核验等级、分析状态、提炼去向 |
-| `records/<id>/README.md` | 证据、结论、反面发现和修改建议 |
+| `records/<id>/record.json` | 来源、作者、许可、分析档位、分析状态、提炼去向 |
+| `records/<id>/README.md` | 证据、反面发现，以及深度档的结论和可选修改建议 |
 | `docs/knowledge/indexes/*` | 从注册表和记录生成的视图，不手改 |
 
 `registry.json` 是人工维护的身份表，不是生成文件。`gen_registry.py`
@@ -57,15 +57,19 @@ manifest 预览，确认后再 `--apply`。
 
 ## 记录生命周期
 
-1. 新记录先写 `records/<id>/README.md` 和 `record.json`；模板在
-   `tools/kb/templates/record/`。
-2. `verification_tier` 使用 `STANDARD.md` 的四档核验；`status` 使用
-   `raw` / `analyzed` / `needs-recheck` / `superseded` / `retired`。
-3. 代码被删除时保留记录，设置 `code_removed: true` 或 registry 的
+1. 新记录按任务选择 `tools/kb/templates/record/initial/` 或
+   `deep/`，写 `records/<id>/README.md` 和 `record.json`。
+2. `analysis_tier` 使用 `initial` / `deep`；`status` 使用
+   `analyzed` / `needs-recheck` / `superseded` / `retired`。不再使用 `raw`。
+3. 初步记录只做分流，不写可复用结论和修改建议，不能提炼；深度记录才支撑
+   修改、发布、兼容性/许可判断和知识提炼。
+4. 初步记录原地升级为深度记录，同一个稳定 ID、同一个路径，不新建
+   `-initial` / `-deep` 副本；深度记录不降级，证据失效用 `status` 表达。
+5. 代码被删除时保留记录，设置 `code_removed: true` 或 registry 的
    `retired`，不要把分析一起删掉。
-4. 只有复核过、脱离单个 mod 仍成立的结论才写入
+6. 只有 `deep + analyzed`、复核过且脱离单个 mod 仍成立的结论才写入
    `docs/knowledge/guides|reference|mechanics`。
-5. 提炼后在知识页保留稳定 ID 或记录链接，并在
+7. 提炼后在知识页保留稳定 ID 或记录链接，并在
    `record.json.distilled_to` 登记去向。知识页底部的 `## 来源记录`
    段由 `tools/kb/sync_knowledge_sources.py --write` 生成，门禁会同时检查
    目标存在、记录 ID 和反向列表是否一致。
@@ -84,8 +88,10 @@ manifest 预览，确认后再 `--apply`。
 
 ### 新增一份分析记录
 
-1. 读取 `records/STANDARD.md` 和 `tools/kb/templates/record/`。
-2. 建立 `records/<stable-id>/README.md` 与 `record.json`。
+1. 读取 `records/STANDARD.md`，选择 `tools/kb/templates/record/initial/`
+   或 `deep/`。
+2. 建立 `records/<stable-id>/README.md` 与 `record.json`，填写
+   `analysis_tier`。
 3. 运行 `python tools/kb/scan_records.py`。
 4. 运行 `python tools/kb/check_all.py`。
 

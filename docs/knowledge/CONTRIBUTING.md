@@ -22,7 +22,9 @@ docs/knowledge/
 
 1. **生成/手写分离**：`indexes/mods.md` 完全由 `scan_mods.py` 重写；
    人工维护的单 mod 要点放在 `indexes/mods-notes.md`。
-2. **知识分层**：单 mod 事实和未审核推断留在 `records/`；只有跨 mod、已复核的结论才进入 `guides/reference/mechanics`。
+2. **知识分层**：单 mod 事实和未审核推断留在 `records/`；初步记录不能提炼，只有
+   `analysis_tier: deep` 且 `status: analyzed` 的记录才可能进入
+   `guides/reference/mechanics`。
 3. **稳定 ID**：目录、记录和知识页引用使用 `mods/registry.json` 登记的稳定 ID；
    registry 是人工维护的 schema v3 身份表，`code` 与 `record` 分开登记。
 4. **链接相对所在文件解析**：迁移后优先用注册表 ID 或脚本生成的相对路径，不手写旧编号。
@@ -39,11 +41,12 @@ docs/knowledge/
 
 ### B. 新增或修改分析记录
 
-1. 先读 [`records/STANDARD.md`](../../records/STANDARD.md) 和
-   `tools/kb/templates/record/`。
-2. 在 `records/<stable-id>/` 更新 `README.md` 与 `record.json`。
+1. 先读 [`records/STANDARD.md`](../../records/STANDARD.md)，按任务选择
+   `tools/kb/templates/record/initial/` 或 `deep/` 模板。
+2. 在 `records/<stable-id>/` 更新 `README.md` 与 `record.json`；初步记录禁止
+   `## 可复用结论`、`## 修改建议` 和非空 `distilled_to`。
 3. 运行 `python tools/kb/scan_records.py`。
-4. 若产生已审核的跨 mod 结论，按 `STANDARD.md` 的提炼规则写入知识页并登记
+4. 若深度记录产生已审核的跨 mod 结论，按 `STANDARD.md` 的提炼规则写入知识页并登记
    `record.json.distilled_to`，然后运行
    `python tools/kb/sync_knowledge_sources.py --write` 更新知识页底部的
    `## 来源记录` 段。
@@ -60,7 +63,7 @@ docs/knowledge/
 
 ### C. 修改知识页
 
-1. 确认结论适用于跨 mod 场景，并保留来源 ID 或记录链接。
+1. 确认结论适用于跨 mod 场景，来源记录必须是 `deep + analyzed`，并保留来源 ID 或记录链接。
 2. 只改对应层：实操 → `guides/`；参考手册 → `reference/`；机制手册 → `mechanics/`；外部来源 → `sources/`。
 3. 若新增/删除来源记录，先改 `record.json.distilled_to`，再运行
    `python tools/kb/sync_knowledge_sources.py --write`；不要手改

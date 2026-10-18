@@ -15,7 +15,8 @@ repository root.
 | `python tools/kb/migrate_mods.py --json` | Read-only migration plan with file counts and conflicts. |
 | `python tools/kb/migrate_mods.py --manifest PATH` | Freeze a plan for later apply. |
 | `python tools/kb/migrate_mods.py --apply` | Move code, rewrite first-party references, then print verification commands. |
-| `python tools/kb/check_records.py` | Validate record anchors, metadata, IDs and distilled links. |
+| `python tools/kb/migrate_records_schema.py --write` | Migrate `record.json` to schema v3 (`analysis_tier`, no `verification_tier`). |
+| `python tools/kb/check_records.py` | Validate tier-specific record skeletons, metadata, IDs and distilled links. |
 | `python tools/kb/check_links.py` | Validate relative links in first-party documentation. |
 | `python tools/kb/check_knowledge.py` | Fail on orphan pages in knowledge layers. |
 | `python tools/kb/sync_knowledge_sources.py --check` | Verify the generated `## 来源记录` sections match `record.json.distilled_to`. |
@@ -33,6 +34,8 @@ maintained:
 - `code.legacy_paths` and `code.target_path` describe the code sample.
 - `record` describes the analysis; `code: null` means the object has a record
   but no local code sample.
+- `record.json.analysis_tier` is `initial` or `deep`; initial records cannot
+  carry `distilled_to` or modification suggestions.
 - `aliases` handle old directory names and renamed IDs.
 
 `gen_registry.py` only writes `mods/registry.proposed.json`; it never overwrites
@@ -42,6 +45,7 @@ migration.
 ```powershell
 python tools/kb/migrate_registry_schema.py          # check v2 -> v3
 python tools/kb/migrate_registry_schema.py --write  # explicit one-way migration
+python tools/kb/migrate_records_schema.py --write   # records -> schema v3
 python tools/kb/gen_registry.py --write             # proposal only
 ```
 

@@ -10,6 +10,9 @@
 - `records/` 已按稳定 ID 存放 28 份分析记录，索引由
   `tools/kb/scan_records.py` 生成；28 份记录的 `license` 字段均已显式填写，
   作者判断与许可说明分别登记在 `author_evidence` / `license_notes`。
+- `record.json` 已升级到 schema v3：记录用 `analysis_tier: initial | deep`
+  分档，`verification_tier` 已移除；现有 28 份记录全部标为 `deep`。
+  两档模板分别在 `tools/kb/templates/record/initial/` 与 `deep/`。
 - `docs/knowledge/` 已分为 `guides/`、`reference/`、`mechanics/`、`sources/`
   与 `indexes/`；`indexes/mods.md` 是纯生成文件，人工笔记在
   [`indexes/mods-notes.md`](knowledge/indexes/mods-notes.md)。
@@ -29,13 +32,15 @@ python tools/kb/check_all.py
 python -m unittest discover -s tools/kb/tests -v
 ```
 
-2026-10-18 结果：`check_all.py` 退出码 0；20 个单测通过；`收集/`、`自建/`
+2026-10-18 结果：`check_all.py` 退出码 0；30 个单测通过；`收集/`、`自建/`
 代码目录无 diff。
 
 ## 下一步
 
-1. 用户完成 mod 删减后，先运行 `migrate_mods.py --json` 检查未登记、失效和冲突。
-2. 审阅 manifest，再执行 `migrate_mods.py --apply`；迁移器会同步重写第一方引用。
-3. 运行扫描器与 `check_all.py`，确认旧/新布局没有并存。
+1. 按优先级给现有深度记录补 `### 范围`、`### 未核验` 与
+   `[已确认] / [推断] / [未核验]` 结论标签。
+2. 用户完成 mod 删减后，先运行 `migrate_mods.py --json` 检查未登记、失效和冲突。
+3. 审阅 manifest，再执行 `migrate_mods.py --apply`；迁移器会同步重写第一方引用。
+4. 运行扫描器与 `check_all.py`，确认旧/新布局没有并存。
 
 记录和知识页的修正不依赖 mods 迁移，可独立进行。
