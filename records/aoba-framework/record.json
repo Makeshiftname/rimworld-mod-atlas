@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "aoba-framework",
+  "package_id": "AOBA.Framework",
+  "display_name": "Fortified Features Framework（`3498575851`）— 分析记录",
+  "authors": [
+    "AOBA"
+  ],
+  "license": "",
+  "source_dir": "3498575851-FortifiedFramework",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

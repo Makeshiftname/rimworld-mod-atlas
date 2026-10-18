@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "nera-spawnthosegenes",
+  "package_id": "Nera.SpawnThoseGenes",
+  "display_name": "[BT] SpawnThoseGenes!（`2898044088`）— 分析记录",
+  "authors": [
+    "Nera（致谢 Operator）"
+  ],
+  "license": "",
+  "source_dir": "2898044088-SpawnThoseGenes",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

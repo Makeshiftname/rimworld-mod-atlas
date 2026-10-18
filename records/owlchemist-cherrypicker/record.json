@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "owlchemist-cherrypicker",
+  "package_id": "Owlchemist.CherryPicker",
+  "display_name": "Cherry Picker（`3521312241`）— 分析记录",
+  "authors": [
+    "Owlchemist"
+  ],
+  "license": "",
+  "source_dir": "3521312241-CherryPicker",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

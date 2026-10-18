@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "fix-miho-visualpatch",
+  "package_id": "Fix.Miho.VisualPatch",
+  "display_name": "Miho Race Children Texture Fix",
+  "authors": [
+    "Ay"
+  ],
+  "license": "",
+  "source_dir": "1~11岁美狐贴图修正",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

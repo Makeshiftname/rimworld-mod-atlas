@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "adaptive-ideology-storage",
+  "package_id": "Adaptive.Ideology.Storage",
+  "display_name": "Adaptive Ideology Storage",
+  "authors": [
+    "vin —— About.xml 写 <authors><li>vin</li></authors>（复数标签是正确写法，见「怎么验的」纠错 4）"
+  ],
+  "license": "无。无 LICENSE / LICENSE.md / README.md / CHANGELOG.md，About.xml 也无 <url>、无 <license>、无 modVersion → 默认保留所有权利",
+  "source_dir": "3301337278-AdaptiveIdeologyStorage",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

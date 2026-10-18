@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "akt-ideology",
+  "package_id": "AKT.Ideology",
+  "display_name": "AKT_Ideology — 扶她文化（`RJW-文化-扶她文化`）— 分析记录",
+  "authors": [
+    "AKawaiiTent"
+  ],
+  "license": "",
+  "source_dir": "RJW-文化-扶她文化（AKawaiiTent's Futa Ideology）",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

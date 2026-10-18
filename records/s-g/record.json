@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "s-g",
+  "package_id": "s.g",
+  "display_name": "P-Music（`725130005`）— 分析记录",
+  "authors": [
+    "Peppsen（另有 ZumZum",
+    "SpacekatTommy 参与曲目）"
+  ],
+  "license": "",
+  "source_dir": "725130005-PMusic",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

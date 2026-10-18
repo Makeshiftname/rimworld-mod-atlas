@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "adaptive-storage-framework",
+  "package_id": "adaptive.storage.framework",
+  "display_name": "Adaptive Storage Framework（`3033901359`）— 分析记录",
+  "authors": [
+    "Soul",
+    "Phaneron",
+    "bradson（主开发）"
+  ],
+  "license": "",
+  "source_dir": "3033901359-AdaptiveStorage",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

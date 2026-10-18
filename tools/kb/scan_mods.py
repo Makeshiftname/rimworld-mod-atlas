@@ -1,15 +1,9 @@
-#!/usr/bin/env python3
-"""Scan all RimWorld mods in the repo and generate the knowledge base index.
+﻿#!/usr/bin/env python3
+"""Scan all RimWorld mods and generate the knowledge-base indexes.
 
 Outputs:
-  docs/knowledge/kb-index.json  - machine-readable metadata for every mod
-  docs/knowledge/mod-index.md   - markdown index (auto section regenerated,
-                                  manual section preserved)
-
-Usage:
-  python tools/kb/scan_mods.py             # (re)generate index
-  python tools/kb/scan_mods.py --check     # compare vs last index, report changes
-  python tools/kb/scan_mods.py --json-only # only refresh kb-index.json
+  docs/knowledge/indexes/mods.json - machine-readable metadata
+  docs/knowledge/indexes/mods.md   - Markdown index (auto section + manual notes)
 """
 from __future__ import annotations
 
@@ -21,68 +15,65 @@ from pathlib import Path
 import kb_common as kb
 
 
-def tick(v: bool) -> str:
-    return "✓" if v else "–"
+def tick(value: bool) -> str:
+    return "✓" if value else "–"
 
 
-def type_label(t: str, conf: str) -> str:
-    return f"{t}?" if conf == "low" else t
+def type_label(type_name: str, confidence: str) -> str:
+    return f"{type_name}?" if confidence == "low" else type_name
 
 
 def build_markdown(mods: list[dict]) -> str:
-    stats = {}
-    for m in mods:
-        stats[m["type"]] = stats.get(m["type"], 0) + 1
-    readme_stats = {}
-    for m in mods:
-        readme_stats[m["readme_status"]] = readme_stats.get(m["readme_status"], 0) + 1
+    stats: dict[str, int] = {}
+    for mod in mods:
+        stats[mod["type"]] = stats.get(mod["type"], 0) + 1
+    readme_stats: dict[str, int] = {}
+    for mod in mods:
+        readme_stats[mod["readme_status"]] = readme_stats.get(mod["readme_status"], 0) + 1
 
-    lines = []
-    lines.append("# Mod Index — RimWorld 知识库")
-    lines.append("")
-    lines.append("> 元数据表由 `tools/kb/scan_mods.py` 自动生成，请勿手改本区间。")
-    lines.append("> 「要点与知识点链接」在文件末尾 `<!-- MANUAL -->` 区间内人工维护。")
-    lines.append("")
-    lines.append("## 统计")
-    lines.append("")
-    cat_stats = {}
-    for m in mods:
-        c = m.get("category", "")
-        cat_stats[c] = cat_stats.get(c, 0) + 1
+    lines = [
+        "# Mod Index — RimWorld 知识库",
+        "",
+        "> 元数据表由 `tools/kb/scan_mods.py` 自动生成，请勿手改本区间。",
+        "> 「要点与知识点链接」在文件末尾 `<!-- MANUAL -->` 区间内人工维护。",
+        "",
+        "## 统计",
+        "",
+    ]
+    cat_stats: dict[str, int] = {}
+    for mod in mods:
+        category = mod.get("category", "")
+        cat_stats[category] = cat_stats.get(category, 0) + 1
     lines.append(
         f"- Mod 总数：**{len(mods)}**（"
         + "、".join(f"`{c}` × {n}" for c, n in sorted(cat_stats.items(), key=lambda x: x[1], reverse=True))
         + "）"
     )
-    lines.append(
-        "- 类型分布：" + "、".join(f"`{t}` × {c}" for t, c in sorted(stats.items()))
-    )
-    lines.append(
-        "- README 状态：" + "、".join(f"`{k}` × {v}" for k, v in sorted(readme_stats.items()))
-    )
-    lines.append("")
-    lines.append("## 索引表")
-    lines.append("")
-    lines.append(
-        "| # | 类 | Mod | Type | Versions | C# | 翻 | Doc | Tst | Pub | README |"
-    )
-    lines.append(
-        "|---|----|-----|------|----------|----|----|-----|-----|-----|--------|"
-    )
-    for m in mods:
-        vers = ",".join(m["versions"]) or ("backup" if m["in_backup"] else "-")
+    lines.append("- 类型分布：" + "、".join(f"`{t}` × {c}" for t, c in sorted(stats.items())))
+    lines.append("- README 状态：" + "、".join(f"`{k}` × {v}" for k, v in sorted(readme_stats.items())))
+    lines.extend([
+        "",
+        "## 索引表",
+        "",
+        "| ID | # | 类 | Mod | Type | Versions | C# | 翻 | Doc | Tst | Pub | README |",
+        "|----|---|----|-----|------|----------|----|----|-----|-----|-----|--------|",
+    ])
+    for mod in mods:
+        versions = ",".join(mod["versions"]) or ("backup" if mod["in_backup"] else "-")
         lines.append(
-            f"| {m['number']} | {m.get('category', '')} | {m['title']} | "
-            f"{type_label(m['type'], m['type_conf'])} "
-            f"| {vers} | {tick(m['has_csharp'])} | {tick(m['has_languages'])} "
-            f"| {tick(m['has_docs'])} | {tick(m['has_tests'])} "
-            f"| {tick(m['has_publisher_plus'])} | {m['readme_status']} |"
+            f"| `{mod['id']}` | {mod['number']} | {mod.get('category', '')} | {mod['title']} | "
+            f"{type_label(mod['type'], mod['type_conf'])} "
+            f"| {versions} | {tick(mod['has_csharp'])} | {tick(mod['has_languages'])} "
+            f"| {tick(mod['has_docs'])} | {tick(mod['has_tests'])} "
+            f"| {tick(mod['has_publisher_plus'])} | {mod['readme_status']} |"
         )
-    lines.append("")
-    lines.append("> 图例：C#=有 C# 源码；翻=Languages/ 翻译；Doc=docs/；Tst=Tests/；")
-    lines.append("> Pub=`_PublisherPlus.xml`；README=ok/模板占位(template)/空壳(stub)/缺失(missing)。")
-    lines.append("> Type 带 `?` 表示启发式推断置信度低（patch 与 standalone 需人工核实）。")
-    lines.append("")
+    lines.extend([
+        "",
+        "> 图例：C#=有 C# 源码；翻=Languages/ 翻译；Doc=docs/；Tst=Tests/；",
+        "> Pub=`_PublisherPlus.xml`；README=ok/模板占位(template)/空壳(stub)/缺失(missing)。",
+        "> Type 带 `?` 表示启发式推断置信度低（patch 与 standalone 需人工核实）。",
+        "",
+    ])
     return "\n".join(lines)
 
 
@@ -91,9 +82,8 @@ def build_json(mods: list[dict]) -> str:
 
 
 def write_index(mods: list[dict], json_only: bool = False) -> None:
-    kb.KB_DIR.mkdir(parents=True, exist_ok=True)
-
-    (kb.KB_DIR / "kb-index.json").write_text(build_json(mods) + "\n", encoding="utf-8")
+    kb.INDEX_DIR.mkdir(parents=True, exist_ok=True)
+    kb.INDEX_JSON.write_text(build_json(mods) + "\n", encoding="utf-8")
     if json_only:
         print(f"wrote {kb.INDEX_JSON}")
         return
@@ -118,27 +108,26 @@ def write_index(mods: list[dict], json_only: bool = False) -> None:
 
 def check_changes(mods: list[dict]) -> int:
     if not kb.INDEX_JSON.exists():
-        print("no previous kb-index.json; run without --check first", file=sys.stderr)
+        print(f"no previous {kb.INDEX_JSON}; run without --check first", file=sys.stderr)
         return 2
-    prev = json.loads(kb.INDEX_JSON.read_text(encoding="utf-8"))
-    prev_by_dir = {m["dir"]: m for m in prev}
-    cur_by_dir = {m["dir"]: m for m in mods}
-
+    previous = json.loads(kb.INDEX_JSON.read_text(encoding="utf-8"))
+    previous_by_id = {m["id"]: m for m in previous}
+    current_by_id = {m["id"]: m for m in mods}
     changes = []
-    for d in sorted(set(cur_by_dir) - set(prev_by_dir)):
-        changes.append(f"  [added]   {d}")
-    for d in sorted(set(prev_by_dir) - set(cur_by_dir)):
-        changes.append(f"  [removed] {d}")
-    for d in sorted(set(cur_by_dir) & set(prev_by_dir)):
-        a, b = prev_by_dir[d], cur_by_dir[d]
-        diffs = []
-        for field in ("readme_status", "type", "versions", "has_csharp", "has_languages",
-                      "has_docs", "has_tests", "has_agents", "has_publisher_plus"):
-            if a.get(field) != b.get(field):
-                diffs.append(f"{field}:{a.get(field)}->{b.get(field)}")
+    for mod_id in sorted(set(current_by_id) - set(previous_by_id)):
+        changes.append(f"  [added]   {mod_id}")
+    for mod_id in sorted(set(previous_by_id) - set(current_by_id)):
+        changes.append(f"  [removed] {mod_id}")
+    fields = (
+        "readme_status", "type", "versions", "has_csharp", "has_languages",
+        "has_docs", "has_tests", "has_agents", "has_publisher_plus", "dir",
+    )
+    for mod_id in sorted(set(current_by_id) & set(previous_by_id)):
+        old, new = previous_by_id[mod_id], current_by_id[mod_id]
+        diffs = [f"{field}:{old.get(field)}->{new.get(field)}"
+                 for field in fields if old.get(field) != new.get(field)]
         if diffs:
-            changes.append(f"  [changed] {d}: {'; '.join(diffs)}")
-
+            changes.append(f"  [changed] {mod_id}: {'; '.join(diffs)}")
     if changes:
         print("Changes since last index:")
         print("\n".join(changes))
@@ -148,44 +137,17 @@ def check_changes(mods: list[dict]) -> int:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--check", action="store_true",
-                    help="compare vs last index and report changes (no rewrite)")
-    ap.add_argument("--json-only", action="store_true",
-                    help="only refresh kb-index.json, leave mod-index.md untouched")
-    args = ap.parse_args()
-
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--check", action="store_true",
+                        help="compare vs last index and report changes (no rewrite)")
+    parser.add_argument("--json-only", action="store_true",
+                        help="only refresh mods.json, leave mods.md untouched")
+    args = parser.parse_args()
     mods = kb.scan_all()
     if args.check:
         return check_changes(mods)
-
     write_index(mods, json_only=args.json_only)
-
-    # warnings for known structural oddities
-    warn = []
-    seen = {}
-    for m in mods:
-        # number is unique within a category (自建/收集 each start at 01)
-        key = (m.get("category", ""), m["number"])
-        seen.setdefault(key, []).append(m["dir"])
-        if m["readme_status"] == "missing" and not m["in_backup"]:
-            warn.append(f"  no README: {m['dir']}")
-        author = (m.get("author") or "").strip()
-        if author and "runningbugs" not in author.lower():
-            warn.append(f"  third-party author: {m['dir']} ({author})")
-    for key, dirs in seen.items():
-        if len(dirs) > 1:
-            warn.append(f"  duplicate number {key}: {dirs}")
-    empties = [m["dir"] for m in mods if m["type"] == "empty"]
-    if empties:
-        warn.append(f"  empty mod dirs: {empties}")
-    backups = [m["dir"] for m in mods if m["in_backup"]]
-    if backups:
-        warn.append(f"  content only under backup/: {backups}")
-    if warn:
-        print("Warnings:")
-        print("\n".join(warn))
     return 0
 
 

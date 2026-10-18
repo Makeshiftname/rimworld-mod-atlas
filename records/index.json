@@ -1,0 +1,399 @@
+[
+  {
+    "schema_version": 1,
+    "id": "abscon-privacy-please",
+    "package_id": "abscon.privacy.please",
+    "display_name": "Privacy, Please!（RJW 隐私意识）",
+    "authors": [
+      "AbstractConcept（原作者）",
+      "fork 贡献者 AblativeAbsolute（Quirks 子项目 + quirk 图标，changelog 署名）"
+    ],
+    "license": "未声明。无 LICENSE / LICENCE 文件。README 明确写 \"I claim no ownership… This version may be taken down by request from the original author\"",
+    "source_dir": "RJW_文化玩法_隐私意识",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "adaptive-ideology-storage",
+    "package_id": "Adaptive.Ideology.Storage",
+    "display_name": "Adaptive Ideology Storage",
+    "authors": [
+      "vin —— About.xml 写 <authors><li>vin</li></authors>（复数标签是正确写法，见「怎么验的」纠错 4）"
+    ],
+    "license": "无。无 LICENSE / LICENSE.md / README.md / CHANGELOG.md，About.xml 也无 <url>、无 <license>、无 modVersion → 默认保留所有权利",
+    "source_dir": "3301337278-AdaptiveIdeologyStorage",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "adaptive-simplestorage",
+    "package_id": "Adaptive.SimpleStorage",
+    "display_name": "Adaptive Simple Storage",
+    "authors": [
+      "vin —— 与 收录/3301337278-AdaptiveIdeologyStorage/ 同一作者（<authors><li>vin</li></authors>，复数标签是正确写法）"
+    ],
+    "license": "无。无 LICENSE / README.md / LoadFolders.xml；About.xml 无 <url>、无 <license>、无 modVersion",
+    "source_dir": "3297307747-AdaptiveSimpleStorage",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "adaptive-storage-framework",
+    "package_id": "adaptive.storage.framework",
+    "display_name": "Adaptive Storage Framework（`3033901359`）— 分析记录",
+    "authors": [
+      "Soul",
+      "Phaneron",
+      "bradson（主开发）"
+    ],
+    "license": "",
+    "source_dir": "3033901359-AdaptiveStorage",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "akt-ideology",
+    "package_id": "AKT.Ideology",
+    "display_name": "AKT_Ideology — 扶她文化（`RJW-文化-扶她文化`）— 分析记录",
+    "authors": [
+      "AKawaiiTent"
+    ],
+    "license": "",
+    "source_dir": "RJW-文化-扶她文化（AKawaiiTent's Futa Ideology）",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "aoba-framework",
+    "package_id": "AOBA.Framework",
+    "display_name": "Fortified Features Framework（`3498575851`）— 分析记录",
+    "authors": [
+      "AOBA"
+    ],
+    "license": "",
+    "source_dir": "3498575851-FortifiedFramework",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "brrainz-harmony",
+    "package_id": "brrainz.harmony",
+    "display_name": "Harmony（`2009463077`）— 分析记录",
+    "authors": [
+      "Andreas Pardeike（Brrainz）"
+    ],
+    "license": "MIT License（LICENSE，Copyright (c) 2017 Andreas Pardeike）",
+    "source_dir": "2009463077-Harmony",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "c0ffee-rjw-ideologyaddons",
+    "package_id": "c0ffee.rjw.IdeologyAddons",
+    "display_name": "C0ffeeRIA（C0ffee's RJW Ideology Addons）",
+    "authors": [
+      "C0ffee（About.xml 写 <author> 单数）"
+    ],
+    "license": "无。无 LICENSE、无 README、无 <url> 之外的法律声明",
+    "source_dir": "RJW_文化_咖啡的人奶文化",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "fix-miho-visualpatch",
+    "package_id": "Fix.Miho.VisualPatch",
+    "display_name": "Miho Race Children Texture Fix",
+    "authors": [
+      "Ay"
+    ],
+    "license": "",
+    "source_dir": "1~11岁美狐贴图修正",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "gt-sam-glittertech",
+    "package_id": "GT.Sam.GlitterTech",
+    "display_name": "Glitter Tech Classic（`725576127`）— 分析记录",
+    "authors": [
+      "Sam"
+    ],
+    "license": "",
+    "source_dir": "725576127-GlitterTechClassic",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "haplo-miscellaneous-training",
+    "package_id": "Haplo.Miscellaneous.Training",
+    "display_name": "Misc. Training",
+    "authors": [
+      "Haplo（HaploX1）"
+    ],
+    "license": "",
+    "source_dir": "717575199-MiscTraining",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "imranfish-xmlextensions",
+    "package_id": "imranfish.xmlextensions",
+    "display_name": "XML Extensions（`2574315206`）— 分析记录",
+    "authors": [
+      "Imranfish"
+    ],
+    "license": "",
+    "source_dir": "2574315206-XMLExtensions",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "mlie-sdbridges",
+    "package_id": "Mlie.SDBridges",
+    "display_name": "[sd] Bridges (Continued)",
+    "authors": [
+      "Mlie",
+      "原作 sulusdacors（工坊 788610933），About.xml 与 README.md 都明写 \"Update of sulusdacors mod\""
+    ],
+    "license": "MIT（LICENSE.md，Copyright (c) 2020 Mlie，无禁再分发声明）→ 可收录、可再分发",
+    "source_dir": "2036488024-SDBridges",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "nera-spawnthosegenes",
+    "package_id": "Nera.SpawnThoseGenes",
+    "display_name": "[BT] SpawnThoseGenes!（`2898044088`）— 分析记录",
+    "authors": [
+      "Nera（致谢 Operator）"
+    ],
+    "license": "",
+    "source_dir": "2898044088-SpawnThoseGenes",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "owlchemist-cherrypicker",
+    "package_id": "Owlchemist.CherryPicker",
+    "display_name": "Cherry Picker（`3521312241`）— 分析记录",
+    "authors": [
+      "Owlchemist"
+    ],
+    "license": "",
+    "source_dir": "3521312241-CherryPicker",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "readyforjeff-rjwpeculiarinstitution",
+    "package_id": "readyforjeff.RJWPeculiarInstitution",
+    "display_name": "Peculiar Institution",
+    "authors": [
+      "readyforjeff"
+    ],
+    "license": "无。无 LICENSE、README 无许可声明 → 未声明许可",
+    "source_dir": "RJW_机制_小妾项圈",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "rim-job-world",
+    "package_id": "rim.job.world",
+    "display_name": "RimJobWorld（RJW）— 分析记录",
+    "authors": [
+      "Ed86（LICENSE 版权行为 semigimp 2017，见「授权」）"
+    ],
+    "license": "读 LICENSE（21 行）",
+    "source_dir": "RJW_核心_本体",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "rjw-fb",
+    "package_id": "rjw.FB",
+    "display_name": "RimJobWorld - FB（RJW 做爱感想·颜值）",
+    "authors": [
+      "Ed86 —— RJW 本体作者本人，属官方附属"
+    ],
+    "license": "未声明。无 LICENSE / LICENCE 文件",
+    "source_dir": "rjw-做爱感想-颜值",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "s-g",
+    "package_id": "s.g",
+    "display_name": "P-Music（`725130005`）— 分析记录",
+    "authors": [
+      "Peppsen（另有 ZumZum",
+      "SpacekatTommy 参与曲目）"
+    ],
+    "license": "",
+    "source_dir": "725130005-PMusic",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "taranchuk-fastergameloading",
+    "package_id": "Taranchuk.FasterGameLoading",
+    "display_name": "Faster Game Loading - Continued（`3652938473`）— 分析记录",
+    "authors": [
+      "綠菇（mushroomTW）—— Taranchuk 原版的维护分支"
+    ],
+    "license": "",
+    "source_dir": "3652938473-FasterGameLoading",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "unlimitedhugs-hugslib",
+    "package_id": "UnlimitedHugs.HugsLib",
+    "display_name": "HugsLib（`818773962`）— 分析记录",
+    "authors": [
+      "UnlimitedHugs"
+    ],
+    "license": "",
+    "source_dir": "818773962-HugsLib",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "vegapnk-cumpilation",
+    "package_id": "vegapnk.cumpilation",
+    "display_name": "Cumpilation",
+    "authors": [
+      "Vegapnk（About.xml 写 Vegapnk - 1.6 Rewrite by Telanda",
+      "CHANGELOG 每条都署 (Commit by @Telanda-DDS)",
+      "CONTRIBUTING.md 的 Contributors 段只有一人：Telanda - Rimworld 1.6 Migration）"
+    ],
+    "license": "随包 LICENCE（661 行 / 34,452 字节，正文是 GNU AGPL-3.0 全文）。⚠️ 但 README.md 的徽章写 License: GPL3 —— 两者不一致，见「查出来的问题 · 1」",
+    "source_dir": "RJW-体液-精液汇编（Cumpilation）",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "yukiyuki-abyss",
+    "package_id": "yukiyuki.ABYSS",
+    "display_name": "ABYSS / 阿比斯",
+    "authors": [
+      "yukiyuki"
+    ],
+    "license": "",
+    "source_dir": "5 阿比斯",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "yukiyuki-asebi",
+    "package_id": "yukiyuki.ASEBI",
+    "display_name": "美南烛 / ASEBI",
+    "authors": [],
+    "license": "",
+    "source_dir": "美南烛",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "yukiyuki-borum",
+    "package_id": "yukiyuki.BORUM",
+    "display_name": "BORUM / 雪绒兽",
+    "authors": [
+      "yukiyuki"
+    ],
+    "license": "",
+    "source_dir": "2 雪绒兽",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "yukiyuki-fleshia",
+    "package_id": "yukiyuki.FLESHIA",
+    "display_name": "FLESHIA / 弗莱西雅",
+    "authors": [
+      "yukiyuki"
+    ],
+    "license": "",
+    "source_dir": "6弗莱西雅",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "yukiyuki-sankaandsosin",
+    "package_id": "yukiyuki.SANKAandSOSIN",
+    "display_name": "SANKA and SOSIN / 素心和葬歌",
+    "authors": [
+      "yukiyuki"
+    ],
+    "license": "",
+    "source_dir": "3 素心和葬歌",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  },
+  {
+    "schema_version": 1,
+    "id": "yukiyuki-yaemu",
+    "package_id": "yukiyuki.YAEMU",
+    "display_name": "YAEMU / 八重律",
+    "authors": [
+      "yukiyuki"
+    ],
+    "license": "",
+    "source_dir": "4 八重律",
+    "status": "analyzed",
+    "modifications": [],
+    "distilled_to": []
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "gt-sam-glittertech",
+  "package_id": "GT.Sam.GlitterTech",
+  "display_name": "Glitter Tech Classic（`725576127`）— 分析记录",
+  "authors": [
+    "Sam"
+  ],
+  "license": "",
+  "source_dir": "725576127-GlitterTechClassic",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

@@ -1,0 +1,3554 @@
+[
+  {
+    "id": "cj-rimtalk",
+    "dir": "收集/80-standalone-RimTalk",
+    "legacy_dir": "80-standalone-RimTalk",
+    "category": "collected",
+    "number": "",
+    "title": "RimTalk",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "cj.rimtalk",
+    "name": "RimTalk",
+    "author": "juicy",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "Jaxe.Bubbles"
+    ],
+    "load_after": [
+      "brrainz.harmony",
+      "Jaxe.Bubbles"
+    ],
+    "description": "Bring your colonists to life with RimTalk! This revolutionary mod uses Google's AI to generate dynamic, context-aware dialogue for your pawns in real-time. Key Features: • AI-powered conversations that reflect each pawn's current mood, thoughts, and situation • Context-aware dialogue based on what colonists are doing and thinking • Multi-language support for diverse colony experiences • Configurable conversation frequency and message suppression options • Easy setup - just get a free API key from Google AI Studio Every conversation is unique and emergent, creating immersive storytelling experiences that evolve with your colony. Gone are the days of repetitive interactions - your pawns will now speak with personality and purpose! Setup: Get your free API key at aistudio.google.com, enable the mod, and paste your key in mod settings. Compatible with most other mods and respects API rate limits automatically.",
+    "versions": [],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 103,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/80-standalone-RimTalk/README_UPSTREAM.md",
+      "收集/80-standalone-RimTalk/preset.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "cj-rimtalk-expandmemory",
+    "dir": "收集/81-patch-RimTalkExpandMemory",
+    "legacy_dir": "81-patch-RimTalkExpandMemory",
+    "category": "collected",
+    "number": "",
+    "title": "RimTalk - Expand Memory",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "cj.rimtalk.expandmemory",
+    "name": "RimTalk - Expand Memory",
+    "author": "SANGUO",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "cj.rimtalk"
+    ],
+    "load_after": [
+      "brrainz.harmony",
+      "cj.rimtalk"
+    ],
+    "description": "[h1]RimTalk - Expand Memory v3.4.0[/h1] RimTalk 的记忆扩展模组。给殖民者加了一套分层记忆系统，让 AI 对话时能记住更多、说得更像真人。 [hr][/hr] [h1]记忆系统[/h1] 分四层存储：超短期(ABM)、短期(SCM)、中期(ELS)、长期(CLPA)。越老的记忆权重越低，重要的内容会留得更久。对话时自动挑选最相关的记忆注入，不会把所有东西一股脑塞进去。 [h1]常识库[/h1] 可以手动写入背景知识，格式是 [标签|重要性]内容。角色对话涉及相关话题时会自动带入。支持分类管理、批量操作、导入导出。 有个标签测试工具，输入标签和对话内容，能直接看到会不会匹配、匹配到什么，方便排查误触。 [h1]记忆时间线 UI[/h1] 卡片式布局，按时间排列，不同层级用颜色区分。支持 Ctrl/Shift 多选和框选，可以批量总结、归档或删除。 [h1]其他[/h1] 支持 OpenAI、DeepSeek、Gemini 等多个平台，可以独立配置，不依赖 RimTalk 本体的设置。 提示词有规范化处理，可以自定义文本替换规则，支持正则，实时生效。 旧存档直接兼容，不需要重新开档。 [hr][/hr] [h1]安装[/h1] 需要 Harmony 和 RimTalk。加载顺序：Core → Harmony → RimTalk → 本 Mod。 [hr][/hr] [h1]鸣谢[/h1] Juicy - RimTalk 原作者 GitHub: https://github.com/sanguodxj-byte/RimTalk-ExpandMemory",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 86,
+    "has_languages": true,
+    "has_docs": true,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/81-patch-RimTalkExpandMemory/CHANGELOG.md",
+      "收集/81-patch-RimTalkExpandMemory/Changelog Guidelines.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/AI_PROVIDERS_GUIDE.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/CommonKnowledgeAPI.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/ContentSniffingPlan.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/ELS_TIMESTAMP_BUG_FIX.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/Git_提交命令清单.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/JobMemoryCapturer.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/MEMORY_WINDOW_PERFORMANCE_OPTIMIZATION.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/PROMPT_CACHING_GUIDE.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/PROMPT_CACHING_PATCH.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/StreamingRoundMemory-Pipeline.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/TTS_REMOVAL_GUIDE.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/v3.3.2.37_旧存档保护机制修复.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/v3.3.21发布总结.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/v3.3.21更新说明-简洁版.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/v3.3.4_EVENT_COMPRESSION.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/v3.3.4_SUMMARY.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/世界书第一阶段-字符串全匹配标签实现.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/世界书第三阶段-扩展属性与UI优化.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/世界书第二阶段-向量增强检索.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/修复_提示词花括号错误.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/修复总结_时间戳和固定记忆.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/修改_注入位置从prompts改为context.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/常识库使用说明按钮.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/常识库匹配引擎评估报告.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/常识库标签最佳实践-技能名陷阱.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/拆分_MainTabWindow_Memory.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/拆分_MainTabWindow_Memory_最终报告.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/拆分_验证清单.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/标签测试工具使用说明.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/标签测试工具实现总结.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/标签测试工具快速参考.md",
+      "收集/81-patch-RimTalkExpandMemory/Docs/记忆系统重构设计_最终版.md",
+      "收集/81-patch-RimTalkExpandMemory/自用每日总结提示词（防语义锚定化）.md",
+      "收集/81-patch-RimTalkExpandMemory/自用深度归档提示词（防语义锚定化）.md",
+      "收集/81-patch-RimTalkExpandMemory/项目管线.md"
+    ],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "colonymanager-zh",
+    "dir": "收集/06-empty-ColonyManager_zh",
+    "legacy_dir": "06-empty-ColonyManager_zh",
+    "category": "collected",
+    "number": "",
+    "title": "ColonyManager_zh",
+    "has_about": false,
+    "in_backup": false,
+    "versions": [],
+    "has_common": false,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "missing",
+    "notes_files": [],
+    "type": "empty",
+    "type_conf": "high"
+  },
+  {
+    "id": "hautarche-hautstraits",
+    "dir": "收集/82-patch-HautsAddedTraits",
+    "legacy_dir": "82-patch-HautsAddedTraits",
+    "category": "collected",
+    "number": "",
+    "title": "Hauts' Added Traits",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "Hautarche.HautsTraits",
+    "name": "Hauts' Added Traits",
+    "author": "Hautarche",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "Hautarche.HautsFramework"
+    ],
+    "load_after": [
+      "OskarPotocki.VanillaFactionsExpanded.Core",
+      "VanillaExpanded.VPsycastsE",
+      "Danzen.VPE.BiotechIntegration",
+      "VanillaExpanded.VPE.Puppeteer",
+      "VPE.Neurophage.Sentinel",
+      "kikohi.cybernetic",
+      "vanillaracesexpanded.highmate",
+      "Hautarche.HautsFramework",
+      "CETeam.CombatExtended"
+    ],
+    "description": "Adds 50 fun traits for pawns (+15 with Ideology, +7 with Biotech, +4 with Royalty, +6 with Anomaly, and +8 with Odyssey; 89 with all DLCs). Most have unique mechanics, such as activatable combat abilities, new ways to get inspirations, and more. To experience more trait goodness, this mod also includes a serum that adds traits of your choice to pawns, and the mod settings enable you to tweak the number of traits pawns can spawn with, from anywhere between 1 to 9. With Royalty: exposing those with the Latent Psychic trait to extraordinary or traumatic events may 'awaken' them, transforming them into powerful psycasters with extra capabilities, and opening the path for them to develop even further, unique psychic powers. A new start scenario lets you start with six Latent Psychics, either at an industrial or tribal tech level. With Biotech: there are genes which either grant certain traits from this mod or provide near-identical effects. If the mod settings allow for more than 3 traits per pawn, children will have more frequent growth moments to enable them to attain that many traits. With Anomaly: there are two new benefits and two new downsides available to 'creepy joiners', each involving a unique trait. See the full description here: https://docs.google.com/document/d/1AjWjya-8knskExfpUYtH3eyMT3oHOg1_BPJzgBO_3FE/edit?usp=sharing",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 73,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": true,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/82-patch-HautsAddedTraits/README_UPSTREAM.md"
+    ],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "maiya-rimtalkdynamiccolors",
+    "dir": "收集/86-patch-RimTalkDynamicColors",
+    "legacy_dir": "86-patch-RimTalkDynamicColors",
+    "category": "collected",
+    "number": "",
+    "title": "RimTalk DynamicColors 边缘世谭-言出多彩",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "Maiya.RimTalkDynamicColors",
+    "name": "RimTalk DynamicColors 边缘世谭-言出多彩",
+    "author": "Maiya0126",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [
+      "brrainz.harmony",
+      "Jaxe.Bubbles",
+      "cj.rimtalk"
+    ],
+    "description": "[b]RimTalk DynamicColors (言出多彩)[/b] A tailored enhancement mod for RimTalk and Interaction Bubbles. 专为 RimTalk 打造的沉浸式色彩增强模组。 [b]✨ All features can be toggled freely in Mod Settings.[/b] [b]✨ 所有功能均可在 Mod 设置里自由开关。[/b] [h1]⚠️ Load Order / 加载顺序[/h1] 1. Harmony 2. Interaction Bubbles 3. RimTalk 4. [b]RimTalk DynamicColors[/b] (This Mod) [h1]Features / 功能[/h1] [b]1. Dynamic Character Colors (角色专属色)[/b] Set custom colors for specific pawns. Supports Ideology \"Favorite Color\" auto-apply. 为角色设置专属颜色，支持自动应用文化DLC的“最爱颜色”。 [b]2. Immersive Actions (沉浸式动作)[/b] Text inside brackets (), **, [] will be dimmed or italicized to distinguish actions from speech. 括号内的动作描写会自动变暗或变为斜体。 [b]3. Bubbles Sync (气泡同步)[/b] All colors and styles sync perfectly to Interaction Bubbles! 所有颜色特效完美同步显示在头顶气泡中！ [b]4. History & Export (历史与导出)[/b] View chat history in-game and export to TXT or HTML files. 内置历史记录查看器，支持导出为 TXT 或 HTML（带颜色）文件。 [h1]New Items / 新增物品[/h1] Craftable at Crafting Spot: [b]🍬 Rainbow Candy:[/b] Makes your speech rainbow-colored! (说话变成动态彩虹色) [b]💊 B&W Pill:[/b] Makes speech high-contrast black & white. (说话变成黑白风格) [b]🍵 Clear Soup:[/b] Removes color effects. (清除特效) [h1]FAQ[/h1] [b]Error: \"Json deserialization failed\"?[/b] This is caused by the AI model generating bad data, not this mod. Please ignore it. 这是AI模型偶尔抽风输出错误格式导致的，不是Mod的问题，请直接忽略。 [h1]Recommended Mod / 推荐模组[/h1] [b]RimTuber 环主播[/b] (by Maiya0126) — Turn your colonists into live-streamers and watch them stream, chat, raid, and build a followership on an in-game platform! Perfect paired with RimTalk for an immersive livestream chat experience. [b]RimTuber 环主播[/b] (作者:Maiya0126) — 让殖民地小人成为主播，在游戏内直播、聊天、互动！与 RimTalk 搭配体验沉浸式直播聊天。 Workshop: steam://url/CommunityFilePage/3723552881",
+    "versions": [],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/86-patch-RimTalkDynamicColors/README_UPSTREAM.md"
+    ],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "porio-tunnulerfix-fork",
+    "dir": "收集/53-patch-AllowTunnelersToDrillFork",
+    "legacy_dir": "53-patch-AllowTunnelersToDrillFork",
+    "category": "collected",
+    "number": "",
+    "title": "TEMPORARY 1.6 Allow Tunnelers To Drill",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "Porio.TunnulerFix.fork",
+    "name": "TEMPORARY 1.6 Allow Tunnelers To Drill",
+    "author": "Porio",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [
+      "Ludeon.RimWorld",
+      "Ludeon.RimWorld.BioTech",
+      "brrainz.harmony"
+    ],
+    "description": "PATCH MADE BY Enduriel https://steamcommunity.com/id/Endur1el 1.5 UPDATE BY Kazamizam https://steamcommunity.com/id/Kazamizam THIS IS A TEMPORARY 1.6 VERSION OF Allow Tunnelers To Drill IT WILL BE REMOVED AS SOON AS THEY UPDATE THE MOD ORIGINAL MAKER FOUND HERE https://steamcommunity.com/sharedfiles/filedetails/?id=2882915775 AND 1.5 https://steamcommunity.com/sharedfiles/filedetails/?id=3232132812 This mod allow the Tunnelers mech from Biotech dlc to drill at deep drill. Is it OP... yes This can be added and remove without breaking save",
+    "versions": [
+      "1.4",
+      "1.5"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "rimtalk-styleexpand",
+    "dir": "收集/85-patch-RimTalkStyleExpand",
+    "legacy_dir": "85-patch-RimTalkStyleExpand",
+    "category": "collected",
+    "number": "",
+    "title": "RimTalk StyleExpand",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RimTalk.StyleExpand",
+    "name": "RimTalk StyleExpand",
+    "author": "NUOQI_P",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "cj.rimtalk"
+    ],
+    "load_after": [
+      "brrainz.harmony",
+      "cj.rimtalk"
+    ],
+    "description": "RimTalk文风扩展模块 — 让对话呈现任意写作风格。 【功能】 用户提供文风素材（小说片段等），MOD自动分析并在对话生成时注入风格特征。支持语义切分、向量检索、LLM文风分析。 【使用】 将文风素材(.txt)放入Styles文件夹，配置Embedding API（推荐Ollama），在设置中扫描并切分文风即可。推荐使用「生成文风描述」功能以获得最佳效果。 【依赖与排序】 需要RimTalk和Harmony，加载顺序置于RimTalk之后。 交流群：1076958977",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 18,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/85-patch-RimTalkStyleExpand/README_EN.md",
+      "收集/85-patch-RimTalkStyleExpand/README_UPSTREAM.md"
+    ],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "rp-rimtalk-personadirector",
+    "dir": "收集/83-patch-RPDPersonaDirector",
+    "legacy_dir": "83-patch-RPDPersonaDirector",
+    "category": "collected",
+    "number": "",
+    "title": "RimTalk: Persona Director",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RP.RimTalk.PersonaDirector",
+    "name": "RimTalk: Persona Director",
+    "author": "Rabirinth",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "cj.rimtalk"
+    ],
+    "load_after": [
+      "brrainz.harmony",
+      "cj.RimTalk"
+    ],
+    "description": "This is an add-on for RimTalk. Features: 1. **Deep Data Extraction**: Reads Genes (Endo/Xeno),Skills, Relationships, and more. 2. **Director Mode**: Generate 3 distinct personality options based on rich data. 3. **Custom Context**: Add your own \"Director Notes\" to shape the character's memory. 4. **Fully Configurable**: Toggle every data field to save tokens or reduce noise.",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 48,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/83-patch-RPDPersonaDirector/BUILDING.md",
+      "收集/83-patch-RPDPersonaDirector/README_UPSTREAM.md"
+    ],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-alertutility",
+    "dir": "收集/01-standalone-AlertUtility",
+    "legacy_dir": "01-standalone-AlertUtility",
+    "category": "collected",
+    "number": "",
+    "title": "AlertUtility",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.AlertUtility",
+    "name": "AlertUtility",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "A simple utility that can set up an in-game count down alert",
+    "versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 6,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": true,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-allowrightclickworkoutsidezone",
+    "dir": "收集/57-standalone-AllowRightClickWorkOutsideZone",
+    "legacy_dir": "57-standalone-AllowRightClickWorkOutsideZone",
+    "category": "collected",
+    "number": "",
+    "title": "Priority Order Bypass Restrictions 强制命令无视限制",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.AllowRightClickWorkOutsideZone",
+    "name": "Priority Order Bypass Restrictions 强制命令无视限制",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "When pawns were selected, right click on work givers won't allow us to work outside allowed zone. This usually means we will have to change the allowed zone, wait for pawns to finish their work, and then change the allowed zone back. It could be very dangerous and very annoying. This mod allows pawns to work outside allowed zone when right clicking on work givers without the need to change the allowed zone. It's aim is to improve the quality of life for players for occasional work outside allowed zone. 当选中小人/机械体时，右键点击可指派工作的地点时，殖民者不能在允许区域外工作。 这通常意味着我们需要更改活动区，等待小人完成工作，然后再将活动区改回去。 这可能非常危险，也非常烦人。 这个模组允许小人在右键点击工作指派点时在活动区外工作，而无需更改活动区。 它的目的是改善玩家在偶尔需要在活动区外工作时的游戏体验。 -------------------------------------------- Update 2025-07-06 EST Besides bypass area restrictions, it can also bypass the disabled worktype restriction from the pawn work priority settings. Rename Bypass Area to Bypass Restrictions and rename the workshop title. 除了区域限制，现在模组也可以无视玩家设置的禁用工作类型。 将Bypass Area重命名为Bypass Restrictions并更新工坊的标题。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-allowtoolghoulfix",
+    "dir": "收集/28-patch-AllowToolGhoulFix",
+    "legacy_dir": "28-patch-AllowToolGhoulFix",
+    "category": "collected",
+    "number": "",
+    "title": "AllowToolGhoulFix",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.AllowToolGhoulFix",
+    "name": "AllowToolGhoulFix",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5"
+    ],
+    "deps": [
+      "unlimitedhugs.allowtool"
+    ],
+    "load_after": [],
+    "description": "This is a patch to fix allow tool causing Ghoul melee disabled issue. The mod is patch the FinishOff worktype def and remove the relevantSkills field. If you have other mods that has similar issue, you can do the same by changing their mod files. Allow Tool might not be the only mod that causes the issue.",
+    "versions": [
+      "1.4",
+      "1.5"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-amonkeyexpansionzh",
+    "dir": "收集/25-translation-AMonkeyExpansion_zh",
+    "legacy_dir": "25-translation-AMonkeyExpansion_zh",
+    "category": "collected",
+    "number": "",
+    "title": "A Monkey Expansion 简体中文翻译",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.AMonkeyExpansionZh",
+    "name": "A Monkey Expansion 简体中文翻译",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "zal.monketime"
+    ],
+    "load_after": [],
+    "description": "A Monkey Expansion (Continued) 还是挺有趣的，但是没有中文翻译，只能自己做一个翻译了。另外，强烈推荐骸鸾的 提取翻译 模组 （Extract translation）做翻译实在是太方便了。",
+    "versions": [],
+    "has_common": true,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "translation",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-anotherallowtool",
+    "dir": "收集/54-standalone-AnotherAllowTool",
+    "legacy_dir": "54-standalone-AnotherAllowTool",
+    "category": "collected",
+    "number": "",
+    "title": "Another Allow Tool (1.6)",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.AnotherAllowTool",
+    "name": "Another Allow Tool (1.6)",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "This is another allow tool implementation that aims to implement a subset of functions in the good old allow tool and remove the dependency to HugsLib. The reason to remove HugsLib dependency is because Allow Tool will have to wait for HugsLib update for a new RimWorld version first. Also, some of the functions are already implemented in the base game, so in Another Allow Tool, we are trying to remove this dependency and only implement a subset of the functions that seem to still be useful.",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 5,
+    "has_languages": true,
+    "has_docs": true,
+    "has_tests": true,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/54-standalone-AnotherAllowTool/docs/architecture.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-areaunlockerreorderfix",
+    "dir": "收集/40-patch-AreaUnlockerReorderFix",
+    "legacy_dir": "40-patch-AreaUnlockerReorderFix",
+    "category": "collected",
+    "number": "",
+    "title": "解锁区域数量上限排序修复 AreaUnlocker Reorder Fix",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.AreaUnlockerReorderFix",
+    "name": "解锁区域数量上限排序修复 AreaUnlocker Reorder Fix",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "fluffy.areaunlocker"
+    ],
+    "load_after": [],
+    "description": "本模组修复了Area Unlocker在RimWorld 1.5版本中无法排序活动区的问题 This mod fixes the issue that Area Unlocker cannot reorder active areas in RimWorld 1.5",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-armorracksforcewearfix",
+    "dir": "收集/21-patch-ArmorRacksForceWearFix",
+    "legacy_dir": "21-patch-ArmorRacksForceWearFix",
+    "category": "collected",
+    "number": "",
+    "title": "Armor Racks Force Wear Fix",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.ArmorRacksForceWearFix",
+    "name": "Armor Racks Force Wear Fix",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "khamenman.armorracks"
+    ],
+    "load_after": [
+      "khamenman.armorracks"
+    ],
+    "description": "Armor Racks Force Wear Fix",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-automaticbioferritehavesting",
+    "dir": "收集/31-standalone-AutomaticBioferriteHarvesting",
+    "legacy_dir": "31-standalone-AutomaticBioferriteHarvesting",
+    "category": "collected",
+    "number": "",
+    "title": "自动弹出灵铁 Automatic Bioferrite Havesting",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.AutomaticBioferriteHavesting",
+    "name": "自动弹出灵铁 Automatic Bioferrite Havesting",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "ludeon.rimworld.anomaly"
+    ],
+    "load_after": [],
+    "description": "This mod is used to automatically eject the bioferrite from the bioferrite harvester when it's full. 本模组可以自动弹出收集满的灵铁采集器中的灵铁。",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-betteroutfitstand",
+    "dir": "收集/69-standalone-BetterOutfitStand",
+    "legacy_dir": "69-standalone-BetterOutfitStand",
+    "category": "collected",
+    "number": "",
+    "title": "Better Outfit Stand (Vanilla Improvement) 更好用的服装架 (原版改进)",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.BetterOutfitStand",
+    "name": "Better Outfit Stand (Vanilla Improvement) 更好用的服装架 (原版改进)",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "This mod does not add any extra furniture to the game. It just tries to make the vanilla outfit stands a little bit easier to use. Vanilla outfit stands will only \"swap\" your clothes, which means it's very complex if you want to put all your clothes to an empty stand. I think it's easier to prepare two suites of clothes for your colonists than to put your clothes to an empty outfit stand. This mod will pop up a window when you right-click it and choose \"Better Outfit Stand\". This window shows two columns on one page: \"Put on stand\" and \"Wear from stand\". In \"Put on stand\", choose clothes worn by the colonist to move onto the stand. In \"Wear from stand\", choose clothes from the stand to wear; conflicting worn clothes are moved to the stand. This mod also adds a \"Put on target outfit stand\" command to spawned apparel and weapons. When a colony outfit stand exists, click the command and then click the target stand to order a colonist to haul the item there. The target stand automatically allows that item. Automatic filter disallowing when an item is removed is temporarily paused, so taking an item off the stand will not change that def's filter setting. 本模组并不添加任何额外的家具。它只是尝试让原版的服装架更容易使用。 原版的服装架只能“交换”衣服，这意味着如果你想把所有的衣服放到架子上会非常复杂。 我认为为殖民者准备两套衣服比把衣服放到空的服装架上更容易。 本模组在你右键点击服装架并选择“更方便的服装架”时会弹出一个窗口。这个窗口在同一页左右两栏显示：“放到衣架上”和“从衣架上穿”。 在“放到衣架上”里，选择殖民者身上要放到架子上的衣服。在“从衣架上穿”里，选择要从架子上穿上的衣服；冲突的已穿服装会自动换到架上。 本模组也会给已生成的服装和武器增加“放到目标服装架”命令。当殖民地有服装架时，点击命令再点击目标服装架，即可安排殖民者把该物品搬过去。目标服装架会自动允许该物品。取下物品时自动禁用对应物品类别的过滤器功能目前已暂停，因此取下衣物不会改变该类别的过滤器设置。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 8,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": true,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-blueprint2",
+    "dir": "收集/66-standalone-NewBlueprint",
+    "legacy_dir": "66-standalone-NewBlueprint",
+    "category": "collected",
+    "number": "",
+    "title": "New Blueprint",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.blueprint2",
+    "name": "New Blueprint",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [
+      "Core"
+    ],
+    "description": "[h1]New Blueprint - Rebuild for Spaceships![/h1] [h2]Overview[/h2] [p]New Blueprint is using the new Prefab system introduced in RimWorld 1.6 to create shareable blueprints that capture both terrain and buildings in their selected areas.[/p] [h2]Key Features[/h2] [list] [*] [b]Easy Blueprint Creation[/b]: Simply drag-select any area to capture both terrain and structures [*] [b]Flexible Placement[/b]: Place terrain and buildings separately with switchable modes [*] [b]Export/Import System[/b]: Share your designs via clipboard or save them for later use [*] [b]Name Conflict Resolution[/b]: When importing blueprints with the same name, you will be prompted to choose whether to overwrite [*] [b]God Mode Support[/b]: Enhanced functionality for testing and rapid development [*] [b]Multi-language Support[/b]: Full localization for English, Chinese Simplified, and Chinese Traditional [/list] [h2]How to Use[/h2] [olist] [1] Drag-select the area you want to capture [2] Save the blueprint with a custom name [3] Export the blueprint to clipboard for sharing [4] Import blueprints from clipboard (with conflict resolution) [5] Place the blueprint in Terrain mode first, then switch to Buildings mode [/olist] [h2]Perfect For[/h2] [list] [*] Creating complex base designs [*] Building space ships, vehicles, or structures [*] Sharing your architectural masterpieces with the community [*] Testing different layouts in god mode [/list] [h2]Requirements[/h2] [p]RimWorld >= 1.6 - Uses the vanilla Prefab system for maximum compatibility[/p] [h2]Localization[/h2] [p]English, Chinese Simplified, and Chinese Traditional translations included[/p] [h2]Note:[/h2] [p]Summary and Preview generated using AI.[/p] [h1]新蓝图 - 为复制飞船重写[/h1] [h2]概述[/h2] [p]新蓝图 利用游戏新增的Prefab系统，能够创建可分享的蓝图，捕获选定区域内的地形和建筑。[/p] [h2]主要功能[/h2] [list] [*] [b]轻松创建蓝图[/b]：只需拖动选择任意区域即可捕获地形和建筑 [*] [b]灵活放置[/b]：可通过切换模式分别放置地形和建筑 [*] [b]导出/导入系统[/b]：通过剪贴板分享您的设计，或保存以供日后使用 [*] [b]命名冲突[/b]：当导入同名蓝图时会询问是否覆盖 [*] [b]支持上帝模式[/b]：为测试和快速开发提供增强功能 [*] [b]多语言支持[/b]：提供完整的英语、简体中文和繁体中文本地化 [/list] [h2]如何使用[/h2] [olist] [1] 拖动选择您想要捕获的区域 [2] 使用自定义名称保存蓝图 [3] 将蓝图导出到剪贴板以供分享 [4] 从剪贴板导入蓝图（带冲突解决功能） [5] 首先在“地形”模式下放置蓝图，然后切换到“建筑”模式（使用按键R） [/olist] [h2]适用场景[/h2] [list] [*] 创建复杂的基地设计 [*] 建造宇宙飞船、载具或结构 [*] 与社区分享您的建筑杰作 [*] 快速重建被摧毁的区域 [*] 在上帝模式下测试不同的布局 [/list] [h2]要求[/h2] [p]RimWorld >= 1.6 - 使用原版新增的Prefab系统以获得最佳兼容性[/p] [h2]本地化[/h2] [p]已包含英语、简体中文和繁体中文翻译[/p] [h2]注意：[/h2] [p]摘要和预览图标由 AI 生成。[/p]",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 18,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/66-standalone-NewBlueprint/TerrainOverview.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-caravanshuttlemassinfoinspectstring",
+    "dir": "收集/67-standalone-CaravanShuttleMassInfoInspectString",
+    "legacy_dir": "67-standalone-CaravanShuttleMassInfoInspectString",
+    "category": "collected",
+    "number": "",
+    "title": "Mass Info for World View Caravan with Shuttle 世界地图穿梭机重量信息显示",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.CaravanShuttleMassInfoInspectString",
+    "name": "Mass Info for World View Caravan with Shuttle 世界地图穿梭机重量信息显示",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "[h1]Mass Info for World View Caravan with Shuttle 世界地图穿梭机重量信息显示[/h1] In World View, we can only see the shuttle's weight usage and capacity information when the shuttle cannot take off due to weight issues. This mod adds a line in the caravan's inspect panel to display the current weight usage and capacity information of the shuttle in the caravan. 在世界视图中，我们只能在穿梭机因为重量问题无法起飞时，才能知道穿梭机当前重量使用情况和容量信息。 本模组在远行队的面板信息中添加了一行，显示当前远行队穿梭机的重量使用情况和容量信息。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-colonygroupstargetableportraits",
+    "dir": "收集/77-patch-ColonyGroupsTargetablePortraits",
+    "legacy_dir": "77-patch-ColonyGroupsTargetablePortraits",
+    "category": "collected",
+    "number": "",
+    "title": "Colony Groups Targetable Portraits",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.ColonyGroupsTargetablePortraits",
+    "name": "Colony Groups Targetable Portraits",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "DerekBickley.LTOColonyGroupsFinal"
+    ],
+    "load_after": [
+      "brrainz.harmony",
+      "DerekBickley.LTOColonyGroupsFinal"
+    ],
+    "description": "让 [LTO] Colony Groups 的顶部头像栏和悬停组弹窗头像支持能力选目标：激活需要选目标的技能（如异常医术）后，直接点击头像即可对该小人施法，行为与 vanilla ColonistBar 一致（校验、高亮、音效、shift 连选）。 Makes [LTO] Colony Groups' top-bar portraits and hover group-popup portraits work as ability targets: while targeting an ability (e.g. Unnatural Healing), click a portrait to target that pawn, with full vanilla behavior (validation, highlight, sound, shift multi-select).",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": false,
+    "has_docs": true,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/77-patch-ColonyGroupsTargetablePortraits/docs/changes/colony-groups-targetable-portraits/plan.md",
+      "收集/77-patch-ColonyGroupsTargetablePortraits/docs/changes/colony-groups-targetable-portraits/proposal.md",
+      "收集/77-patch-ColonyGroupsTargetablePortraits/docs/changes/colony-groups-targetable-portraits/tasks.md"
+    ],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-commonmodcompatibilitypatches",
+    "dir": "收集/55-patch-CommonModCompatibilityPatches",
+    "legacy_dir": "55-patch-CommonModCompatibilityPatches",
+    "category": "collected",
+    "number": "",
+    "title": "Common Mod Compatibility Patches",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.CommonModCompatibilityPatches",
+    "name": "Common Mod Compatibility Patches",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [
+      "UnlimitedHugs.HugsLib",
+      "UnlimitedHugs.AllowTool",
+      "Memegoddess.BuildFromInventory",
+      "Memegoddess.ReplaceStuff",
+      "XeoNovaDan.TinyTweaks",
+      "Mlie.RimStory",
+      "OskarPotocki.VanillaFactionsExpanded.Core",
+      "Nals.DynamicPortraits",
+      "Solaris.RatkinRaceMod",
+      "Paluto22.PawnHealthBar",
+      "Ancot.KiiroRace",
+      "erdelf.HumanoidAlienRaces",
+      "erdelf.MinifyEverything",
+      "hatti.qualitybuilder.fork"
+    ],
+    "description": "A small collection of runtime compatibility patches for commonly used RimWorld mods. Every target-mod patch is dynamically detected at startup: if the corresponding mod/type/method is absent, the patch is skipped silently. Current patches: - RimWorld music: when recent-song filtering leaves only zero-commonality special-use songs, clear the recent-song filter so vanilla can choose a normal positive-weight song instead of returning null and spamming red errors. - Allow Tool: guard stale cached Haul Urgently things before RimWorld hauling APIs. - Build From Inventory / Replace Stuff: guard vanilla pathfinder reservation notifications for inventory-held or unspawned reservation targets. - Build From Inventory: clamp impossible HaulToContainer reservation stack counts after inventory drops. - Replace Stuff / TinyTweaks: guard Replace Stuff automatic bridge placement helper against null/invalid blueprint contexts. - Replace Stuff / TinyTweaks: guard Replace Stuff over-mineable blueprint helper against null/invalid blueprint contexts. - TinyTweaks: skip auto-rebuild blueprint placement when a launched building has no previous map context. - RimStory: guard broken saved individual-death anniversary events (ADead) with missing/invalid pawns and suppress exceptions from that event path. - RimStory: guard broken saved mass-funeral state when its last grave is missing, destroyed, unspawned, or belongs to another map; discard the stale funeral queue instead of repeating a NullReferenceException. - Vanilla Expanded Framework: serialize RimWorld goodwill-situation cache access and rebuild the cache if concurrent access has already corrupted it. - [NL] Dynamic Portraits: skip unsafe work-item overlays for job targets with incomplete ThingDef/graphic data and suppress residual DrawWorkItems UI exceptions. - NewRatkinPlus: replace wandering-caravan cleanup with a null-safe equivalent so stale saved settler-pool references do not call Dictionary.Remove(null) during the Ratkin wandering trader incident. - Anomaly Invoke Horax ritual: snapshot invoker inventory offerings before transferring them to the carry tracker and safely consume carried/inventory offerings at ritual end, avoiding collection-modified and unaccounted-offering errors. - Vanilla bed sleeping slots: replace the red \"Could not find good sleeping slot position\" error (bed reassigned or fully occupied while a pawn lies in it) with a graceful fallback that returns the pawn's actually occupied slot, logging a one-time warning instead. - Anomaly pawn duplicator (Unnatural Corpse incident): copy both gene lists before resolving override links and tolerate overriding genes missing on the duplicate (modded xenotypes), instead of crashing with \"Sequence contains no matching element\". - Pawn Health Bar: tighten the bleed-label boundary check so a pawn bleeding at exactly 0.01 rate no longer passes a null label to GenUI.GetWidthCached, avoiding an ArgumentNullException every frame; a one-time warning is logged instead. - Kiiro Race: skip the stealth hediff's glow check while the pawn has no map (caravan, shuttle, or other mapless state), so the hediff is no longer removed by vanilla after a NullReferenceException every tick. - Humanoid Alien Races: skip the RulesForPawn postfix when the pawn is null (e.g. Kiiro Story's wanderer-join quest letter with a missing generated pawn), so quest generation is no longer aborted by a NullReferenceException. - Minify Everything: restore the vanilla maxPawns-1 reservation check when issuing reinstall haul jobs, so jobs are no longer created for buildings still in use (e.g. an occupied bed), eliminating the repeated red \"Could not reserve\" errors; the job waits until the building is free again. - Vanilla LifeStageMinAge: when a life stage def is missing from a pawn's race (e.g. HumanlikeChild on alien races like Kiiro), return the same 0-age fallback vanilla produces after logging, but skip the red error; every caller (vanilla ideo certainty curve, 1trickPwnyta's Defaults birthday check, etc.) behaves exactly as unpatched, without the red spam. - QualityBuilder: guard the building/frame lookup against a null map captured from a despawned or carried frame, so the finish-frame job cleanup no longer throws a NullReferenceException. Target mods are listed under loadAfter, not as dependencies, so this mod can stay enabled even when some target mods are not installed.",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": true,
+    "has_publisher_plus": false,
+    "has_loadfolders": true,
+    "has_loadfolders_bak": false,
+    "has_agents": true,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/55-patch-CommonModCompatibilityPatches/AGENTS.md"
+    ],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-deathiscoming",
+    "dir": "收集/24-standalone-DeathIsComing",
+    "legacy_dir": "24-standalone-DeathIsComing",
+    "category": "collected",
+    "number": "",
+    "title": "死神来了 Death Is Coming",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.DeathIsComing",
+    "name": "死神来了 Death Is Coming",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "每天殖民地会被死神点名一个人，不会点名孕妇，被点名的小人会死亡 The God of Death will target one colonist in your colony everyday. If the targeted pawn is pregnant, then she will survive, otherwise he/she will die.",
+    "versions": [
+      "1.4",
+      "1.5"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-deathweapon",
+    "dir": "收集/17-standalone-DeathWeapon",
+    "legacy_dir": "17-standalone-DeathWeapon",
+    "category": "collected",
+    "number": "",
+    "title": "Death Weapon 死神之刃",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.DeathWeapon",
+    "name": "Death Weapon 死神之刃",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "死神之刃模组的主要目标是斩断不死。本模组提供的武器效果只有一个：直接击杀受到攻击的单位。在手工加工点中使用一块钢铁就可以制作，无科技需求。 This mod, Death Weapon, aims to cut off the undead. The only effect of the weapon provided by this mod is to directly kill the attacked unit. You can make the death weapons at the crafting spot, no tech requirements.",
+    "versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 9,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-deepstoragecontentstabsearchpatch",
+    "dir": "收集/38-patch-DeepStorageContentsTabSearchPatch",
+    "legacy_dir": "38-patch-DeepStorageContentsTabSearchPatch",
+    "category": "collected",
+    "number": "",
+    "title": "深度存储内容页添加搜索 Deep Storage Contents Tab Search Patch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.DeepStorageContentsTabSearchPatch",
+    "name": "深度存储内容页添加搜索 Deep Storage Contents Tab Search Patch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5"
+    ],
+    "deps": [
+      "lwm.deepstorage"
+    ],
+    "load_after": [],
+    "description": "本模组在深度存储的内容选项卡中添加了搜索框，方便玩家查找物品。 This mod adds a search box to the contents tab of deep storage, making it easier for players to find items.",
+    "versions": [
+      "1.5"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-dontmeditateyet",
+    "dir": "收集/68-standalone-DontMeditateYet",
+    "legacy_dir": "68-standalone-DontMeditateYet",
+    "category": "collected",
+    "number": "",
+    "title": "Don't Meditate Yet 先别冥想",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.DontMeditateYet",
+    "name": "Don't Meditate Yet 先别冥想",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "[h1]Don't Meditate Yet 先别冥想[/h1] In vanilla RimWorld, pawns will stop working but meditate when they are below the threshold, undrafted. However, this makes it very inconvenient when you just finished a fight outside your colony and wish to quickly pack up and leave, your pawns will just stop working and meditate. This mod will show a toggle gizmo button when the pawn has a psylink. By default, it's turned off, which aligns with the vanilla behavior, when it's turned on, pawns will not meditate. The status is remembered for each map, which means you can turn it off in your base map, and when you go to another map, you can turn it on. After getting back to the base map, it will automatically turn off. The default status when you start a new map could be configured in the mod settings. 在原版游戏里，小人会在精神力低于阈值时停止工作，去冥想恢复精神力。但是这会导致在战斗结束后，玩家希望快速收拾离开时，小人会停止工作去冥想，非常的不方便。 本mod会显示一个小人精神力低于阈值时的图标按钮，当按钮被激活时，小人不会去冥想，而是继续工作。默认情况下，按钮是关闭的，与原版游戏行为一致，当按钮被激活时，小人不会去冥想恢复精神力。这个状态会被记录在每个地图上，因此你可以将按钮在你的基地地图关闭，当你去到其他地图时，按钮可以被打开。当你回到基地地图时，按钮会自动调整为关闭状态。 默认情况下按钮的开关状态可以在模组选项中设置。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 8,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/68-standalone-DontMeditateYet/IMPLEMENTATION_NOTES.md",
+      "收集/68-standalone-DontMeditateYet/README_MOD.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-dubsmenusrightclickaction",
+    "dir": "收集/20-patch-DubsMenusRightClickAction",
+    "legacy_dir": "20-patch-DubsMenusRightClickAction",
+    "category": "collected",
+    "number": "",
+    "title": "Dubs Mint Menus Recipe Right Click Open InfoCard",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.DubsMenusRightClickAction",
+    "name": "Dubs Mint Menus Recipe Right Click Open InfoCard",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "dubwise.dubsmintmenus"
+    ],
+    "load_after": [
+      "dubwise.dubsmintmenus"
+    ],
+    "description": "2024-04-09 新增右键植物图标打开植物信息页功能。 Add a right click action to the plant icon in the plant dialog to open the info card. ------ 给工作台的Dubs Mint Menus右边方格增加右键打开信息页的功能。配合上BetterInfoCard可以做到同时查看多个产物信息的效果。 Add a right click action to the right side of the Dubs Mint Menus workbench to open the info card. If you have BetterInfoCard installed, you can open InfoCard for multiple products at the same time.",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 3,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-facialanimationeyefix",
+    "dir": "收集/19-patch-FacialAnimationEyeFix",
+    "legacy_dir": "19-patch-FacialAnimationEyeFix",
+    "category": "collected",
+    "number": "",
+    "title": "Facial Animation Eye Fix",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.FacialAnimationEyeFix",
+    "name": "Facial Animation Eye Fix",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5"
+    ],
+    "deps": [
+      "nals.facialanimation"
+    ],
+    "load_after": [
+      "nals.facialanimation"
+    ],
+    "description": "本模组用来修复面部表情模组有时候会出现的“黑眼圈”BUG。原理大致是游戏开始的时候，模拟点击了（直接调用相关函数）模组选项，面部表情模组里的\"Re-draw Render Textures\"按钮。 This mod is to fix the \"black layering around eyes bug\" for facial animation mod. The principle is to simulate the clicking on the \"Re-draw Render Textures\" button (by direct function call) in the facial animation mod settings when the game starts.",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-facialanimationstatuesnapshotfix",
+    "dir": "收集/72-patch-FacialAnimationStatueSnapshotFix",
+    "legacy_dir": "72-patch-FacialAnimationStatueSnapshotFix",
+    "category": "collected",
+    "number": "",
+    "title": "Facial Animation Statue Snapshot Fix",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.FacialAnimationStatueSnapshotFix",
+    "name": "Facial Animation Statue Snapshot Fix",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "Nals.FacialAnimation"
+    ],
+    "load_after": [
+      "Nals.FacialAnimation",
+      "Nals.FacialAnimationExperimentals"
+    ],
+    "description": "Patches Facial Animation's statue snapshot hook to tolerate duplicate facial controller comps. This fixes trader stock / faction leader statue generation crashes like: System.ArgumentException: An item with the same key has already been added. Key: FacialAnimation.HeadControllerComp The patch changes Facial Animation's snapshot dictionary write from a strict Add to a safe add that keeps the first value and ignores duplicate keys. It does not remove or mutate pawn comps. 修复 Facial Animation 在雕像快照/贸易库存生成时，因为重复面部控制器组件向 Dictionary.Add 写入相同 key 而抛错的问题。本补丁不删除 pawn 的组件，只让快照保存逻辑容忍重复 key，并保留第一个值。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-freegoto",
+    "dir": "收集/59-patch-DraftPawnCanGoToOccupiedCell",
+    "legacy_dir": "59-patch-DraftPawnCanGoToOccupiedCell",
+    "category": "collected",
+    "number": "",
+    "title": "Free Go To 自由的移动目标点",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.FreeGoTo",
+    "name": "Free Go To 自由的移动目标点",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "The RimWorld 1.6 does not allow dragging your destination to an occupied cell. Although you can right click on that cell to move there, it is not convenient. This mod allows you to drag your destination to an occupied cell. 环世界1.6不允许将移动的目标点拖动到一个被其它小人占用的格子上。虽然你可以右键点击那个格子来移动到那里，但这有点麻烦。 这个mod允许你将目标点拖动到一个被占用的格子上。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-ghoulattackspin",
+    "dir": "收集/75-standalone-GhoulAttackSpin",
+    "legacy_dir": "75-standalone-GhoulAttackSpin",
+    "category": "collected",
+    "number": "",
+    "title": "Ghoul Attack Spin 食尸鬼攻击旋转特效",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.GhoulAttackSpin",
+    "name": "Ghoul Attack Spin 食尸鬼攻击旋转特效",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "Adds a pure visual 360-degree spin to ghouls when their normal melee attack animation plays. The spin has no gameplay effect and automatically ends with the short melee jitter animation. Spin direction is configurable (clockwise / counterclockwise / random, default random). Also adds an optional auto adrenal-heart toggle for drafted ghouls (auto-casts Ghoul Frenzy) and a configurable hotkey for Ghoul Frenzy (default: none). 为食尸鬼普通近战攻击动画增加纯视觉 360 度旋转效果。旋转不改变任何战斗/寻路/命中逻辑，并会在短暂攻击动画结束后自动恢复正常。旋转方向可设置（顺时针/逆时针/随机，默认随机）。另提供食尸鬼自动激素心脏开关（征召时自动释放食尸鬼狂热）和食尸鬼狂热快捷键设置（默认无）。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-ghoulcommands",
+    "dir": "收集/60-standalone-GhoulCommands",
+    "legacy_dir": "60-standalone-GhoulCommands",
+    "category": "collected",
+    "number": "",
+    "title": "Ghoul Auto Serum Commands 食尸鬼自动服用血清命令按钮",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.GhoulCommands",
+    "name": "Ghoul Auto Serum Commands 食尸鬼自动服用血清命令按钮",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "Ghoul Auto Serum Commands 食尸鬼自动服用血清命令按钮 This mod adds a command button for the Ghouls. Current implemented commands: - Toggle Ghoul automatically taking JuggernautSerum - Toggle Ghoul automatically taking MetalbloodSerum 本模组为食尸鬼添加了一个命令按钮。 当前实现的命令： - 切换食尸鬼自动使用强力血清 - 切换食尸鬼自动使用钢血血清",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-gui",
+    "dir": "收集/09-lib-GUILib",
+    "legacy_dir": "09-lib-GUILib",
+    "category": "collected",
+    "number": "",
+    "title": "Simple GUI Library and Gallery",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.GUI",
+    "name": "Simple GUI Library and Gallery",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "Simple GUI library and gallery for my mods",
+    "versions": [
+      "1.4",
+      "1.5"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 8,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "lib",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-hakuro-xenohuman-zh",
+    "dir": "收集/18-translation-HakuroXenohumanZh",
+    "legacy_dir": "18-translation-HakuroXenohumanZh",
+    "category": "collected",
+    "number": "",
+    "title": "HakuroXenohuman_zh",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.Hakuro.Xenohuman.Zh",
+    "name": "HakuroXenohuman_zh",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4"
+    ],
+    "deps": [
+      "hakuro.xenohuman.septentrionrace"
+    ],
+    "load_after": [
+      "hakuro.xenohuman.septentrionrace"
+    ],
+    "description": "Hakuro Xenohuman 简体中文翻译",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "translation",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-hidegenebankgenesfromtraders",
+    "dir": "收集/64-patch-HideGenebankGenesFromTraders",
+    "legacy_dir": "64-patch-HideGenebankGenesFromTraders",
+    "category": "collected",
+    "number": "",
+    "title": "Hide Genebank Genes From Traders 基因库里的基因不卖！",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.HideGenebankGenesFromTraders",
+    "name": "Hide Genebank Genes From Traders 基因库里的基因不卖！",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "This mod hides genes in the gene bank from traders, so easier to trade. 本模组可以在交易界面中隐藏基因库里的基因，方便基因贸易。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-highlightenemies",
+    "dir": "收集/05-standalone-HighlightEnemies",
+    "legacy_dir": "05-standalone-HighlightEnemies",
+    "category": "collected",
+    "number": "",
+    "title": "Highlight Enemies",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.HighlightEnemies",
+    "name": "Highlight Enemies",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "Add a toggle button to highlight enemies with question marks when enabled",
+    "versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 8,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-itempolicy",
+    "dir": "收集/02-standalone-ItemPolicy",
+    "legacy_dir": "02-standalone-ItemPolicy",
+    "category": "collected",
+    "number": "",
+    "title": "ItemPolicy",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.ItemPolicy",
+    "name": "ItemPolicy",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "Item Policies Mod for RimWorld The Item Policies Mod offers players a tool to designate specific items for pawns to carry in their inventories, enhancing strategic inventory management and gameplay. Features: Distinct Inventory Management: This mod has a similar functionality with Carry More mod, with a totally different underlining implementation.The Item Policies Mod allows players to directly search for and set item quantities without delving into XML file modifications. Customizable Item Policies: Within the Item Policies main menu, players can establish item policies for individual pawns. The mod introduces a feature to copy and paste these settings between pawns, with the pasting function combining the policies. Inventory Check Mechanism: Consistent with standard RimWorld mechanics, pawns periodically review their inventory for medicine, typically every 6000 to 9000 ticks. This mod ensures pawns also assess their inventory for both medicine and items specified in the policies within a similar game tick range. Description text generated using AI with author's own text as reference. Mod published in MIT license at https://github.com/lisanhu/rimworld-RimModNotes.git Folder name 02-ItemPolicy",
+    "versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 12,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/02-standalone-ItemPolicy/CHANGELOG.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-killingreward",
+    "dir": "收集/78-standalone-KillingReward",
+    "legacy_dir": "78-standalone-KillingReward",
+    "category": "collected",
+    "number": "",
+    "title": "KillingReward 嗜血恩赐",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.KillingReward",
+    "name": "KillingReward 嗜血恩赐",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "Kills by your own colonists against hostile factions fill a blood tithe. Each filled tithe earns a boon from the dark archotech: instantly complete a research, raise a pawn's skill by 3, or receive a full stack of an item of your choice. 我方小人亲手击杀敌对派系单位可积累「血祭」进度。进度打满即可获得黑暗超凡智能的恩赐：立刻完成一项研究、小人技能 +3、或领取一整格指定物品。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 20,
+    "has_languages": true,
+    "has_docs": true,
+    "has_tests": true,
+    "has_publisher_plus": true,
+    "has_loadfolders": true,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/78-standalone-KillingReward/docs/2026-07-31-KillingReward-design.md",
+      "收集/78-standalone-KillingReward/docs/2026-07-31-KillingReward-implementation-plan.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-landingonasteroid",
+    "dir": "收集/65-standalone-LandingOnAsteroid",
+    "legacy_dir": "65-standalone-LandingOnAsteroid",
+    "category": "collected",
+    "number": "",
+    "title": "Landing On Asteroid 着陆小行星",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.LandingOnAsteroid",
+    "name": "Landing On Asteroid 着陆小行星",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "In RimWorld 1.6, we are still not able to start our colony on an asteroid. This mod makes it possible to select an asteroid as the starting tile. In the left top corner of the world view, after clicking on generating world, you can see the view orbital button. You can choose an asteroid as your starting normally. Preview image, icon and French translation credits to @T. Dussolier Idea credits to @子萌 环世界1.6中，我们仍然无法在小行星上开始殖民地。 此模组可以让玩家选择小行星作为起始地格。 在生成世界后，世界视图的左上角，有一个查看轨道图标按钮。 可以鼠标点击小行星作为起始地格。 预览图、图标和法语翻译由 @T. Dussolier 提供。 想法来自于@子萌 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3533612276]Français : Dussolier - Traducteur du Bordemonde[/url] Discord : t.dussolier",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/65-standalone-LandingOnAsteroid/Notes.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-letterstackcleaner2",
+    "dir": "收集/27-standalone-LetterStackCleaner2",
+    "legacy_dir": "27-standalone-LetterStackCleaner2",
+    "category": "collected",
+    "number": "",
+    "title": "Letter Stack Cleaner 2",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.LetterStackCleaner2",
+    "name": "Letter Stack Cleaner 2",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "This is a re-implementation of the mod Letter Stack Cleaner. I started the re-implementation due to the original mod does not support the action in World view.",
+    "versions": [
+      "1.4",
+      "1.5"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 3,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-limitedletterslots",
+    "dir": "收集/56-standalone-LimitedLetterSlots",
+    "legacy_dir": "56-standalone-LimitedLetterSlots",
+    "category": "collected",
+    "number": "",
+    "title": "Limited Letter Slots 有限信件槽",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.LimitedLetterSlots",
+    "name": "Limited Letter Slots 有限信件槽",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "This mod changes the behavior of how letters are drawned in the game. It limits the number of letter slots to a fixed number, which can be configured in the mod settings. The extra letters will be bundled into a single letter button, so you won't miss any important messages. It's just to prevent pushing the higher region information away from screen. Note: Because the bundle button is also taking a letter slot, so if you configure the number of letter slots to 2, when you receive 3 letters, you will start to see the bundle button which will contain the 2nd and the 3rd letters. The support for 1.5 is not tested. It should work, but I don't want to switch to 1.5 for testing right now. Idea came from Wengfrid (德国猎) 本模组修改了游戏中信件的显示方式。 它将信件槽的数量限制为一个固定的数字，可以在模组设置中进行配置。 额外的信件将被打包成一个单独的信件组按钮， 这样你就不会错过任何重要的信息。 这只是为了防止将更高优先级的信息推离屏幕。 注意：由于信件组按钮也占用一个信件槽， 因此如果你将信件槽数量配置为2，当你收到3封信件时， 你将看到信件组按钮，其中包含第2封和第3封信件。 1.5版本的支持没有经过测试。它应该没问题，我暂时还不想切换到1.5进行测试。 灵感来自于 Wengfrid (德国猎)。",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-linuximefix",
+    "dir": "收集/71-patch-LinuxImeFix",
+    "legacy_dir": "71-patch-LinuxImeFix",
+    "category": "collected",
+    "number": "",
+    "title": "Linux IME Fix Linux 输入法修复",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.LinuxImeFix",
+    "name": "Linux IME Fix Linux 输入法修复",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "[h1] Linux IME Fix Linux 输入法修复 [/h1] [h2] 中文说明 [/h2] 本 MOD 用于修复 Linux 下 RimWorld 文本框无法直接使用 IBus 输入法的问题。 [h2] 功能 [/h2] - 支持 Linux 版 RimWorld 1.6。 - 支持基于 IBus 的输入法，包括通过 IBus 使用的 Rime。 - 支持 RimWorld 的 IMGUI TextField/TextArea 文本框。 - 在游戏内显示预编辑/候选词窗口，支持光标跟随、UI 缩放、屏幕边缘处理和顶层绘制。 - 支持 Backspace 等组词编辑键。 [h2] 运行环境 [/h2] - Linux 版 RimWorld 1.6 - Harmony - 桌面会话中正在运行的 IBus - 对应语言的 IBus 输入引擎，例如 IBus Rime [h2] English [/h2] Fixes direct IBus input in RimWorld text fields on Linux. [h2] Features [/h2] - Supports RimWorld 1.6 on Linux. - Works with IBus-based input methods, including Rime through IBus. - Supports RimWorld IMGUI TextField/TextArea input. - Shows an in-game preedit/candidate window with cursor following, UI scaling support, screen-edge handling, and top-layer rendering. - Supports composition editing keys such as Backspace. [h2] Requirements [/h2] - Linux version of RimWorld 1.6 - Harmony - IBus running in the desktop session - An IBus input engine for your language, such as Rime via IBus [h2] How it works [/h2] The mod sends text-field key events to IBus through D-Bus, receives preedit/candidate/commit updates, and inserts committed text back into the active RimWorld text field.",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": true,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/71-patch-LinuxImeFix/IBUS_SIGNAL_FORMAT.md"
+    ],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-maximumanimaldensity",
+    "dir": "收集/61-standalone-MaximumAnimalDensity",
+    "legacy_dir": "61-standalone-MaximumAnimalDensity",
+    "category": "collected",
+    "number": "",
+    "title": "Maximum Animal Density 最大动物密度",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.MaximumAnimalDensity",
+    "name": "Maximum Animal Density 最大动物密度",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "If there are too many animals generated in the tiles, the game could be really laggy for old computers. This mod will limit the maximum number of animals generated in the tiles. Please go to mod settings to set the uniform upper limit. 如果地图上生成的动物数量过多，游戏可能会在老旧电脑上变得非常卡顿。 本模组将限制地图上生成的动物数量上限。 请前往模组设置界面设置统一的上限。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-modname",
+    "dir": "收集/45-standalone-TargetLine",
+    "legacy_dir": "45-standalone-TargetLine",
+    "category": "collected",
+    "number": "",
+    "title": "目标线 Target Line",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.modname",
+    "name": "目标线 Target Line",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "画一条线从所有小人指向其目标，非敌方单位是绿色，蓝色，青色；敌方单位是红色，橙色，紫色。方便敌人来袭的时候观察敌人的目标。 Draw a line from all pawns to their target, non-enemy units are green, blue, cyan; enemy units are red, orange, purple. It is convenient to observe the target of the enemy when the enemy is attacking. 可以在模组设置中设置是否显示。 You can set whether to display in the mod settings.",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-moelotlsimplesidearmscompatiblepatch",
+    "dir": "收集/39-patch-MoelotlSimpleSidearmsCompatiblePatch",
+    "legacy_dir": "39-patch-MoelotlSimpleSidearmsCompatiblePatch",
+    "category": "collected",
+    "number": "",
+    "title": "萌螈和简单的副武器模组兼容性补丁 Moelotl and SimpleSidearms Compatible Patch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.MoelotlSimpleSidearmsCompatiblePatch",
+    "name": "萌螈和简单的副武器模组兼容性补丁 Moelotl and SimpleSidearms Compatible Patch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "hentailoliteam.axolotl"
+    ],
+    "load_after": [],
+    "description": "本模组修复了萌螈和简单的副武器模组之间的兼容性问题，如果萌螈修复了这个问题，这个模组将会隐藏 This mod fixes compatibility issues between MoeLotl and SimpleSidearms. If MoeLotl fixes this issue, this mod will be hidden.",
+    "versions": [
+      "1.5"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-moremapseeds",
+    "dir": "收集/22-standalone-MoreMapSeeds",
+    "legacy_dir": "22-standalone-MoreMapSeeds",
+    "category": "collected",
+    "number": "",
+    "title": "更多地图随机种子 More Map Seeds",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.MoreMapSeeds",
+    "name": "更多地图随机种子 More Map Seeds",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "添加了更多地图生成时使用的种子，目前新增的种子文本只有中文，并大部分由ChatGPT生成，如果需要为其他语言添加种子，请参考Languages/English的目录结构，并增添想要的内容。 Add more words to use for map generation. Currently, only Chinese words are added, and most of them are generated by ChatGPT. If you need to add seeds for other languages, please refer to the directory structure of Languages/English and add the content you want following similar structures. 本模组使用了Harmony Patch，并未使用最简单的解决方案，这是考虑到未来可能需要调整种子生成的规则，比如完全禁用原版种子生成，比如调整新增种子生成的概率等等场景，这些扩展功能并不保证会实现。 This mod uses Harmony Patch and does not use the simplest solution. This is because it may be necessary to adjust the rules of seed generation in the future, such as completely disabling the original seed generation, adjusting the probability of generating new seeds, and other senarios. These extended features are not guaranteed to be implemented.",
+    "versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 8,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-moreresponsiveplanet",
+    "dir": "收集/62-standalone-MoreResponsivePlanet",
+    "legacy_dir": "62-standalone-MoreResponsivePlanet",
+    "category": "collected",
+    "number": "",
+    "title": "More Responsive Planet 世界视角UI响应改进",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.MoreResponsivePlanet",
+    "name": "More Responsive Planet 世界视角UI响应改进",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "In RimWorld, the Planet/World view is very laggy, especially when there are many settlements, factions, landmarks in 1.6. This mod tries to improve the performance of the World view. Core strategies: - Disable the default world selector dragger, create a standalone dragger - Use a single background thread to compute the selected world object after dragging is done - Record the input event more efficiently through Unity MonoBehaviour instead of replying the built-in Unity event system 环世界的世界视角在1.6版本中非常卡顿，尤其是当有很多定居点、派系和地标时。 这个mod尝试改善世界视角的性能。 优化策略： - 禁用默认的世界选择器拖动器，创建一个独立的拖动器 - 使用单独的后台线程在拖动完成后计算所选的世界对象 - 通过Unity MonoBehaviour更高效地记录输入事件，而不是依赖内置的Unity事件系统",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 5,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-morescenariosearchbars",
+    "dir": "收集/23-patch-MoreScenarioSearchbars",
+    "legacy_dir": "23-patch-MoreScenarioSearchbars",
+    "category": "collected",
+    "number": "",
+    "title": "More Scenario Searchbars",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.MoreScenarioSearchbars",
+    "name": "More Scenario Searchbars",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4"
+    ],
+    "deps": [
+      "nimrag.scenariosearchbar"
+    ],
+    "load_after": [],
+    "description": "More Scenario Searchbars on Create Incident, credits to https://steamcommunity.com/sharedfiles/filedetails/?id=3052467818 for his work on creating the base function, which I use in this patch. I'm just reuse the code in Scenario Searchbars and create one more patch for CreateIncident.",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-mouseeventthrottle",
+    "dir": "收集/76-standalone-SmoothDragSelect",
+    "legacy_dir": "76-standalone-SmoothDragSelect",
+    "category": "collected",
+    "number": "",
+    "title": "流畅拖拽选择 Smooth Drag Select",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.MouseEventThrottle",
+    "name": "流畅拖拽选择 Smooth Drag Select",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "修复鼠标拖拽（如按住左键框选）时游戏卡顿的问题，支持高回报率鼠标。 原因：鼠标拖动时每秒产生大量 MouseDrag/MouseMove 事件，Unity 的 IMGUI 对每个事件都完整执行一遍界面树（殖民者栏、主按钮、窗口栈、各 MOD 窗口）。帧率越低，每帧积压的事件越多，形成恶性循环。挂在 OnGUI 上的 FPS 计数会因此显示虚高数值（如 900+），并非真实渲染帧率。 本 MOD 对这类事件做自适应限流：帧率正常时上限 60Hz，几乎无感；帧率下降时自动收紧至 10Hz 止损。画面更新仍由每帧的 Repaint 承担，功能无任何变化。 --- Fixes stuttering while dragging (e.g. left-button drag-select), especially with high polling-rate mice. Cause: a moving mouse generates many MouseDrag/MouseMove events per second, and Unity's IMGUI runs the entire UI tree (colonist bar, main buttons, window stack, mod windows) for every one of them. The lower the frame rate, the more events pile up per frame - a vicious cycle. OnGUI-based FPS counters report inflated numbers (e.g. 900+) which are not real rendered frames. The mod adaptively rate-limits these events: up to 60Hz when the frame rate is healthy (imperceptible), tightening to 10Hz when frames degrade. Visuals still refresh on the per-frame Repaint pass, so behavior is unchanged.",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": true,
+    "has_tests": false,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/76-standalone-SmoothDragSelect/docs/superpowers/specs/2026-07-27-mouse-event-throttle-design.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-mrs-hybrid",
+    "dir": "收集/58-standalone-MoreRaidStrategies-HybridRaids",
+    "legacy_dir": "58-standalone-MoreRaidStrategies-HybridRaids",
+    "category": "collected",
+    "number": "",
+    "title": "More Raid Strategies: Hybrid Raids 更多的袭击类型：复合袭击",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.MRS.Hybrid",
+    "name": "More Raid Strategies: Hybrid Raids 更多的袭击类型：复合袭击",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "The vanilla game has several raid types that we have been very familiar with, and in certain cases, we might want to try something different. This mod is trying to add a few raid types that are hybrid of the vanilla raid types. Warning: This could be hard, since we might have more frequent EdgeDrop raids, breaching raids, seige raids with breaching raids, etc. This mod is the first in my planned \"More Raid Strategies\" series, we might try to add more different raid types in the form of other mods in the future. Current implemented hybrid raids: - Siege and Breach: A siege group (0.5 x points) and a breaching group (0.7 x points) attack at the same time - Drop Pod and Breach: A drop-pod group (0.6 x points) and a breaching group (0.6 x points) attack at the same time The points mentioned here will also be ajusted so the actual points for a center-drop-pod group will be points * 0.6 * ajust-factor. 原版游戏的几种袭击类型，我们已经非常熟悉了，有时候，我们可能强的可怕，需要一些来自敌人的爱。 这个模组试图添加一些基于原版袭击类型的复合袭击类型。 警告：这可能会很难，因为我们可能会有更频繁的边缘掉落袭击、破门袭击，围攻配合破墙袭击等。 这个模组是我计划中的“更多袭击类型”系列中的第一个，在未来我们可能会在其他模组尝试添加更多不同的袭击类型。 当前实现的复合袭击类型： - 围攻配合破墙：一个围攻小队（0.5 x 点数）和一个破墙小队（0.7 x 点数）同时攻击 - 掉落配合破墙：一个掉落小队（0.6 x 点数）和一个破墙小队（0.6 x 点数）同时攻击 这里说的点数在袭击开始前会进行调整，所以一个中心空投小分队的实际点数是 预期点数 * 0.6 * 调整曲线。 It's possible not to use defs but to directly mix all in-game raid strategies (including modded ones) using C# code only. The reason we don't go this approach is we might want more control over how the raids are mixed. The downside is we have to manually configure each raid type we want to mix, unlike the pure C# code approach which can just generate all possible mixed types. 不使用XML Def，而是直接使用C#代码混合所有游戏内的袭击类型（包括模组添加的）是可行的。 我们不采用这种方法是为了更好地控制如何混合不同的袭击类型。 坏处是我们需要对每种想要复合的袭击类型进行手动配置。不像纯C#代码的方案可以直接生成所有可能的混合类型。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 4,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-musicpatch",
+    "dir": "收集/15-patch-MusicalInstrumentsPatch",
+    "legacy_dir": "15-patch-MusicalInstrumentsPatch",
+    "category": "collected",
+    "number": "",
+    "title": "Musical Instruments (Continued) Patch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.MusicPatch",
+    "name": "Musical Instruments (Continued) Patch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "mlie.musicalinstruments"
+    ],
+    "load_after": [
+      "mlie.musicalinstruments"
+    ],
+    "description": "Musical Instruments (Continued)中的乐器不能播放音乐，本模组修复了这个问题。但是当载入存档时之前播放一半的音乐不会继续播放，直到小人下一次开始演奏。 The musical instruments in Musical Instruments (Continued) mod could not play music. This mod fixes that. The half-way played music will not continue when loading saves, until the pawns are starting another performance.",
+    "versions": [
+      "1.4",
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 3,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-nosoloudmilira",
+    "dir": "收集/46-xml-NotSoLoudMilira",
+    "legacy_dir": "46-xml-NotSoLoudMilira",
+    "category": "collected",
+    "number": "",
+    "title": "别太吵的米莉拉 Not So Loud Milira",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.NoSoLoudMilira",
+    "name": "别太吵的米莉拉 Not So Loud Milira",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "ancot.milirarace"
+    ],
+    "load_after": [],
+    "description": "米莉拉模组武器的声音太大了，这个模组把所有米莉拉声音调整成为一半。 The sound of Milira's weapons is too loud, this mod adjusts all Milira sounds to half.",
+    "versions": [],
+    "has_common": true,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "xml",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-notsomanypolicies",
+    "dir": "收集/44-standalone-NotSoManyPolicies",
+    "legacy_dir": "44-standalone-NotSoManyPolicies",
+    "category": "collected",
+    "number": "",
+    "title": "开局方案删不完 Not So Many Policies",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.NotSoManyPolicies",
+    "name": "开局方案删不完 Not So Many Policies",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "环世界开始游戏后，会生成一大堆预置的方案：服装方案，食物方案，药物方案，阅读方案。其中，尤其以服装方案和食物方案为多，删起来非常麻烦。 After the game starts, RimWorld will generate a lot of preset policies: outfit policies, food policies, drug policies, and reading policies. Among them, outfit policies and food policies are the most, and it is very troublesome to delete them. 本模组会阻止游戏在开始时生成全部这些方案，服装方案只保留任意，食物方案只保留无限制和不提供，用药方案和阅读方案暂时不动。 This mod will prevent the game from generating all these policies at the beginning, keeping only \"any\" outfit policy and only \"unlimited\" and \"do not provide\" food policy, and temporarily not touching drug policy and reading policy.",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-operationstabwithmedrestrict",
+    "dir": "收集/36-standalone-MedOperationsTabWithMedRestrict",
+    "legacy_dir": "36-standalone-MedOperationsTabWithMedRestrict",
+    "category": "collected",
+    "number": "",
+    "title": "在手术页面设置药物方案 Operations Tab With Med Restrict",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.OperationsTabWithMedRestrict",
+    "name": "在手术页面设置药物方案 Operations Tab With Med Restrict",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "本模组在手术页面添加了药物方案设置，可以在一个页面内设置手术所需的药物方案，方便管理。 This mod adds a drug plan setting to the surgery page, which allows you to set the drug plan required for surgery on one page, making it easier to manage.",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-pawnnotblockingconstruction",
+    "dir": "收集/63-standalone-PawnNotBlockingConstruct",
+    "legacy_dir": "63-standalone-PawnNotBlockingConstruct",
+    "category": "collected",
+    "number": "",
+    "title": "Pawn Not Blocking Construction 小人不会阻碍建造",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.PawnNotBlockingConstruction",
+    "name": "Pawn Not Blocking Construction 小人不会阻碍建造",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "In vanilla RimWorld, pawns can block the construction of buildings, which can be frustrating when trying to build structures in tight spaces. This mod allows pawns to move through construction sites without interrupting the building process. 在原版环世界中，小人踩上正在建造的建筑会打断建造小人的工作。这个模组允许小人踩在正在建造的建筑上，而不会打断建造过程。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-pde-dontstarve",
+    "dir": "收集/32-special-PermanentDarknessExtendedDontStarve",
+    "legacy_dir": "32-special-PermanentDarknessExtendedDontStarve",
+    "category": "collected",
+    "number": "",
+    "title": "无尽黑暗扩展 —— 饥荒 Permanent Darkness Extended -- DontStarve",
+    "has_about": false,
+    "in_backup": true,
+    "package_id": "RunningBugs.PDE.DontStarve",
+    "name": "无尽黑暗扩展 —— 饥荒 Permanent Darkness Extended -- DontStarve",
+    "author": "RunningBugs, 德国猎",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "runningbugs.permanentdarkness"
+    ],
+    "load_after": [
+      "runningbugs.permanentdarkness"
+    ],
+    "description": "Template",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 8,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "special",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-permanentdarkness",
+    "dir": "收集/29-standalone-PermanentUnnaturalDarkness",
+    "legacy_dir": "29-standalone-PermanentUnnaturalDarkness",
+    "category": "collected",
+    "number": "",
+    "title": "无尽黑暗 Permanent Darkness",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.PermanentDarkness",
+    "name": "无尽黑暗 Permanent Darkness",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "Ludeon.RimWorld.Anomaly"
+    ],
+    "load_after": [
+      "Ludeon.RimWorld.Anomaly"
+    ],
+    "description": "Great thanks to 德国猎 for the great idea and testing! 感谢B站UP主德国猎提供的想法和测试！ Unnatural darkness covers your eyes, bites you in the dark, attracts anomaly creatures to attack your colony. But there's hope! We will fight! We can stay alive long enough! We will go beat the Noctolith and bring the light back to the world! 异常黑暗会遮住你的双眼，伤害你的殖民者，吸引异常生物来攻击你的殖民地。但是我们还有希望！我们会战斗！我们可以撑得足够久！我们会去打败夜石，把光明带回世界！ And that is no longer true... 这一切已经不再是真的了... Description: - Unnatural darkness covers the world, and it's permanent. Don't let your colonists go outside, or they will disappear in the permanent darkness. - There's no Noctolith to attck, there's no anomaly creatures attracted, and there's no way to lit up the world. 描述： - 异常黑暗笼罩着世界，而且是永久的。不要让你的殖民者走到外面，否则他们会在永久黑暗中消失。 - 没有黑柱能攻击，没有异常生物被吸引而来，也没有办法照亮世界。 Add the permanent game condition by editing the scenario, called Permanent Darkness. It's only tested with permanent game condition. 在剧本编辑器里添加永久游戏状态：永久黑暗。只在永久游戏状态下进行了测试。",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 12,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/29-standalone-PermanentUnnaturalDarkness/PLAN.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-polarisblocext",
+    "dir": "收集/41-patch-PolarisblocExt",
+    "legacy_dir": "41-patch-PolarisblocExt",
+    "category": "collected",
+    "number": "",
+    "title": "天轴自用扩展 Polarisbloc Extension",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.PolarisblocExt",
+    "name": "天轴自用扩展 Polarisbloc Extension",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "Vanya.Polarisbloc.CoreLab.tmp",
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "本模组是自用的一些对于天轴模组的扩展内容，目前内容包含： - 在研究完成纳米修复装置后，会像人格核机会任务一样，生成一个任务，可以获取到科技核心，但是两次任务之间有一年的间隔时间 This mod is a collection of extended functionalities for Polarisbloc, including: - After researching repairer nano haze, a quest will be generated (like the ai persona core quest), which can obtain a tech core, however, there is a one-year interval between two requests",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-polarisblocfoodtodrugpatch",
+    "dir": "收集/37-xml-PolarisblocFoodToDrugPatch",
+    "legacy_dir": "37-xml-PolarisblocFoodToDrugPatch",
+    "category": "collected",
+    "number": "",
+    "title": "天轴食物加入成瘾品列表补丁 Polarisbloc Food Add To Drug Patch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.PolarisblocFoodToDrugPatch",
+    "name": "天轴食物加入成瘾品列表补丁 Polarisbloc Food Add To Drug Patch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [
+      "vanya.polarisbloc.securityforce.tmp",
+      "rsmaintain.vanya.polarisbloc.mechenemy"
+    ],
+    "description": "将天轴食物加入成瘾品列表，这样就可以设置药物方案，让小人随身携带，而在食物方案中禁止食用。当遇到战斗时，药物方案可以允许小人直接食用库存中的食物。成瘾品类别为None，暂时不确定对于文化成瘾品禁止，或者仅医疗的影响。 Add Polarisbloc food to drug list, so that you can set drug policy to carry it with pawns, and forbid them to eat it in food policy. When in combat, drug policy can allow pawns to eat the food in stock directly. Drug category is set to None, not sure if it will affect culture drug or only medical drug.",
+    "versions": [],
+    "has_common": true,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "xml",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-polarisblocsecurityforcedistresscallpatch",
+    "dir": "收集/33-patch-PolarisblocSecurityForceDistressCallPatch",
+    "legacy_dir": "33-patch-PolarisblocSecurityForceDistressCallPatch",
+    "category": "collected",
+    "number": "",
+    "title": "Polarisbloc Security Force Distress Call Patch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.PolarisblocSecurityForceDistressCallPatch",
+    "name": "Polarisbloc Security Force Distress Call Patch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5"
+    ],
+    "deps": [
+      "vanya.polarisbloc.securityforce.tmp"
+    ],
+    "load_after": [
+      "vanya.polarisbloc.securityforce.tmp"
+    ],
+    "description": "This mod is used to fix the imcompatibility between the Anomaly distress call and the Security Force Faction. 本模组用于修复异常的求救信号任务和安保部队派系的不兼容性。",
+    "versions": [
+      "1.5"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-questitemwatch",
+    "dir": "收集/10-standalone-QuestItemWatch",
+    "legacy_dir": "10-standalone-QuestItemWatch",
+    "category": "collected",
+    "number": "",
+    "title": "QuestItemWatch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.QuestItemWatch",
+    "name": "QuestItemWatch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "A mod that will watch for quest items and send you a letter when the quests with expected item would expire. 本模组会监测任务物品是否包含在预设物品里，并在任务即将过期时发出信件提醒",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-quickdumpworncloth",
+    "dir": "收集/35-standalone-QuickDumpWornCloth",
+    "legacy_dir": "35-standalone-QuickDumpWornCloth",
+    "category": "collected",
+    "number": "",
+    "title": "远行队快速扔掉死人衣物 Caravan Quick Dump Worn Cloth",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.QuickDumpWornCloth",
+    "name": "远行队快速扔掉死人衣物 Caravan Quick Dump Worn Cloth",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "选中远行队后，增加了一个Gizmo图标，扔掉死人衣物，会快速的扔掉远行队携带的衣服 After selecting the caravan, an additional Gizmo icon is added to quickly discard the worn clothes of the dead.",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-racursepatch",
+    "dir": "收集/51-patch-RACursePatch",
+    "legacy_dir": "51-patch-RACursePatch",
+    "category": "collected",
+    "number": "",
+    "title": "鼠异诅咒补丁 RACursePatch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RACursePatch",
+    "name": "鼠异诅咒补丁 RACursePatch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "fxz.ratkinanomaly.update"
+    ],
+    "load_after": [
+      "fxz.ratkinanomaly.update"
+    ],
+    "description": "鼠异的诅咒机制非常有趣，但是不能只对殖民者生效，本模组对鼠异诅咒补丁打了补丁，并增加了模组选项，只对殖民者生效。 The RACurse is really interesting, but it cannot be configured to affect only colonists. This mod adds configurable options to limit its effects to colonists only.",
+    "versions": [
+      "1.5"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-racursesa",
+    "dir": "收集/50-standalone-RACurseStandalone",
+    "legacy_dir": "50-standalone-RACurseStandalone",
+    "category": "collected",
+    "number": "",
+    "title": "鼠异诅咒独立模组 RACurseStandalone",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RACurseSA",
+    "name": "鼠异诅咒独立模组 RACurseStandalone",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "鼠异的诅咒机制非常有趣，但是需要各种前置并且不能只对殖民者生效，本模组将其从原模组抽出，并增加了模组选项，只对殖民者生效。 The RACurse is really interesting, but it requires the Ratkin mod as dependency and cannot be configured to affect only colonists. This standalone mod extracts that curse system and adds configurable options to limit its effects to colonists only.",
+    "versions": [
+      "1.5"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-ratkincursesstandalone",
+    "dir": "收集/43-standalone-RatkinCursesStandalone",
+    "legacy_dir": "43-standalone-RatkinCursesStandalone",
+    "category": "collected",
+    "number": "",
+    "title": "鼠鼠异常诅咒特辑 Ratkin Curses Standalone",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RatkinCursesStandalone",
+    "name": "鼠鼠异常诅咒特辑 Ratkin Curses Standalone",
+    "author": "Feng Xinzi, RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "鼠鼠异常里的诅咒现在可以设置为永久游戏状态了，并且不是随机的 The curses in Ratkin Anomaly+ can now be set as permanent game states, and are no longer random",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 4,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-recipebook",
+    "dir": "收集/03-standalone-RecipeBook",
+    "legacy_dir": "03-standalone-RecipeBook",
+    "category": "collected",
+    "number": "",
+    "title": "RecipeBook",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RecipeBook",
+    "name": "RecipeBook",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "RecipeBook mod description",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 3,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-researchprerequisites",
+    "dir": "收集/16-standalone-ResearchPrerequisites",
+    "legacy_dir": "16-standalone-ResearchPrerequisites",
+    "category": "collected",
+    "number": "",
+    "title": "Research Prerequisites 前置研究",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.ResearchPrerequisites",
+    "name": "Research Prerequisites 前置研究",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "前置研究模组，简单的给原生科研页面增加了自动研究前置科技的功能，在选择一项研究后，它的所有前置未完成科技会自动进入研究队列并一项项研究。条件：选中的研究需要有研究台，需要有科研蓝图，不能是已完成或者正在研究的科技。特性：当有研究队列时，如果选择了另一项科技，并加入研究队列，会丢弃之前的研究队列；当有研究队列时，如果选择的科技是可以直接研究，并点击了原生的研究按钮，那么在这项科技研究完成后会自动继续之前的研究队列。 Research Prerequisites is a simple mod that adds the ability to automatically research all prerequisites of a selected research. When you select a research, all of its prerequisites that are not yet researched will be automatically added to the research queue and researched one by one. Conditions: the selected research must have a research bench, must have blueprints, and must not be already researched or currently being researched. Features: when there is a research queue, if you select another research and click on the button \"add it to the research queue\", the previous research queue will be discarded; when there is a research queue, if the selected research can be researched directly and you clicked the vanilla research button, then after the research is completed, the previous research queue will be automatically continued.",
+    "versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 15,
+    "has_languages": true,
+    "has_docs": true,
+    "has_tests": false,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/16-standalone-ResearchPrerequisites/docs/superpowers/plans/2026-07-29-research-queue-redesign.md",
+      "收集/16-standalone-ResearchPrerequisites/docs/superpowers/plans/2026-08-02-queue-head-is-current.md",
+      "收集/16-standalone-ResearchPrerequisites/docs/superpowers/specs/2026-07-29-research-queue-redesign-design.md",
+      "收集/16-standalone-ResearchPrerequisites/docs/superpowers/specs/2026-08-02-queue-head-is-current-design.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-restockingstatus",
+    "dir": "收集/26-standalone-RestockingStatus",
+    "legacy_dir": "26-standalone-RestockingStatus",
+    "category": "collected",
+    "number": "",
+    "title": "补货状态 Restocking Status",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RestockingStatus",
+    "name": "补货状态 Restocking Status",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "本模组目的是更直观的显示定居点是否在补货中，如果完成补货，就是默认定居点的样子，如果正在补货中，会在定居点图标出现一个标志。 The aim of this mod is to show more intuitively whether the settlement is restocking. If the restocking is completed, it will be the default settlement icon. If it is restocking, a symbol will appear in the settlement icon. 图标来自flaticon由SumberRejeki创作 https://www.flaticon.com/free-icons/sync Sync icons created by SumberRejeki - Flaticon https://www.flaticon.com/free-icons/sync",
+    "versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 3,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-rimflix-animeshows",
+    "dir": "收集/79-xml-RimFlixAnimeShows",
+    "legacy_dir": "79-xml-RimFlixAnimeShows",
+    "category": "collected",
+    "number": "",
+    "title": "RimFlix Anime Shows 动漫电视秀",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RimFlix.AnimeShows",
+    "name": "RimFlix Anime Shows 动漫电视秀",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "zal.rimflix"
+    ],
+    "load_after": [
+      "zal.rimflix",
+      "aznplucky.RimFlix"
+    ],
+    "description": "Anime-style TV shows for RimFlix (Continued). Ships placeholder loops (blob mascot, starry sky) as working examples; drop your own images into Textures/Shows to make real shows. Load after RimFlix. RimFlix (Continued) 的动漫风电视节目包。自带可播放的占位节目（弹跳团子、星空闪烁）作为示例；把你自己收集的图片放进 Textures/Shows 即可制作真正的节目。请在 RimFlix 之后加载。",
+    "versions": [],
+    "has_common": false,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": false,
+    "has_docs": true,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": true,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/79-xml-RimFlixAnimeShows/AGENTS.md",
+      "收集/79-xml-RimFlixAnimeShows/docs/adding-shows.md"
+    ],
+    "type": "xml",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-rimlocksmith",
+    "dir": "收集/73-standalone-RimLocksmith",
+    "legacy_dir": "73-standalone-RimLocksmith",
+    "category": "collected",
+    "number": "",
+    "title": "RimLocksmith 边缘锁匠",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RimLocksmith",
+    "name": "RimLocksmith 边缘锁匠",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "RimLocksmith is a colony-door access control mod inspired by Locks2. It focuses on the common door access categories, explicit mod-door compatibility, built-in Chinese translation, default presets, multi-door batch editing, and white-box-tested core policy code. Current scope: RimLocksmith does not implement Locks2's advanced filters such as apparel, work type, race, bedroom owner, game condition, or detailed animal age/sex rules. Notable fixes and differences: - Default settings are configurable in the mod options. - New colony doors can automatically use the default rules. - Defaults can be applied to all unconfigured colony doors or forcibly applied to all colony doors. - Multiple selected colony doors can be edited together from the inspect tab; non-colony doors are ignored. - Fence-blocked pen animals keep vanilla behavior: even if colony animals are allowed by default, they cannot open normal colony doors by themselves. This avoids the Locks2-style problem where pen animals can escape because the mod overrides PawnCanOpen and bypasses vanilla roamerCanOpen / fence-blocking checks. Animal flaps and roamerCanOpen doors still follow vanilla semantics. 边缘锁匠是一个殖民地门禁配置 Mod。它参考 Locks2 的常用门禁分类，但使用独立架构，内置完整中文翻译，支持默认配置、多门批量修改、显式 Mod 门兼容，并通过白盒测试覆盖核心权限逻辑。 当前范围：本 Mod 不实现 Locks2 的高级过滤功能，例如按服装、工作类型、种族、卧室主人、游戏条件、动物年龄/性别等细分规则过滤。 主要差异和修复： - 模组选项中可以设置默认门禁规则。 - 新建殖民地门可以自动使用默认规则。 - 可以将默认规则应用到所有未设置过的殖民地门，或覆盖应用到所有殖民地门。 - 选择多扇殖民地门时，可以通过检查面板的标签页一起修改配置；非殖民地门会被忽略。 - 保留原版栅栏动物逻辑：即使默认允许殖民地动物，受栅栏限制的畜栏动物也不能自己打开普通殖民地门。这样避免了 Locks2 式问题：Mod 接管 PawnCanOpen 后绕过原版 roamerCanOpen / fence-blocking 检查，导致畜栏动物能打开普通门并跑出畜栏。动物门帘和 roamerCanOpen 门仍按原版语义处理。 Implemented using Hermes Agent w/ OpenAI-codex/GPT-5.5 使用Hermes Agent和OpenAI-codex/GPT-5.5实现代码",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 17,
+    "has_languages": true,
+    "has_docs": true,
+    "has_tests": true,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/73-standalone-RimLocksmith/DESIGN.md",
+      "收集/73-standalone-RimLocksmith/docs/rebuild-design.md",
+      "收集/73-standalone-RimLocksmith/docs/vanilla-behavior-audit.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-rimsavesmoreautosaveslotspatch",
+    "dir": "收集/12-patch-RimSavesMoreAutoaveSlotsPatch",
+    "legacy_dir": "12-patch-RimSavesMoreAutoaveSlotsPatch",
+    "category": "collected",
+    "number": "",
+    "title": "RimSaves and MoreAutosaveSlots Compatible Patch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RimSavesMoreAutosaveSlotsPatch",
+    "name": "RimSaves and MoreAutosaveSlots Compatible Patch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "arandomkiwi.rimsaves"
+    ],
+    "load_after": [
+      "revolus.moreautosaveslots",
+      "mlie.moreautosaveslots",
+      "arandomkiwi.rimsaves"
+    ],
+    "description": "Template",
+    "versions": [
+      "1.4",
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 4,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-ritualoutcomefindrelic",
+    "dir": "收集/48-standalone-RitualOutcomeFindRelic",
+    "legacy_dir": "48-standalone-RitualOutcomeFindRelic",
+    "category": "collected",
+    "number": "",
+    "title": "仪式可以发现圣物线索 Ritual add \"Find Relic Information\" outcome",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RitualOutcomeFindRelic",
+    "name": "仪式可以发现圣物线索 Ritual add \"Find Relic Information\" outcome",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "仪式可以发现圣物线索 Ritual add \"Find Relic Information\" outcome",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-ritualoutcomeselection",
+    "dir": "收集/70-standalone-RitualOutcomeSelection",
+    "legacy_dir": "70-standalone-RitualOutcomeSelection",
+    "category": "collected",
+    "number": "",
+    "title": "Ritual Outcome Selection 选择仪式结果",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RitualOutcomeSelection",
+    "name": "Ritual Outcome Selection 选择仪式结果",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "[h1] Ritual Outcome Selection 选择仪式结果 [/h1] [h2] Description [/h2] This mod allows you to select the outcome of a ritual in RimWorld. The motivation of this mod is to save some time for myself doing Save and Load to get the desired outcome of a ritual. [h2] Usage [/h2] Just start a ritual as usual, a new dialog will pop up before the ritual starts, allowing you to select your expected outcome of the ritual. [h2] 描述 [/h2] 这个mod允许你在RimWorld中选择仪式的结果。 这个mod的目的是为了节省自己S/L的时间，以获得想要的仪式结果。 [h2] 使用 [/h2] 按常规方式开始一个仪式，仪式开始前会弹出一个对话框，让你选择你想要的仪式结果。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": true,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-roadonice",
+    "dir": "收集/11-patch-RoadOnIcePatch",
+    "legacy_dir": "11-patch-RoadOnIcePatch",
+    "category": "collected",
+    "number": "",
+    "title": "RoadOnIcePatch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RoadOnIce",
+    "name": "RoadOnIcePatch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5"
+    ],
+    "deps": [
+      "mlie.roadsoftherim"
+    ],
+    "load_after": [
+      "mlie.roadsoftherim",
+      "zylle.morevanillabiomes"
+    ],
+    "description": "本模组在地图加载时会给地形打补丁，从而允许在冰原和海洋冰盖上建造边缘之路。 This mod will patch the ice sheet and sea ice biomes to allow building of roads from Roads of the Rim after the map is loading.",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-rppbillallmechpatch",
+    "dir": "收集/07-patch-RPP_Bill_AllMech_Patch",
+    "legacy_dir": "07-patch-RPP_Bill_AllMech_Patch",
+    "category": "collected",
+    "number": "",
+    "title": "RPP_Bill_AllMech_Patch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RppBillAllMechPatch",
+    "name": "RPP_Bill_AllMech_Patch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4"
+    ],
+    "deps": [
+      "alaestor.miscrobots.plusplus",
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "这个模组修复了工作清单中，设置任意机械体时，无法对RPP模组中的机器人生效的问题。This mod fixes the issue where all mech setting in bills does not work with RPP mod.",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-rppcommonsensecleanbeforeworkpatch",
+    "dir": "收集/08-patch-RppCommonSenseCleanBeforeCookingPatch",
+    "legacy_dir": "08-patch-RppCommonSenseCleanBeforeCookingPatch",
+    "category": "collected",
+    "number": "",
+    "title": "Misc. Robots++ Clean Before Work Patch",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RppCommonSenseCleanBeforeWorkPatch",
+    "name": "Misc. Robots++ Clean Before Work Patch",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "alaestor.miscrobots.plusplus",
+      "avilmask.commonsense"
+    ],
+    "load_after": [],
+    "description": "CommonSense模组的工作前清扫功能很好用，但是Misc.Robots++的万能机无法在工作前清扫（其他的工作机器人不能进行清扫工作），本模组对CommonSense模组中的Utility.IncapableOfCleaning函数进行了修改，使万能机也能在工作前清扫。特别感谢CommonSense作者avilmask的帮助。 CommonSense Mod's Clean Before Work function is very useful, but Misc.Robots++'s OmniBot cannot clean before work (other work robots cannot clean), this mod modifies the Utility.IncapableOfCleaning function in the CommonSense mod to make the OmniBot clean before work. Special thanks to CommonSense author avilmask for his help.",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 1,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-screamingstarfishforallstorytellers",
+    "dir": "收集/52-xml-ScreamingStarfishForAllStorytellers",
+    "legacy_dir": "52-xml-ScreamingStarfishForAllStorytellers",
+    "category": "collected",
+    "number": "",
+    "title": "海星的尖叫响彻环世界 Screaming Starfish for All Storytellers",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.ScreamingStarfishForAllStorytellers",
+    "name": "海星的尖叫响彻环世界 Screaming Starfish for All Storytellers",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "ZM.ScreamingStarfish"
+    ],
+    "load_after": [
+      "ZM.ScreamingStarfish"
+    ],
+    "description": "叙事者——海星地联 是我这几天最喜欢的模组，可惜的是海星的尖叫只能在那一个叙事者下使用。 本模组能够为所有叙事者添加海星尖叫的效果。需要在原模组后加载。 Screaming Starfish is my favorite storyteller mod in the past few days, but unfortunately, the screaming effect can only be used with that specific storyteller. This mod allows the screaming effect to be added to all storytellers. It needs to be loaded after the original mod.",
+    "versions": [],
+    "has_common": true,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "xml",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-silencedtoxifiergenerator",
+    "dir": "收集/30-xml-SilencedToxifierGenerator",
+    "legacy_dir": "30-xml-SilencedToxifierGenerator",
+    "category": "collected",
+    "number": "",
+    "title": "静音排污发电机 Silenced Toxifier Generator",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.SilencedToxifierGenerator",
+    "name": "静音排污发电机 Silenced Toxifier Generator",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "本模组用于静音排污发电机。 This mod is used to silence the Toxifier Generator.",
+    "versions": [],
+    "has_common": true,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "xml",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-silentdeathpall",
+    "dir": "收集/42-standalone-SilentDeathPall",
+    "legacy_dir": "42-standalone-SilentDeathPall",
+    "category": "collected",
+    "number": "",
+    "title": "安静的死亡迷雾 Silent DeathPall",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.SilentDeathPall",
+    "name": "安静的死亡迷雾 Silent DeathPall",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "Ludeon.RimWorld.Anomaly",
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "安静的死亡迷雾 死亡迷雾复活蹒跚怪是左上角的消息会发出声音，如果短期内有很多尸体复活，会有点吵，本模组解决了这个问题 Silent DeathPall DeathPall resurrected Shamblers will make a sound in the upper left message, if there are many corpses resurrected in a short period of time, it will be a bit noisy, this mod solves this problem",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-surgeryneverfail",
+    "dir": "收集/14-standalone-SurgeryNeverFail",
+    "legacy_dir": "14-standalone-SurgeryNeverFail",
+    "category": "collected",
+    "number": "",
+    "title": "Surgery Never Fail",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.SurgeryNeverFail",
+    "name": "Surgery Never Fail",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "如果你还在使用S/L大法来确保手术的成功率，这个MOD很适合你。本MOD将确保手术永远成功。 If you are still using the Save/Load to ensure the success rate of surgeries, this MOD is perfect for you. This mod will guarantee surgery never fail. 进入游戏右下角有个手术的图标，默认启用，启用时手术永远成功，禁用时使用原版代码 There's a toggle surgery icon at the bottom right after entering the game. It is enabled by default, meaning surgery never fail. You can disable it to use the vanilla behaviours. 本模组使用的图标来自flaticon： https://www.flaticon.com/free-icons/surgery Surgery icons created by Iconjam - Flaticon The icon used in the mod is from flaticon: https://www.flaticon.com/free-icons/surgery Surgery icons created by Iconjam - Flaticon",
+    "versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 9,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-syr-doormats-zh",
+    "dir": "收集/13-translation-SYR_Doormats_zh",
+    "legacy_dir": "13-translation-SYR_Doormats_zh",
+    "category": "collected",
+    "number": "",
+    "title": "[SYR] Doormats 简体中文翻译",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.SYR.Doormats.zh",
+    "name": "[SYR] Doormats 简体中文翻译",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "syrchalis.doormats"
+    ],
+    "load_after": [],
+    "description": "[SYR] Doormats 内置了简中翻译但是不全，这是自用的汉化补充，基本上就是把原模组英语翻译文件拿过来翻译，原模组只有日语翻译是全的，别的都缺很多东西，暂时还不想补充英语缺失日语有的翻译项",
+    "versions": [
+      "1.4"
+    ],
+    "has_common": false,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "translation",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-unlockharbingertreeinallcases",
+    "dir": "收集/49-patch-UnlockHarbingerTreeInAllCases",
+    "legacy_dir": "49-patch-UnlockHarbingerTreeInAllCases",
+    "category": "collected",
+    "number": "",
+    "title": "在任何情况下解锁厄兆噬树图鉴 Unlock Harbinger Tree In All Cases",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.UnlockHarbingerTreeInAllCases",
+    "name": "在任何情况下解锁厄兆噬树图鉴 Unlock Harbinger Tree In All Cases",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [
+      "Ludeon.RimWorld.Anomaly"
+    ],
+    "description": "在原版极端生态下，因为厄兆噬树不能生成在冰盖这样的极端地形，导致低级图鉴不能够正确解锁。这个模组尝试修复这个问题，当厄兆噬树生成事件被触发时，无论如何图鉴都会解锁。 In original game extreme biome, because Harbinger Tree can not be generated in extreme biomes like sea ice, so corresponding entity can not be discovered correctly. This mod try to fix this problem, when Harbinger Tree is generated, it will be directly discovered no matter whether the tree is acutally generated.",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-usefulstats",
+    "dir": "收集/74-standalone-UsefulStats",
+    "legacy_dir": "74-standalone-UsefulStats",
+    "category": "collected",
+    "number": "",
+    "title": "Useful Stats 实用数据表",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.UsefulStats",
+    "name": "Useful Stats 实用数据表",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "Adds a main-tab table for craftable item efficiency: market value per work and single-material amount per work. The first version focuses on currently craftable recipes/buildables and future unlockable recipes/buildables. 添加一个主按钮数据表，用来比较可制作物品的效率：市场价值/工作量，以及单一材料数量/工作量。第一版重点显示当前可制作与将来解锁后可制作的物品。",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 4,
+    "has_languages": false,
+    "has_docs": false,
+    "has_tests": true,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/74-standalone-UsefulStats/DESIGN.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-weathercontroldevicecontzh",
+    "dir": "收集/04-translation-WeatherControlDeviceCont_zh",
+    "legacy_dir": "04-translation-WeatherControlDeviceCont_zh",
+    "category": "collected",
+    "number": "",
+    "title": "WeatherControlDeviceCont_zh",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.WeatherControlDeviceContZh",
+    "name": "WeatherControlDeviceCont_zh",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.4",
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "mlie.weathercontroldevice"
+    ],
+    "load_after": [],
+    "description": "天气控制器的简体中文翻译",
+    "versions": [],
+    "has_common": false,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "translation",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-workbenchzone",
+    "dir": "收集/34-standalone-WorkbenchZone",
+    "legacy_dir": "34-standalone-WorkbenchZone",
+    "category": "collected",
+    "number": "",
+    "title": "工作台存储区 Workbench Zone",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.WorkbenchZone",
+    "name": "工作台存储区 Workbench Zone",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "工作台存储区，简单快速的创建相应大小的空存储区，点击工作台会出现一个创建存储区的标志。",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 4,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/34-standalone-WorkbenchZone/1.5/Source/Notes.md",
+      "收集/34-standalone-WorkbenchZone/1.6/Source/Notes.md"
+    ],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-worldmapeditor",
+    "dir": "收集/47-standalone-WorldMapEditor",
+    "legacy_dir": "47-standalone-WorldMapEditor",
+    "category": "collected",
+    "number": "",
+    "title": "世界地图编辑器 World Map Editor",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.WorldMapEditor",
+    "name": "世界地图编辑器 World Map Editor",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony"
+    ],
+    "load_after": [],
+    "description": "世界地图编辑器 World Map Editor 本模组让玩家在进入游戏后（非创建游戏时）可以在世界地图上编辑地块。可以设置地块的生物群落、丘陵度、定居点等。 This mod allows players to edit map tiles on the world map after entering the game (not when creating a new game). You can set the biome, hilliness, and settlements of the map tiles. 目前的实现方法在有性能问题，但是可以通过关闭编辑器来解决。模组的源代码附在MOD中，并且已上传至GitHub（https://github.com/lisanhu/rimworld-RimModNotes/tree/main/47-WorldMapEditor），希望有大神提出优化建议或者pull request。 The current implementation has performance issues, but they can be resolved by closing the editor. The source code of the mod is included in the mod and has been uploaded to GitHub(https://github.com/lisanhu/rimworld-RimModNotes/tree/main/47-WorldMapEditor). Any suggestions for optimization or pull requests are welcome. 启用时，此模组会在每个地块上创建一个隐形的世界对象，这会显著影响性能。关闭时，这些对象会被移除，恢复正常性能。 When enabled, this mod creates an invisible world object on each map tile, which can significantly impact performance. When disabled, these objects are removed, restoring normal performance. 在保存之前，世界对象会自动移除，以保持较小的存档文件。 The world objects are automatically removed before saving to keep the save file size small. 提示：如果您在世界地图上遇到性能问题，请尝试将编辑器打开然后关闭，以移除这些对象。 Tip: If you experience performance issues on the world map, try toggling the editor on and then off to remove the objects. 启用时，世界地图编辑器支持拖拽选择，但性能会非常差。请尽可能放大视角以获得最佳性能。您最多可同时选择80个地块。 When on, World Map Editor supports drag-selection, but the performance would be really really bad. Please zoom in your camera as close as possible to get best performance. You can select 80 tiles at the same time. 本模组使用的图标来源： Icons are from the following source: https://www.flaticon.com/free-icons/rocky-mountains Rocky mountains icons created by Iconjam - Flaticon https://www.flaticon.com/free-icons/tools-and-utensils Tools and utensils icons created by juicy_fish - Flaticon https://www.flaticon.com/free-icons/biome Biome icons created by Eucalyp - Flaticon",
+    "versions": [
+      "1.5",
+      "1.6"
+    ],
+    "has_common": true,
+    "has_csharp": true,
+    "cs_count": 2,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "standalone",
+    "type_conf": "high"
+  },
+  {
+    "id": "saltgin-rimtalkeventmemory",
+    "dir": "收集/84-patch-RimTalkEventPlus",
+    "legacy_dir": "84-patch-RimTalkEventPlus",
+    "category": "collected",
+    "number": "",
+    "title": "RimTalk Event+",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "saltgin.rimtalkeventmemory",
+    "name": "RimTalk Event+",
+    "author": "SaltGin",
+    "supported_versions": [
+      "1.5",
+      "1.6"
+    ],
+    "deps": [
+      "brrainz.harmony",
+      "cj.rimtalk"
+    ],
+    "load_after": [
+      "cj.rimtalk"
+    ],
+    "description": "Lightweight event sensing expansion layer for RimTalk. Experimental.",
+    "versions": [],
+    "has_common": false,
+    "has_csharp": true,
+    "cs_count": 30,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [
+      "收集/84-patch-RimTalkEventPlus/README_UPSTREAM.md"
+    ],
+    "type": "patch",
+    "type_conf": "high"
+  },
+  {
+    "id": "runningbugs-rimtalkpersonatraits",
+    "dir": "自建/01-xml-RimTalkPersonaTraits",
+    "legacy_dir": "01-xml-RimTalkPersonaTraits",
+    "category": "owned",
+    "number": "",
+    "title": "RimTalk 人设特质包 RimTalk Persona Traits",
+    "has_about": true,
+    "in_backup": false,
+    "package_id": "RunningBugs.RimTalkPersonaTraits",
+    "name": "RimTalk 人设特质包 RimTalk Persona Traits",
+    "author": "RunningBugs",
+    "supported_versions": [
+      "1.6"
+    ],
+    "deps": [],
+    "load_after": [],
+    "description": "一个轻量级的角色扮演向特质包：10 个「对话人设」特质（性格/说话风格/嗜好），无数值改动、纯描述、纯 XML。 每个特质的描述都专为 RimTalk 的提示词注入优化：使用 {PAWN_nameDef} 等占位符、写明说话方式与话题，让 AI 对话更有「人味」。 A lightweight roleplay-oriented trait pack: 10 \"conversational persona\" traits (personality / speech style / hobbies), no stat changes, description-only, pure XML. Every trait description is optimized for RimTalk's prompt injection: it uses {PAWN_nameDef} placeholders and spells out how the pawn speaks and what it talks about, so AI dialogue feels more alive.",
+    "versions": [
+      "1.6"
+    ],
+    "has_common": false,
+    "has_csharp": false,
+    "cs_count": 0,
+    "has_languages": true,
+    "has_docs": false,
+    "has_tests": false,
+    "has_publisher_plus": false,
+    "has_loadfolders": false,
+    "has_loadfolders_bak": false,
+    "has_agents": false,
+    "readme_status": "ok",
+    "notes_files": [],
+    "type": "xml",
+    "type_conf": "high"
+  }
+]

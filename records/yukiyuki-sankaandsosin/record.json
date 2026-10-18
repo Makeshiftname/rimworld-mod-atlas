@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "yukiyuki-sankaandsosin",
+  "package_id": "yukiyuki.SANKAandSOSIN",
+  "display_name": "SANKA and SOSIN / 素心和葬歌",
+  "authors": [
+    "yukiyuki"
+  ],
+  "license": "",
+  "source_dir": "3 素心和葬歌",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

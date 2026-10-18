@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "unlimitedhugs-hugslib",
+  "package_id": "UnlimitedHugs.HugsLib",
+  "display_name": "HugsLib（`818773962`）— 分析记录",
+  "authors": [
+    "UnlimitedHugs"
+  ],
+  "license": "",
+  "source_dir": "818773962-HugsLib",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

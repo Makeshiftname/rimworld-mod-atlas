@@ -1,0 +1,1298 @@
+{
+  "schema_version": 2,
+  "mods": [
+    {
+      "id": "cj-rimtalk",
+      "category": "collected",
+      "package_id": "cj.rimtalk",
+      "display_name": "RimTalk",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/80-standalone-RimTalk"
+      ]
+    },
+    {
+      "id": "cj-rimtalk-expandmemory",
+      "category": "collected",
+      "package_id": "cj.rimtalk.expandmemory",
+      "display_name": "RimTalk - Expand Memory",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/81-patch-RimTalkExpandMemory"
+      ]
+    },
+    {
+      "id": "colonymanager-zh",
+      "category": "collected",
+      "package_id": "",
+      "display_name": "ColonyManager_zh",
+      "type": "empty",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/06-empty-ColonyManager_zh"
+      ]
+    },
+    {
+      "id": "hautarche-hautstraits",
+      "category": "collected",
+      "package_id": "Hautarche.HautsTraits",
+      "display_name": "Hauts' Added Traits",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/82-patch-HautsAddedTraits"
+      ]
+    },
+    {
+      "id": "maiya-rimtalkdynamiccolors",
+      "category": "collected",
+      "package_id": "Maiya.RimTalkDynamicColors",
+      "display_name": "RimTalk DynamicColors 边缘世谭-言出多彩",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/86-patch-RimTalkDynamicColors"
+      ]
+    },
+    {
+      "id": "porio-tunnulerfix-fork",
+      "category": "collected",
+      "package_id": "Porio.TunnulerFix.fork",
+      "display_name": "TEMPORARY 1.6 Allow Tunnelers To Drill",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/53-patch-AllowTunnelersToDrillFork"
+      ]
+    },
+    {
+      "id": "rimtalk-styleexpand",
+      "category": "collected",
+      "package_id": "RimTalk.StyleExpand",
+      "display_name": "RimTalk StyleExpand",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/85-patch-RimTalkStyleExpand"
+      ]
+    },
+    {
+      "id": "rp-rimtalk-personadirector",
+      "category": "collected",
+      "package_id": "RP.RimTalk.PersonaDirector",
+      "display_name": "RimTalk: Persona Director",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/83-patch-RPDPersonaDirector"
+      ]
+    },
+    {
+      "id": "runningbugs-alertutility",
+      "category": "collected",
+      "package_id": "RunningBugs.AlertUtility",
+      "display_name": "AlertUtility",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/01-standalone-AlertUtility"
+      ]
+    },
+    {
+      "id": "runningbugs-allowrightclickworkoutsidezone",
+      "category": "collected",
+      "package_id": "RunningBugs.AllowRightClickWorkOutsideZone",
+      "display_name": "Priority Order Bypass Restrictions 强制命令无视限制",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/57-standalone-AllowRightClickWorkOutsideZone"
+      ]
+    },
+    {
+      "id": "runningbugs-allowtoolghoulfix",
+      "category": "collected",
+      "package_id": "RunningBugs.AllowToolGhoulFix",
+      "display_name": "AllowToolGhoulFix",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/28-patch-AllowToolGhoulFix"
+      ]
+    },
+    {
+      "id": "runningbugs-amonkeyexpansionzh",
+      "category": "collected",
+      "package_id": "RunningBugs.AMonkeyExpansionZh",
+      "display_name": "A Monkey Expansion 简体中文翻译",
+      "type": "translation",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/25-translation-AMonkeyExpansion_zh"
+      ]
+    },
+    {
+      "id": "runningbugs-anotherallowtool",
+      "category": "collected",
+      "package_id": "RunningBugs.AnotherAllowTool",
+      "display_name": "Another Allow Tool (1.6)",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/54-standalone-AnotherAllowTool"
+      ]
+    },
+    {
+      "id": "runningbugs-areaunlockerreorderfix",
+      "category": "collected",
+      "package_id": "RunningBugs.AreaUnlockerReorderFix",
+      "display_name": "解锁区域数量上限排序修复 AreaUnlocker Reorder Fix",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/40-patch-AreaUnlockerReorderFix"
+      ]
+    },
+    {
+      "id": "runningbugs-armorracksforcewearfix",
+      "category": "collected",
+      "package_id": "RunningBugs.ArmorRacksForceWearFix",
+      "display_name": "Armor Racks Force Wear Fix",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/21-patch-ArmorRacksForceWearFix"
+      ]
+    },
+    {
+      "id": "runningbugs-automaticbioferritehavesting",
+      "category": "collected",
+      "package_id": "RunningBugs.AutomaticBioferriteHavesting",
+      "display_name": "自动弹出灵铁 Automatic Bioferrite Havesting",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/31-standalone-AutomaticBioferriteHarvesting"
+      ]
+    },
+    {
+      "id": "runningbugs-betteroutfitstand",
+      "category": "collected",
+      "package_id": "RunningBugs.BetterOutfitStand",
+      "display_name": "Better Outfit Stand (Vanilla Improvement) 更好用的服装架 (原版改进)",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/69-standalone-BetterOutfitStand"
+      ]
+    },
+    {
+      "id": "runningbugs-blueprint2",
+      "category": "collected",
+      "package_id": "RunningBugs.blueprint2",
+      "display_name": "New Blueprint",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/66-standalone-NewBlueprint"
+      ]
+    },
+    {
+      "id": "runningbugs-caravanshuttlemassinfoinspectstring",
+      "category": "collected",
+      "package_id": "RunningBugs.CaravanShuttleMassInfoInspectString",
+      "display_name": "Mass Info for World View Caravan with Shuttle 世界地图穿梭机重量信息显示",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/67-standalone-CaravanShuttleMassInfoInspectString"
+      ]
+    },
+    {
+      "id": "runningbugs-colonygroupstargetableportraits",
+      "category": "collected",
+      "package_id": "RunningBugs.ColonyGroupsTargetablePortraits",
+      "display_name": "Colony Groups Targetable Portraits",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/77-patch-ColonyGroupsTargetablePortraits"
+      ]
+    },
+    {
+      "id": "runningbugs-commonmodcompatibilitypatches",
+      "category": "collected",
+      "package_id": "RunningBugs.CommonModCompatibilityPatches",
+      "display_name": "Common Mod Compatibility Patches",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/55-patch-CommonModCompatibilityPatches"
+      ]
+    },
+    {
+      "id": "runningbugs-deathiscoming",
+      "category": "collected",
+      "package_id": "RunningBugs.DeathIsComing",
+      "display_name": "死神来了 Death Is Coming",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/24-standalone-DeathIsComing"
+      ]
+    },
+    {
+      "id": "runningbugs-deathweapon",
+      "category": "collected",
+      "package_id": "RunningBugs.DeathWeapon",
+      "display_name": "Death Weapon 死神之刃",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/17-standalone-DeathWeapon"
+      ]
+    },
+    {
+      "id": "runningbugs-deepstoragecontentstabsearchpatch",
+      "category": "collected",
+      "package_id": "RunningBugs.DeepStorageContentsTabSearchPatch",
+      "display_name": "深度存储内容页添加搜索 Deep Storage Contents Tab Search Patch",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/38-patch-DeepStorageContentsTabSearchPatch"
+      ]
+    },
+    {
+      "id": "runningbugs-dontmeditateyet",
+      "category": "collected",
+      "package_id": "RunningBugs.DontMeditateYet",
+      "display_name": "Don't Meditate Yet 先别冥想",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/68-standalone-DontMeditateYet"
+      ]
+    },
+    {
+      "id": "runningbugs-dubsmenusrightclickaction",
+      "category": "collected",
+      "package_id": "RunningBugs.DubsMenusRightClickAction",
+      "display_name": "Dubs Mint Menus Recipe Right Click Open InfoCard",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/20-patch-DubsMenusRightClickAction"
+      ]
+    },
+    {
+      "id": "runningbugs-facialanimationeyefix",
+      "category": "collected",
+      "package_id": "RunningBugs.FacialAnimationEyeFix",
+      "display_name": "Facial Animation Eye Fix",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/19-patch-FacialAnimationEyeFix"
+      ]
+    },
+    {
+      "id": "runningbugs-facialanimationstatuesnapshotfix",
+      "category": "collected",
+      "package_id": "RunningBugs.FacialAnimationStatueSnapshotFix",
+      "display_name": "Facial Animation Statue Snapshot Fix",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/72-patch-FacialAnimationStatueSnapshotFix"
+      ]
+    },
+    {
+      "id": "runningbugs-freegoto",
+      "category": "collected",
+      "package_id": "RunningBugs.FreeGoTo",
+      "display_name": "Free Go To 自由的移动目标点",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/59-patch-DraftPawnCanGoToOccupiedCell"
+      ]
+    },
+    {
+      "id": "runningbugs-ghoulattackspin",
+      "category": "collected",
+      "package_id": "RunningBugs.GhoulAttackSpin",
+      "display_name": "Ghoul Attack Spin 食尸鬼攻击旋转特效",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/75-standalone-GhoulAttackSpin"
+      ]
+    },
+    {
+      "id": "runningbugs-ghoulcommands",
+      "category": "collected",
+      "package_id": "RunningBugs.GhoulCommands",
+      "display_name": "Ghoul Auto Serum Commands 食尸鬼自动服用血清命令按钮",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/60-standalone-GhoulCommands"
+      ]
+    },
+    {
+      "id": "runningbugs-gui",
+      "category": "collected",
+      "package_id": "RunningBugs.GUI",
+      "display_name": "Simple GUI Library and Gallery",
+      "type": "lib",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/09-lib-GUILib"
+      ]
+    },
+    {
+      "id": "runningbugs-hakuro-xenohuman-zh",
+      "category": "collected",
+      "package_id": "RunningBugs.Hakuro.Xenohuman.Zh",
+      "display_name": "HakuroXenohuman_zh",
+      "type": "translation",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/18-translation-HakuroXenohumanZh"
+      ]
+    },
+    {
+      "id": "runningbugs-hidegenebankgenesfromtraders",
+      "category": "collected",
+      "package_id": "RunningBugs.HideGenebankGenesFromTraders",
+      "display_name": "Hide Genebank Genes From Traders 基因库里的基因不卖！",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/64-patch-HideGenebankGenesFromTraders"
+      ]
+    },
+    {
+      "id": "runningbugs-highlightenemies",
+      "category": "collected",
+      "package_id": "RunningBugs.HighlightEnemies",
+      "display_name": "Highlight Enemies",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/05-standalone-HighlightEnemies"
+      ]
+    },
+    {
+      "id": "runningbugs-itempolicy",
+      "category": "collected",
+      "package_id": "RunningBugs.ItemPolicy",
+      "display_name": "ItemPolicy",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/02-standalone-ItemPolicy"
+      ]
+    },
+    {
+      "id": "runningbugs-killingreward",
+      "category": "collected",
+      "package_id": "RunningBugs.KillingReward",
+      "display_name": "KillingReward 嗜血恩赐",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/78-standalone-KillingReward"
+      ]
+    },
+    {
+      "id": "runningbugs-landingonasteroid",
+      "category": "collected",
+      "package_id": "RunningBugs.LandingOnAsteroid",
+      "display_name": "Landing On Asteroid 着陆小行星",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/65-standalone-LandingOnAsteroid"
+      ]
+    },
+    {
+      "id": "runningbugs-letterstackcleaner2",
+      "category": "collected",
+      "package_id": "RunningBugs.LetterStackCleaner2",
+      "display_name": "Letter Stack Cleaner 2",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/27-standalone-LetterStackCleaner2"
+      ]
+    },
+    {
+      "id": "runningbugs-limitedletterslots",
+      "category": "collected",
+      "package_id": "RunningBugs.LimitedLetterSlots",
+      "display_name": "Limited Letter Slots 有限信件槽",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/56-standalone-LimitedLetterSlots"
+      ]
+    },
+    {
+      "id": "runningbugs-linuximefix",
+      "category": "collected",
+      "package_id": "RunningBugs.LinuxImeFix",
+      "display_name": "Linux IME Fix Linux 输入法修复",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/71-patch-LinuxImeFix"
+      ]
+    },
+    {
+      "id": "runningbugs-maximumanimaldensity",
+      "category": "collected",
+      "package_id": "RunningBugs.MaximumAnimalDensity",
+      "display_name": "Maximum Animal Density 最大动物密度",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/61-standalone-MaximumAnimalDensity"
+      ]
+    },
+    {
+      "id": "runningbugs-modname",
+      "category": "collected",
+      "package_id": "RunningBugs.modname",
+      "display_name": "目标线 Target Line",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/45-standalone-TargetLine"
+      ]
+    },
+    {
+      "id": "runningbugs-moelotlsimplesidearmscompatiblepatch",
+      "category": "collected",
+      "package_id": "RunningBugs.MoelotlSimpleSidearmsCompatiblePatch",
+      "display_name": "萌螈和简单的副武器模组兼容性补丁 Moelotl and SimpleSidearms Compatible Patch",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/39-patch-MoelotlSimpleSidearmsCompatiblePatch"
+      ]
+    },
+    {
+      "id": "runningbugs-moremapseeds",
+      "category": "collected",
+      "package_id": "RunningBugs.MoreMapSeeds",
+      "display_name": "更多地图随机种子 More Map Seeds",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/22-standalone-MoreMapSeeds"
+      ]
+    },
+    {
+      "id": "runningbugs-moreresponsiveplanet",
+      "category": "collected",
+      "package_id": "RunningBugs.MoreResponsivePlanet",
+      "display_name": "More Responsive Planet 世界视角UI响应改进",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/62-standalone-MoreResponsivePlanet"
+      ]
+    },
+    {
+      "id": "runningbugs-morescenariosearchbars",
+      "category": "collected",
+      "package_id": "RunningBugs.MoreScenarioSearchbars",
+      "display_name": "More Scenario Searchbars",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/23-patch-MoreScenarioSearchbars"
+      ]
+    },
+    {
+      "id": "runningbugs-mouseeventthrottle",
+      "category": "collected",
+      "package_id": "RunningBugs.MouseEventThrottle",
+      "display_name": "流畅拖拽选择 Smooth Drag Select",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/76-standalone-SmoothDragSelect"
+      ]
+    },
+    {
+      "id": "runningbugs-mrs-hybrid",
+      "category": "collected",
+      "package_id": "RunningBugs.MRS.Hybrid",
+      "display_name": "More Raid Strategies: Hybrid Raids 更多的袭击类型：复合袭击",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/58-standalone-MoreRaidStrategies-HybridRaids"
+      ]
+    },
+    {
+      "id": "runningbugs-musicpatch",
+      "category": "collected",
+      "package_id": "RunningBugs.MusicPatch",
+      "display_name": "Musical Instruments (Continued) Patch",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/15-patch-MusicalInstrumentsPatch"
+      ]
+    },
+    {
+      "id": "runningbugs-nosoloudmilira",
+      "category": "collected",
+      "package_id": "RunningBugs.NoSoLoudMilira",
+      "display_name": "别太吵的米莉拉 Not So Loud Milira",
+      "type": "xml",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/46-xml-NotSoLoudMilira"
+      ]
+    },
+    {
+      "id": "runningbugs-notsomanypolicies",
+      "category": "collected",
+      "package_id": "RunningBugs.NotSoManyPolicies",
+      "display_name": "开局方案删不完 Not So Many Policies",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/44-standalone-NotSoManyPolicies"
+      ]
+    },
+    {
+      "id": "runningbugs-operationstabwithmedrestrict",
+      "category": "collected",
+      "package_id": "RunningBugs.OperationsTabWithMedRestrict",
+      "display_name": "在手术页面设置药物方案 Operations Tab With Med Restrict",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/36-standalone-MedOperationsTabWithMedRestrict"
+      ]
+    },
+    {
+      "id": "runningbugs-pawnnotblockingconstruction",
+      "category": "collected",
+      "package_id": "RunningBugs.PawnNotBlockingConstruction",
+      "display_name": "Pawn Not Blocking Construction 小人不会阻碍建造",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/63-standalone-PawnNotBlockingConstruct"
+      ]
+    },
+    {
+      "id": "runningbugs-pde-dontstarve",
+      "category": "collected",
+      "package_id": "RunningBugs.PDE.DontStarve",
+      "display_name": "无尽黑暗扩展 —— 饥荒 Permanent Darkness Extended -- DontStarve",
+      "type": "special",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/32-special-PermanentDarknessExtendedDontStarve"
+      ]
+    },
+    {
+      "id": "runningbugs-permanentdarkness",
+      "category": "collected",
+      "package_id": "RunningBugs.PermanentDarkness",
+      "display_name": "无尽黑暗 Permanent Darkness",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/29-standalone-PermanentUnnaturalDarkness"
+      ]
+    },
+    {
+      "id": "runningbugs-polarisblocext",
+      "category": "collected",
+      "package_id": "RunningBugs.PolarisblocExt",
+      "display_name": "天轴自用扩展 Polarisbloc Extension",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/41-patch-PolarisblocExt"
+      ]
+    },
+    {
+      "id": "runningbugs-polarisblocfoodtodrugpatch",
+      "category": "collected",
+      "package_id": "RunningBugs.PolarisblocFoodToDrugPatch",
+      "display_name": "天轴食物加入成瘾品列表补丁 Polarisbloc Food Add To Drug Patch",
+      "type": "xml",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/37-xml-PolarisblocFoodToDrugPatch"
+      ]
+    },
+    {
+      "id": "runningbugs-polarisblocsecurityforcedistresscallpatch",
+      "category": "collected",
+      "package_id": "RunningBugs.PolarisblocSecurityForceDistressCallPatch",
+      "display_name": "Polarisbloc Security Force Distress Call Patch",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/33-patch-PolarisblocSecurityForceDistressCallPatch"
+      ]
+    },
+    {
+      "id": "runningbugs-questitemwatch",
+      "category": "collected",
+      "package_id": "RunningBugs.QuestItemWatch",
+      "display_name": "QuestItemWatch",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/10-standalone-QuestItemWatch"
+      ]
+    },
+    {
+      "id": "runningbugs-quickdumpworncloth",
+      "category": "collected",
+      "package_id": "RunningBugs.QuickDumpWornCloth",
+      "display_name": "远行队快速扔掉死人衣物 Caravan Quick Dump Worn Cloth",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/35-standalone-QuickDumpWornCloth"
+      ]
+    },
+    {
+      "id": "runningbugs-racursepatch",
+      "category": "collected",
+      "package_id": "RunningBugs.RACursePatch",
+      "display_name": "鼠异诅咒补丁 RACursePatch",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/51-patch-RACursePatch"
+      ]
+    },
+    {
+      "id": "runningbugs-racursesa",
+      "category": "collected",
+      "package_id": "RunningBugs.RACurseSA",
+      "display_name": "鼠异诅咒独立模组 RACurseStandalone",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/50-standalone-RACurseStandalone"
+      ]
+    },
+    {
+      "id": "runningbugs-ratkincursesstandalone",
+      "category": "collected",
+      "package_id": "RunningBugs.RatkinCursesStandalone",
+      "display_name": "鼠鼠异常诅咒特辑 Ratkin Curses Standalone",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/43-standalone-RatkinCursesStandalone"
+      ]
+    },
+    {
+      "id": "runningbugs-recipebook",
+      "category": "collected",
+      "package_id": "RunningBugs.RecipeBook",
+      "display_name": "RecipeBook",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/03-standalone-RecipeBook"
+      ]
+    },
+    {
+      "id": "runningbugs-researchprerequisites",
+      "category": "collected",
+      "package_id": "RunningBugs.ResearchPrerequisites",
+      "display_name": "Research Prerequisites 前置研究",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/16-standalone-ResearchPrerequisites"
+      ]
+    },
+    {
+      "id": "runningbugs-restockingstatus",
+      "category": "collected",
+      "package_id": "RunningBugs.RestockingStatus",
+      "display_name": "补货状态 Restocking Status",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/26-standalone-RestockingStatus"
+      ]
+    },
+    {
+      "id": "runningbugs-rimflix-animeshows",
+      "category": "collected",
+      "package_id": "RunningBugs.RimFlix.AnimeShows",
+      "display_name": "RimFlix Anime Shows 动漫电视秀",
+      "type": "xml",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/79-xml-RimFlixAnimeShows"
+      ]
+    },
+    {
+      "id": "runningbugs-rimlocksmith",
+      "category": "collected",
+      "package_id": "RunningBugs.RimLocksmith",
+      "display_name": "RimLocksmith 边缘锁匠",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/73-standalone-RimLocksmith"
+      ]
+    },
+    {
+      "id": "runningbugs-rimsavesmoreautosaveslotspatch",
+      "category": "collected",
+      "package_id": "RunningBugs.RimSavesMoreAutosaveSlotsPatch",
+      "display_name": "RimSaves and MoreAutosaveSlots Compatible Patch",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/12-patch-RimSavesMoreAutoaveSlotsPatch"
+      ]
+    },
+    {
+      "id": "runningbugs-ritualoutcomefindrelic",
+      "category": "collected",
+      "package_id": "RunningBugs.RitualOutcomeFindRelic",
+      "display_name": "仪式可以发现圣物线索 Ritual add \"Find Relic Information\" outcome",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/48-standalone-RitualOutcomeFindRelic"
+      ]
+    },
+    {
+      "id": "runningbugs-ritualoutcomeselection",
+      "category": "collected",
+      "package_id": "RunningBugs.RitualOutcomeSelection",
+      "display_name": "Ritual Outcome Selection 选择仪式结果",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/70-standalone-RitualOutcomeSelection"
+      ]
+    },
+    {
+      "id": "runningbugs-roadonice",
+      "category": "collected",
+      "package_id": "RunningBugs.RoadOnIce",
+      "display_name": "RoadOnIcePatch",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/11-patch-RoadOnIcePatch"
+      ]
+    },
+    {
+      "id": "runningbugs-rppbillallmechpatch",
+      "category": "collected",
+      "package_id": "RunningBugs.RppBillAllMechPatch",
+      "display_name": "RPP_Bill_AllMech_Patch",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/07-patch-RPP_Bill_AllMech_Patch"
+      ]
+    },
+    {
+      "id": "runningbugs-rppcommonsensecleanbeforeworkpatch",
+      "category": "collected",
+      "package_id": "RunningBugs.RppCommonSenseCleanBeforeWorkPatch",
+      "display_name": "Misc. Robots++ Clean Before Work Patch",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/08-patch-RppCommonSenseCleanBeforeCookingPatch"
+      ]
+    },
+    {
+      "id": "runningbugs-screamingstarfishforallstorytellers",
+      "category": "collected",
+      "package_id": "RunningBugs.ScreamingStarfishForAllStorytellers",
+      "display_name": "海星的尖叫响彻环世界 Screaming Starfish for All Storytellers",
+      "type": "xml",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/52-xml-ScreamingStarfishForAllStorytellers"
+      ]
+    },
+    {
+      "id": "runningbugs-silencedtoxifiergenerator",
+      "category": "collected",
+      "package_id": "RunningBugs.SilencedToxifierGenerator",
+      "display_name": "静音排污发电机 Silenced Toxifier Generator",
+      "type": "xml",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/30-xml-SilencedToxifierGenerator"
+      ]
+    },
+    {
+      "id": "runningbugs-silentdeathpall",
+      "category": "collected",
+      "package_id": "RunningBugs.SilentDeathPall",
+      "display_name": "安静的死亡迷雾 Silent DeathPall",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/42-standalone-SilentDeathPall"
+      ]
+    },
+    {
+      "id": "runningbugs-surgeryneverfail",
+      "category": "collected",
+      "package_id": "RunningBugs.SurgeryNeverFail",
+      "display_name": "Surgery Never Fail",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/14-standalone-SurgeryNeverFail"
+      ]
+    },
+    {
+      "id": "runningbugs-syr-doormats-zh",
+      "category": "collected",
+      "package_id": "RunningBugs.SYR.Doormats.zh",
+      "display_name": "[SYR] Doormats 简体中文翻译",
+      "type": "translation",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/13-translation-SYR_Doormats_zh"
+      ]
+    },
+    {
+      "id": "runningbugs-unlockharbingertreeinallcases",
+      "category": "collected",
+      "package_id": "RunningBugs.UnlockHarbingerTreeInAllCases",
+      "display_name": "在任何情况下解锁厄兆噬树图鉴 Unlock Harbinger Tree In All Cases",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/49-patch-UnlockHarbingerTreeInAllCases"
+      ]
+    },
+    {
+      "id": "runningbugs-usefulstats",
+      "category": "collected",
+      "package_id": "RunningBugs.UsefulStats",
+      "display_name": "Useful Stats 实用数据表",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/74-standalone-UsefulStats"
+      ]
+    },
+    {
+      "id": "runningbugs-weathercontroldevicecontzh",
+      "category": "collected",
+      "package_id": "RunningBugs.WeatherControlDeviceContZh",
+      "display_name": "WeatherControlDeviceCont_zh",
+      "type": "translation",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/04-translation-WeatherControlDeviceCont_zh"
+      ]
+    },
+    {
+      "id": "runningbugs-workbenchzone",
+      "category": "collected",
+      "package_id": "RunningBugs.WorkbenchZone",
+      "display_name": "工作台存储区 Workbench Zone",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/34-standalone-WorkbenchZone"
+      ]
+    },
+    {
+      "id": "runningbugs-worldmapeditor",
+      "category": "collected",
+      "package_id": "RunningBugs.WorldMapEditor",
+      "display_name": "世界地图编辑器 World Map Editor",
+      "type": "standalone",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/47-standalone-WorldMapEditor"
+      ]
+    },
+    {
+      "id": "saltgin-rimtalkeventmemory",
+      "category": "collected",
+      "package_id": "saltgin.rimtalkeventmemory",
+      "display_name": "RimTalk Event+",
+      "type": "patch",
+      "aliases": [],
+      "legacy_paths": [
+        "收集/84-patch-RimTalkEventPlus"
+      ]
+    },
+    {
+      "id": "runningbugs-rimtalkpersonatraits",
+      "category": "owned",
+      "package_id": "RunningBugs.RimTalkPersonaTraits",
+      "display_name": "RimTalk 人设特质包 RimTalk Persona Traits",
+      "type": "xml",
+      "aliases": [],
+      "legacy_paths": [
+        "自建/01-xml-RimTalkPersonaTraits"
+      ]
+    },
+    {
+      "id": "abscon-privacy-please",
+      "category": "record-only",
+      "package_id": "abscon.privacy.please",
+      "display_name": "Privacy, Please!（RJW 隐私意识）",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/RJW_文化玩法_隐私意识"
+      ]
+    },
+    {
+      "id": "adaptive-ideology-storage",
+      "category": "record-only",
+      "package_id": "Adaptive.Ideology.Storage",
+      "display_name": "Adaptive Ideology Storage",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/3301337278-AdaptiveIdeologyStorage"
+      ]
+    },
+    {
+      "id": "adaptive-simplestorage",
+      "category": "record-only",
+      "package_id": "Adaptive.SimpleStorage",
+      "display_name": "Adaptive Simple Storage",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/3297307747-AdaptiveSimpleStorage"
+      ]
+    },
+    {
+      "id": "adaptive-storage-framework",
+      "category": "record-only",
+      "package_id": "adaptive.storage.framework",
+      "display_name": "Adaptive Storage Framework（`3033901359`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/3033901359-AdaptiveStorage"
+      ]
+    },
+    {
+      "id": "akt-ideology",
+      "category": "record-only",
+      "package_id": "AKT.Ideology",
+      "display_name": "AKT_Ideology — 扶她文化（`RJW-文化-扶她文化`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/RJW-文化-扶她文化（AKawaiiTent's Futa Ideology）"
+      ]
+    },
+    {
+      "id": "aoba-framework",
+      "category": "record-only",
+      "package_id": "AOBA.Framework",
+      "display_name": "Fortified Features Framework（`3498575851`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/3498575851-FortifiedFramework"
+      ]
+    },
+    {
+      "id": "brrainz-harmony",
+      "category": "record-only",
+      "package_id": "brrainz.harmony",
+      "display_name": "Harmony（`2009463077`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/2009463077-Harmony"
+      ]
+    },
+    {
+      "id": "c0ffee-rjw-ideologyaddons",
+      "category": "record-only",
+      "package_id": "c0ffee.rjw.IdeologyAddons",
+      "display_name": "C0ffeeRIA（C0ffee's RJW Ideology Addons）",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/RJW_文化_咖啡的人奶文化"
+      ]
+    },
+    {
+      "id": "fix-miho-visualpatch",
+      "category": "record-only",
+      "package_id": "Fix.Miho.VisualPatch",
+      "display_name": "Miho Race Children Texture Fix",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/1~11岁美狐贴图修正"
+      ]
+    },
+    {
+      "id": "gt-sam-glittertech",
+      "category": "record-only",
+      "package_id": "GT.Sam.GlitterTech",
+      "display_name": "Glitter Tech Classic（`725576127`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/725576127-GlitterTechClassic"
+      ]
+    },
+    {
+      "id": "haplo-miscellaneous-training",
+      "category": "record-only",
+      "package_id": "Haplo.Miscellaneous.Training",
+      "display_name": "Misc. Training",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/717575199-MiscTraining"
+      ]
+    },
+    {
+      "id": "imranfish-xmlextensions",
+      "category": "record-only",
+      "package_id": "imranfish.xmlextensions",
+      "display_name": "XML Extensions（`2574315206`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/2574315206-XMLExtensions"
+      ]
+    },
+    {
+      "id": "mlie-sdbridges",
+      "category": "record-only",
+      "package_id": "Mlie.SDBridges",
+      "display_name": "[sd] Bridges (Continued)",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/2036488024-SDBridges"
+      ]
+    },
+    {
+      "id": "nera-spawnthosegenes",
+      "category": "record-only",
+      "package_id": "Nera.SpawnThoseGenes",
+      "display_name": "[BT] SpawnThoseGenes!（`2898044088`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/2898044088-SpawnThoseGenes"
+      ]
+    },
+    {
+      "id": "owlchemist-cherrypicker",
+      "category": "record-only",
+      "package_id": "Owlchemist.CherryPicker",
+      "display_name": "Cherry Picker（`3521312241`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/3521312241-CherryPicker"
+      ]
+    },
+    {
+      "id": "readyforjeff-rjwpeculiarinstitution",
+      "category": "record-only",
+      "package_id": "readyforjeff.RJWPeculiarInstitution",
+      "display_name": "Peculiar Institution",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/RJW_机制_小妾项圈"
+      ]
+    },
+    {
+      "id": "rim-job-world",
+      "category": "record-only",
+      "package_id": "rim.job.world",
+      "display_name": "RimJobWorld（RJW）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/RJW_核心_本体"
+      ]
+    },
+    {
+      "id": "rjw-fb",
+      "category": "record-only",
+      "package_id": "rjw.FB",
+      "display_name": "RimJobWorld - FB（RJW 做爱感想·颜值）",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/rjw-做爱感想-颜值"
+      ]
+    },
+    {
+      "id": "s-g",
+      "category": "record-only",
+      "package_id": "s.g",
+      "display_name": "P-Music（`725130005`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/725130005-PMusic"
+      ]
+    },
+    {
+      "id": "taranchuk-fastergameloading",
+      "category": "record-only",
+      "package_id": "Taranchuk.FasterGameLoading",
+      "display_name": "Faster Game Loading - Continued（`3652938473`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/3652938473-FasterGameLoading"
+      ]
+    },
+    {
+      "id": "unlimitedhugs-hugslib",
+      "category": "record-only",
+      "package_id": "UnlimitedHugs.HugsLib",
+      "display_name": "HugsLib（`818773962`）— 分析记录",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/818773962-HugsLib"
+      ]
+    },
+    {
+      "id": "vegapnk-cumpilation",
+      "category": "record-only",
+      "package_id": "vegapnk.cumpilation",
+      "display_name": "Cumpilation",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/RJW-体液-精液汇编（Cumpilation）"
+      ]
+    },
+    {
+      "id": "yukiyuki-abyss",
+      "category": "record-only",
+      "package_id": "yukiyuki.ABYSS",
+      "display_name": "ABYSS / 阿比斯",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/5 阿比斯"
+      ]
+    },
+    {
+      "id": "yukiyuki-asebi",
+      "category": "record-only",
+      "package_id": "yukiyuki.ASEBI",
+      "display_name": "美南烛 / ASEBI",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/美南烛"
+      ]
+    },
+    {
+      "id": "yukiyuki-borum",
+      "category": "record-only",
+      "package_id": "yukiyuki.BORUM",
+      "display_name": "BORUM / 雪绒兽",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/2 雪绒兽"
+      ]
+    },
+    {
+      "id": "yukiyuki-fleshia",
+      "category": "record-only",
+      "package_id": "yukiyuki.FLESHIA",
+      "display_name": "FLESHIA / 弗莱西雅",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/6弗莱西雅"
+      ]
+    },
+    {
+      "id": "yukiyuki-sankaandsosin",
+      "category": "record-only",
+      "package_id": "yukiyuki.SANKAandSOSIN",
+      "display_name": "SANKA and SOSIN / 素心和葬歌",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/3 素心和葬歌"
+      ]
+    },
+    {
+      "id": "yukiyuki-yaemu",
+      "category": "record-only",
+      "package_id": "yukiyuki.YAEMU",
+      "display_name": "YAEMU / 八重律",
+      "type": "unknown",
+      "aliases": [],
+      "legacy_paths": [],
+      "record_paths": [
+        "收录/4 八重律"
+      ]
+    }
+  ]
+}

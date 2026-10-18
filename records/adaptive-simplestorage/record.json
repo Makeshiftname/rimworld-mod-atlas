@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "adaptive-simplestorage",
+  "package_id": "Adaptive.SimpleStorage",
+  "display_name": "Adaptive Simple Storage",
+  "authors": [
+    "vin —— 与 收录/3301337278-AdaptiveIdeologyStorage/ 同一作者（<authors><li>vin</li></authors>，复数标签是正确写法）"
+  ],
+  "license": "无。无 LICENSE / README.md / LoadFolders.xml；About.xml 无 <url>、无 <license>、无 modVersion",
+  "source_dir": "3297307747-AdaptiveSimpleStorage",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "yukiyuki-yaemu",
+  "package_id": "yukiyuki.YAEMU",
+  "display_name": "YAEMU / 八重律",
+  "authors": [
+    "yukiyuki"
+  ],
+  "license": "",
+  "source_dir": "4 八重律",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

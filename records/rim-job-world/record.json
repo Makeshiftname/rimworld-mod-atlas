@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "rim-job-world",
+  "package_id": "rim.job.world",
+  "display_name": "RimJobWorld（RJW）— 分析记录",
+  "authors": [
+    "Ed86（LICENSE 版权行为 semigimp 2017，见「授权」）"
+  ],
+  "license": "读 LICENSE（21 行）",
+  "source_dir": "RJW_核心_本体",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

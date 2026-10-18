@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "haplo-miscellaneous-training",
+  "package_id": "Haplo.Miscellaneous.Training",
+  "display_name": "Misc. Training",
+  "authors": [
+    "Haplo（HaploX1）"
+  ],
+  "license": "",
+  "source_dir": "717575199-MiscTraining",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

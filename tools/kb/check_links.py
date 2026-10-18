@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Validate links and references in the knowledge base.
 
 Checks:
-  1. Every relative link in AGENTS.md and docs/knowledge/*.md resolves.
-  2. Mod numbers in kb-index.json are unique (55 is expected to be duplicated).
-  3. Path references in mod-index.md's manual section point to existing files.
+  1. Every relative link in AGENTS.md, docs/knowledge/**/*.md and records/**/*.md resolves.
+  2. Stable mod IDs in indexes/mods.json are unique.
+  3. Every relative link in the architecture entrypoints resolves.
 
 Usage:
   python tools/kb/check_links.py
@@ -12,6 +12,7 @@ Exit code 0 = all good, 1 = problems found.
 """
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -23,28 +24,30 @@ LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 
 def iter_md_files() -> list[Path]:
     files = []
-    agents = kb.REPO_ROOT / "AGENTS.md"
-    if agents.exists():
-        files.append(agents)
-    for p in sorted(kb.KB_DIR.glob("*.md")):
-        files.append(p)
-    return files
+    for rel in ("AGENTS.md", "ARCHITECTURE.md", "README.md"):
+        path = kb.REPO_ROOT / rel
+        if path.exists():
+            files.append(path)
+    for root in (kb.KB_DIR, kb.REPO_ROOT / "records", kb.REPO_ROOT / "mods"):
+        if root.is_dir():
+            files.extend(sorted(root.rglob("*.md")))
+    return sorted(set(files))
 
 
 def check_file(path: Path, problems: list[str]) -> None:
     try:
         text = path.read_text(encoding="utf-8", errors="replace")
-    except OSError as e:
-        problems.append(f"{path.relative_to(kb.REPO_ROOT)}: cannot read: {e}")
+    except OSError as exc:
+        problems.append(f"{path.relative_to(kb.REPO_ROOT)}: cannot read: {exc}")
         return
     rel = path.relative_to(kb.REPO_ROOT)
-    for m in LINK_RE.finditer(text):
-        target = m.group(1).strip()
+    for match in LINK_RE.finditer(text):
+        target = match.group(1).strip()
         if not target or target.startswith(("http://", "https://", "mailto:", "ftp://", "#")):
             continue
         if "://" in target:
             continue
-        path_part = target.split("#")[0]
+        path_part = target.split("#", 1)[0]
         if not path_part:
             continue
         resolved = (path.parent / path_part).resolve()
@@ -52,38 +55,32 @@ def check_file(path: Path, problems: list[str]) -> None:
             problems.append(f"{rel}: broken link -> `{target}`")
 
 
-def check_mod_numbers(problems: list[str], warnings: list[str]) -> None:
+def check_mod_ids(problems: list[str]) -> None:
     if not kb.INDEX_JSON.exists():
-        problems.append("docs/knowledge/kb-index.json missing; run scan_mods.py first")
+        problems.append("docs/knowledge/indexes/mods.json missing; run scan_mods.py first")
         return
-    import json
-    mods = json.loads(kb.INDEX_JSON.read_text(encoding="utf-8"))
+    try:
+        mods = json.loads(kb.INDEX_JSON.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        problems.append(f"docs/knowledge/indexes/mods.json: {exc}")
+        return
     seen: dict[str, list[str]] = {}
-    for m in mods:
-        # number is unique within a category (自建/收集 each start at 01)
-        key = (m.get("category", ""), m["number"])
-        seen.setdefault(key, []).append(m["dir"])
-    for key, dirs in sorted(seen.items()):
+    for mod in mods:
+        seen.setdefault(mod["id"], []).append(mod["dir"])
+    for mod_id, dirs in sorted(seen.items()):
         if len(dirs) > 1:
-            # Duplicate numbering within a category is reported as a warning,
-            # not a hard failure (kept for forward-compat with any future dup).
-            cat, num = key
-            warnings.append(f"duplicate mod number [{cat} {num}]: {', '.join(dirs)}")
+            problems.append(f"duplicate stable id {mod_id}: {', '.join(dirs)}")
 
 
 def main() -> int:
     problems: list[str] = []
-    warnings: list[str] = []
-    for f in iter_md_files():
-        check_file(f, problems)
-    check_mod_numbers(problems, warnings)
-
-    for w in warnings:
-        print(f"  warning: {w}")
+    for path in iter_md_files():
+        check_file(path, problems)
+    check_mod_ids(problems)
     if problems:
         print(f"Found {len(problems)} problem(s):")
-        for p in problems:
-            print(f"  - {p}")
+        for problem in problems:
+            print(f"  - {problem}")
         return 1
     print("All links and references OK.")
     return 0

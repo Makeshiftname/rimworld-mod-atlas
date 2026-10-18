@@ -1,105 +1,59 @@
-# AGENTS.md — RimWorld Modding 仓库
+﻿# AGENTS.md — RimWorld Modding 仓库
 
-本仓库是个人 RimWorld modding 学习作品集：**87 个 mod 目录**——`收集/` 86 个（收集的他人 mod，重编 `01–86`，目录名带功能前缀）+ `自建/` 1 个（**仓库主本人原创**，编号从 `01` 起）。
-仓库以 [RunningBugs/rimworld-RimModNotes](https://github.com/RunningBugs/rimworld-RimModNotes) 为基础 fork 搭建；除 `自建/` 外均为**收集/学习的他人 mod，不宜改动 mod 本体**（含 About.xml 内容/C#/Defs）；`packageId` 前缀 `RunningBugs.*`，MIT 许可。
+本仓库的目录职责、稳定 ID、提炼规则和迁移流程以
+[`ARCHITECTURE.md`](ARCHITECTURE.md) 为唯一入口；本文件只保留执行任务时容易踩错的约定。
 
-## 仓库结构
+## 开始前
 
-- 两级分类：`自建/`（仓库主本人原创可发布）、`收集/`（收集的他人 mod）；目录名 `NN-功能-名称`，
-  功能前缀 = standalone/patch/xml/translation/lib/empty/special（与 mod-index Type 一致）。
-  每个 mod 内含 `About/About.xml`、版本目录（`1.4/` `1.5/` `1.6/`）、`Common/`（跨版本共享）、
-  `Source/`（C#）、`Languages/`、`docs/`、`Tests/` 等。
-- 类型分布（仅 `收集/`，按目录功能前缀统计）：patch 30 / standalone 44 / xml 5（30,37,46,52,79）/
-  translation 4（04,13,18,25）/ empty 1（06）/ lib 1（09）/ special 1（32）。
-  ⚠️ `scan_mods.py` 报的分布**含 `自建/`**（其 01 为 xml 型），故它报 `xml × 6`、总数 87——两个数都对，只是口径不同。
-- **既有事实勿改**：06 空目录、32 内容在 `backup/`；55 重复编号已于 2026-08-08 修正
-  （现为 `55-patch-CommonModCompatibilityPatches` 与 `56-standalone-LimitedLetterSlots`）。
+1. 先读根 [`ARCHITECTURE.md`](ARCHITECTURE.md) 与 [`docs/knowledge/README.md`](docs/knowledge/README.md)。
+2. 单 mod 调查先读 [`records/STANDARD.md`](records/STANDARD.md)。
+3. 需要游戏机制/实现背景时，按知识库主入口选择 `guides/`、`reference/` 或 `mechanics/`。
+4. 不读取整个大目录做无差别审阅；先查索引、注册表和目标记录。
 
-## 知识库（重要）
+## 目录与编辑边界
 
-完整的 modding 经验提炼在 **`docs/knowledge/`**，开始任何 RimWorld 任务前先看
-[总索引](docs/knowledge/README.md)。知识库分三层：
+- `mods/owned/` 与现有 `自建/`：仓库主原创，可按任务修改。
+- `mods/collected/` 与现有 `收集/`：第三方供应内容，默认只读；不要改 About/C#/Defs/资源。
+- `records/`：分析档案；保留证据与纠错，不删除反面发现。
+- `docs/knowledge/`：只放经审核的通用结论；单 mod 专属信息留在记录。
+- `mods/registry.json` 是稳定 ID 唯一权威；编号、类型和排序写入生成索引，不塞进目录身份。
 
-- **上层主题笔记**（本目录根下）——从本地 mod 提炼的实操经验
-- **`ref/` 参考手册层**——蒸馏 rimworldwiki `Modding Tutorials` vetted 区，讲「功能怎么实现」
-- **`mech/` 游戏机制层**——讲「游戏系统本身由什么构成」，数据来自本地游戏 Defs + 官方简中译文
+## 常用命令
 
-**上层主题笔记：**
-
-- 想给原版/第三方功能打补丁 → `docs/knowledge/harmony-patching.md`
-- 画窗口/加切换栏图标 → `docs/knowledge/ui-and-windows.md`
-- 每 tick 逻辑/存档 → `docs/knowledge/game-and-world-components.md`
-- 改 Defs / PatchOperation / 纯 XML → `docs/knowledge/xml-defs-and-patches.md`
-- 翻译 → `docs/knowledge/translations-localization.md`
-- 跨版本目录/Common/ → `docs/knowledge/cross-version-structure.md`
-- 测试 → `docs/knowledge/testing-and-validation.md`
-- 卡顿/GUI 性能 → `docs/knowledge/performance-and-gui.md`
-- 新建 C# mod 骨架/日志模板 → `docs/knowledge/project-templates.md`
-- 发布/软链接/工坊红线 → `docs/knowledge/publishing-and-release.md`
-- 静态审计一个 mod（依赖装况/程序集类型/翻译覆盖/贴图可达/多版本是否真能加载）→ `docs/knowledge/mod-static-audit.md`
-
-**ref/ 层**（写 mod 前查实现）：见 [ref/README.md](docs/knowledge/ref/README.md)。
-
-**mech/ 层**（查游戏系统本身）：见 [mech/README.md](docs/knowledge/mech/README.md)。
-覆盖 Core 各系统 + 4 个 DLC 专有系统，共 16 篇。
-
-全部 mod 的索引表 + 人工要点/笔记分布：`docs/knowledge/mod-index.md`。
-**注意**：多数 mod 的根 `README.md` 是模板占位；真实学习笔记在
-`Notes.md` / `docs/` / `DESIGN.md` 等文件（分布见 mod-index 的 MANUAL 段）。
-
-## 关键约定
-
-- **跨版本**：共享资源放 `Common/`；老 mod 单 1.4，新收集 mod（编号 ≥54）基本仅 1.6；避免用 LoadFolders.xml。
-- **测试**：RimWorld 运行时对象无法在游戏外实例化，用 Python 静态白盒测试
-  （`Tests/whitebox/test_*_static.py` + `run_whitebox.sh`）；纯逻辑可加 C# 单测。
-- **发布**：13 个 mod 带 `_PublisherPlus.xml`（16,26,57,60,66,67,69,70,71,73,75,76,78；发布时排除 `obj/`）；patch 第三方 mod 时其
-  packageId 写入 `<loadAfter>` 而非 `<modDependencies>`；改动后 `About.xml` 描述与代码保持同步。
-- **构建**：`cd <版本>/Source && dotnet build -c Release`，产物 DLL 随源码提交。
-- **日志**：复用 `Logger.cs` 骨架（`Log.Message/Warning/Error` 自动带调用位置）。
-
-## 技能与 RAG 检索约定（2026-08-08）
-
-**RAGnarōk 本地 RAG（零外部依赖、全离线）**：RimWorld 知识库问题
-（Harmony 补丁 / XML Defs / 翻译 / 跨版本 / 性能等）**优先用 `ragQuery` 工具查
-topic `Rimworld KB`**，命中后再作答；该 topic 内容 = `docs/knowledge/`（72 chunks，
-新增文档后需在扩展侧重新索引）。显式说"用 RAG 查 X"即强制触发。
-
-**常用 skill 触发约定**（安装于 `~/.agents/skills/`，显式点名即强制触发；
-mattpocock 系多数需先跑一次 `/setup-matt-pocock-skills`）：
-
-| 任务 | skill | 触发语 |
-|---|---|---|
-| 调研外部资料（灰机 wiki/官方 docs/一手来源）并落盘 findings 到仓库 | `research` | "研究/调研 X" |
-| 排查难缠 bug / 性能回归 | `diagnosing-bugs` | "诊断/调试 X" |
-| 测试先行开发（Python 白盒 / C# 单测） | `tdd` | "red-green-refactor / 加测试" |
-| 审查改动（自建 mod、PR、分支） | `code-review` | "review 改动/分支" |
-| 压测新 mod 功能设计决策 | `grilling` | "压测/挑战我的方案" |
-| C# 模块/接口深度设计 | `codebase-design` | "设计这个模块/接口" |
-| 重构规划（拆小步 + GitHub issue） | `request-refactor-plan` | "规划重构" |
-| 快速原型验证补丁/逻辑思路 | `prototype` | "做个原型验证" |
-| 合并上游/fork 冲突 | `resolving-merge-conflicts` | 遇到合并冲突时 |
-
-> 原则：skill 按需触发（模型读 frontmatter 描述判断），**显式点名最可靠**；
-> RAGnarōk 是函数工具（`ragQuery`），命中主题即可直接调用。
-
-## 维护知识库（当新增/修改 mod 时）
-
-工具链在 `tools/kb/`（纯 Python 标准库），完整流程见
-[docs/knowledge/CONTRIBUTING.md](docs/knowledge/CONTRIBUTING.md)：
-
-```bash
-python tools/kb/scan_mods.py            # 重新生成 mod-index 元数据段（保留 MANUAL 段）
-python tools/kb/scan_mods.py --check    # 查看变更报告
-python tools/kb/check_links.py          # 验收门槛：必须退出码 0
-python tools/kb/check_repo_hygiene.py   # 结构卫生门槛（.bak/PDB/目录命名）：必须退出码 0
-python tools/kb/validate_readme.py --todo   # 查看占位 README 待重写清单
+```powershell
+python tools/kb/check_all.py                 # 所有门禁
+python tools/kb/scan_mods.py                 # 刷新代码样本索引
+python tools/kb/scan_records.py              # 刷新记录索引
+python tools/kb/migrate_mods.py              # mods/ 迁移 dry-run
+python tools/kb/migrate_mods.py --apply      # 确认后执行迁移
 ```
 
-**规则**：`mod-index.md` 的 `AUTO` 段由脚本生成勿手改；`MANUAL` 段人工维护；
-主题文档全部手写（脚本不做内容生成）。
+## 构建与测试
 
-另有 `tools/game_defs/extract_defs.py`（纯标准库）：从**本地游戏数据**
-（`Data/<DLC>/Defs/` + `Languages/ChineseSimplified*.tar` 的官方简中 DefInjected）
-抽取 Def 底稿，供 `mech/` 层手写文档时核对字段与规模。底稿落
-`tools/game_defs/.cache/`（已 gitignore，可再生）。用法见
-[mech/README.md](docs/knowledge/mech/README.md)。
+- 构建：`cd <版本>/Source && dotnet build -c Release`，产物 DLL 随源码提交。
+- 纯逻辑可加 C# 单测；RimWorld 运行时对象无法在游戏外实例化时，使用 Python 静态白盒测试。
+- 运行时路径只在本地配置或环境变量中提供；共享脚本不硬编码某台机器的游戏目录。
+
+## 维护规则
+
+- 生成物由脚本重建，不手改：`registry.json`、`indexes/mods.md`、`indexes/mods.json`、`records/index.json`。
+- 修改结构后运行 `check_all.py`；链接、记录身份、目录卫生、索引漂移都必须通过。
+- 第三方 mod 的 `packageId` 应进入 `<loadAfter>` 而非 `<modDependencies>`（仅当它是补丁前置而非硬依赖）。
+- 改动 `About.xml` 后同步对应描述与记录。
+- 新增长期规则时先更新 `ARCHITECTURE.md`，不要继续把背景知识堆进本文件。
+
+## 技能触发
+
+显式点名最可靠；常用映射：
+
+| 任务 | skill / 触发 |
+|---|---|
+| 外部资料调研并落盘 | `research` / “研究 X” |
+| 难缠 bug 或性能回归 | `diagnosing-bugs` / “诊断 X” |
+| 测试先行 | `tdd` |
+| 审查改动 | `code-review` |
+| 设计接口/模块 | `codebase-design` |
+| 重构规划 | `request-refactor-plan` |
+| 合并冲突 | `resolving-merge-conflicts` |
+
+RimWorld 知识库问题优先使用本地 `ragQuery`；新增知识文档后按 RAG 扩展侧流程重新索引。

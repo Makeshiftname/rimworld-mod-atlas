@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "readyforjeff-rjwpeculiarinstitution",
+  "package_id": "readyforjeff.RJWPeculiarInstitution",
+  "display_name": "Peculiar Institution",
+  "authors": [
+    "readyforjeff"
+  ],
+  "license": "无。无 LICENSE、README 无许可声明 → 未声明许可",
+  "source_dir": "RJW_机制_小妾项圈",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

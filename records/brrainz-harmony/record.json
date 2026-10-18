@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "brrainz-harmony",
+  "package_id": "brrainz.harmony",
+  "display_name": "Harmony（`2009463077`）— 分析记录",
+  "authors": [
+    "Andreas Pardeike（Brrainz）"
+  ],
+  "license": "MIT License（LICENSE，Copyright (c) 2017 Andreas Pardeike）",
+  "source_dir": "2009463077-Harmony",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

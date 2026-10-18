@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "yukiyuki-abyss",
+  "package_id": "yukiyuki.ABYSS",
+  "display_name": "ABYSS / 阿比斯",
+  "authors": [
+    "yukiyuki"
+  ],
+  "license": "",
+  "source_dir": "5 阿比斯",
+  "status": "analyzed",
+  "modifications": [],
+  "distilled_to": []
+}

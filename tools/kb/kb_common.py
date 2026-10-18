@@ -1,4 +1,4 @@
-"""Shared helpers for the RimWorld mod knowledge base toolchain (tools/kb/).
+﻿"""Shared helpers for the RimWorld mod knowledge base toolchain (tools/kb/).
 
 Pure Python standard library, works on Windows/Linux/macOS.
 """
@@ -8,6 +8,8 @@ import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+import registry as stable_registry
+
 # tools/kb/kb_common.py -> repo root
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
@@ -15,7 +17,7 @@ MOD_DIR_RE = re.compile(r"^\d+[-_]")
 NUMBER_RE = re.compile(r"^(\d+)")
 VERSION_DIR_RE = re.compile(r"^1\.\d+$")
 
-# 两级分类：大类（自建/收集）+ 功能前缀（与 mod-index Type 一致）
+# Legacy two-level categories. New mods live under mods/{owned,collected}.
 CATEGORY_DIRS = ("自建", "收集")
 FUNC_PREFIX_RE = re.compile(r"^(standalone|patch|xml|translation|lib|empty|special)[-_]")
 
@@ -27,23 +29,30 @@ TEMPLATE_MARKERS = [
 ]
 
 KB_DIR = REPO_ROOT / "docs" / "knowledge"
-INDEX_JSON = KB_DIR / "kb-index.json"
-INDEX_MD = KB_DIR / "mod-index.md"
+INDEX_DIR = KB_DIR / "indexes"
+INDEX_JSON = INDEX_DIR / "mods.json"
+INDEX_MD = INDEX_DIR / "mods.md"
+# Transitional aliases used by older scripts; target files are in indexes/.
+LEGACY_INDEX_JSON = KB_DIR / "indexes/mods.json"
+LEGACY_INDEX_MD = KB_DIR / "indexes/mods.md"
 AUTO_START = "<!-- AUTO-GENERATED-START -->"
 AUTO_END = "<!-- AUTO-GENERATED-END -->"
 MANUAL_START = "<!-- MANUAL-START -->"
 MANUAL_END = "<!-- MANUAL-END -->"
 
 
+def _registry() -> dict:
+    return stable_registry.load_registry()
+
+
 def mod_dirs() -> list[Path]:
-    """Return all mod directories under the 自建/ and 收集/ category folders."""
-    dirs = []
-    for cat in CATEGORY_DIRS:
-        cat_dir = REPO_ROOT / cat
-        if cat_dir.is_dir():
-            dirs.extend(p for p in cat_dir.iterdir()
-                        if p.is_dir() and MOD_DIR_RE.match(p.name))
-    return sorted(dirs, key=lambda p: p.name)
+    """Return active mod directories from the registry.
+
+    The registry makes this tool compatible with both the legacy 自建/收集
+    layout and the future mods/owned + mods/collected layout.  A mod present in
+    both places is an error rather than a silent duplicate.
+    """
+    return [path for _mod_id, path in stable_registry.all_active_mod_dirs(_registry())]
 
 
 def _child_text(elem: ET.Element, tag: str) -> str:
@@ -94,11 +103,9 @@ def _parse_about_text(about_path: Path, data: dict) -> dict:
     sv = re.search(r"<supportedVersions>(.*?)</supportedVersions>", raw, re.S)
     if sv:
         data["supported_versions"] = re.findall(r"<li>\s*(1\.\d+)\s*</li>", sv.group(1))
-    data["deps"] = re.findall(
-        r"<modDependencies>(.*?)</modDependencies>", raw, re.S)[0:] and re.findall(
-        r"<packageId>\s*([^<\s]+)\s*</packageId>",
-        re.search(r"<modDependencies>(.*?)</modDependencies>", raw, re.S).group(1)) \
-        if re.search(r"<modDependencies>(.*?)</modDependencies>", raw, re.S) else []
+    deps = re.search(r"<modDependencies>(.*?)</modDependencies>", raw, re.S)
+    if deps:
+        data["deps"] = re.findall(r"<packageId>\s*([^<\s]+)\s*</packageId>", deps.group(1))
     la = re.search(r"<loadAfter>(.*?)</loadAfter>", raw, re.S)
     if la:
         data["load_after"] = re.findall(r"<li>\s*([^<\s]+)\s*</li>", la.group(1))
@@ -121,14 +128,31 @@ def readme_status(readme_path: Path) -> str:
     return "ok"
 
 
-def probe_mod(mod_dir: Path) -> dict:
-    """Collect structural facts about one mod directory."""
-    m = NUMBER_RE.match(mod_dir.name)
-    number = m.group(1) if m else ""
+def _legacy_metadata(mod_dir: Path, registry_entry: dict | None) -> tuple[str, str, str]:
+    """Return category, legacy number and title for old and target layouts."""
+    if registry_entry:
+        return (
+            registry_entry.get("category", ""),
+            _legacy_number(registry_entry.get("legacy_paths", [""])[0]),
+            registry_entry.get("display_name") or registry_entry.get("id", mod_dir.name),
+        )
+    number = NUMBER_RE.match(mod_dir.name)
+    category = mod_dir.parent.name if mod_dir.parent.name in CATEGORY_DIRS else ""
     title = FUNC_PREFIX_RE.sub(
         "", NUMBER_RE.sub("", mod_dir.name, count=1).lstrip("-_ "), count=1
     ) or mod_dir.name
-    category = mod_dir.parent.name if mod_dir.parent.name in CATEGORY_DIRS else ""
+    return category, number.group(1) if number else "", title
+
+
+def _legacy_number(value: str) -> str:
+    match = NUMBER_RE.match(value)
+    return match.group(1) if match else ""
+
+
+def probe_mod(mod_dir: Path, registry_entry: dict | None = None) -> dict:
+    """Collect structural facts about one mod directory."""
+    category, number, title = _legacy_metadata(mod_dir, registry_entry)
+    mod_id = (registry_entry or {}).get("id", mod_dir.name)
 
     about_top = mod_dir / "About" / "About.xml"
     about_backup = mod_dir / "backup" / "About" / "About.xml"
@@ -137,8 +161,6 @@ def probe_mod(mod_dir: Path) -> dict:
     about = parse_about(about_top if has_about else about_backup) if (has_about or in_backup) else {}
 
     def _real_version_dirs(d: Path) -> list[str]:
-        """Version subdirs that actually contain files (ignore ghost/empty dirs
-        which git does not track, keeping local scan == CI scan)."""
         return sorted(
             sub.name for sub in d.iterdir()
             if sub.is_dir() and VERSION_DIR_RE.match(sub.name)
@@ -179,7 +201,9 @@ def probe_mod(mod_dir: Path) -> dict:
     )
 
     mod = {
-        "dir": mod_dir.name,
+        "id": mod_id,
+        "dir": str(mod_dir.relative_to(REPO_ROOT)).replace("\\", "/"),
+        "legacy_dir": mod_dir.name,
         "category": category,
         "number": number,
         "title": title,
@@ -205,15 +229,14 @@ def probe_mod(mod_dir: Path) -> dict:
 
 
 def classify(mod: dict) -> tuple[str, str]:
-    """Type classification. Directory func prefix (自建/收集/NN-功能-名称) is
-    the authoritative source (conf=high); fall back to heuristics otherwise."""
-    stem = NUMBER_RE.sub("", mod["dir"], count=1).lstrip("-_ ")
+    """Type classification. Existing data remains authoritative; fall back to heuristics."""
+    stem = NUMBER_RE.sub("", mod["legacy_dir"], count=1).lstrip("-_ ")
     m = FUNC_PREFIX_RE.match(stem)
     if m:
         return m.group(1), "high"
     if not mod.get("has_about") and not mod.get("in_backup"):
         return "empty", "high"
-    dirname = mod["dir"].lower()
+    dirname = mod["legacy_dir"].lower()
     if re.search(r"zh", dirname):
         return "translation", "high"
     if not mod["has_csharp"]:
@@ -228,11 +251,17 @@ def classify(mod: dict) -> tuple[str, str]:
 
 
 def scan_all() -> list[dict]:
-    return [probe_mod(d) for d in mod_dirs()]
+    data = _registry()
+    rows = []
+    for entry in data.get("mods", []):
+        path = stable_registry.active_path_for(entry)
+        if path is not None:
+            rows.append(probe_mod(path, entry))
+    return sorted(rows, key=lambda m: (m["category"], m["id"]))
 
 
 def extract_manual(md_text: str) -> str | None:
-    """Extract the MANUAL section body (without the markers) from existing mod-index.md."""
+    """Extract the MANUAL section body (without the markers) from indexes/mods.md."""
     start = md_text.find(MANUAL_START)
     end = md_text.find(MANUAL_END)
     if start == -1 or end == -1 or end <= start:
