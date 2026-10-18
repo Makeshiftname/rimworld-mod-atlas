@@ -1,22 +1,23 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "rjw-fb",
   "package_id": "rjw.FB",
   "display_name": "RimJobWorld - FB（RJW 做爱感想·颜值）",
+  "origin": "collected",
   "authors": [
     "Ed86"
   ],
+  "author_evidence": [
+    "README 身份卡：Ed86（RJW 本体作者）"
+  ],
   "license": "未声明。无 LICENSE / LICENCE 文件",
+  "license_notes": "未声明；无 LICENSE。",
   "source_dir": "rjw-做爱感想-颜值",
   "status": "analyzed",
+  "analysis_tier": "deep",
   "modifications": [],
   "distilled_to": [
     "docs/knowledge/guides/mod-static-audit.md"
   ],
-  "origin": "collected",
-  "code_removed": false,
-  "author_evidence": [
-    "README 身份卡：Ed86（RJW 本体作者）"
-  ],
-  "license_notes": "未声明；无 LICENSE。"
+  "code_removed": false
 }

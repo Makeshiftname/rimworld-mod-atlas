@@ -1,22 +1,23 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "adaptive-simplestorage",
   "package_id": "Adaptive.SimpleStorage",
   "display_name": "Adaptive Simple Storage",
+  "origin": "collected",
   "authors": [
     "vin"
   ],
+  "author_evidence": [
+    "About.xml `<authors><li>vin</li></authors>`"
+  ],
   "license": "无。无 LICENSE / README.md / LoadFolders.xml；About.xml 无 <url>、无 <license>、无 modVersion",
+  "license_notes": "未声明；默认保留所有权利。",
   "source_dir": "3297307747",
   "status": "analyzed",
+  "analysis_tier": "deep",
   "modifications": [],
   "distilled_to": [
     "docs/knowledge/guides/mod-static-audit.md"
   ],
-  "origin": "collected",
-  "code_removed": false,
-  "author_evidence": [
-    "About.xml `<authors><li>vin</li></authors>`"
-  ],
-  "license_notes": "未声明；默认保留所有权利。"
+  "code_removed": false
 }

@@ -1,0 +1,20 @@
+{
+  "schema_version": 3,
+  "id": "<stable-id>",
+  "package_id": "",
+  "display_name": "",
+  "origin": "collected",
+  "authors": [],
+  "author_evidence": [],
+  "license": "未声明",
+  "license_notes": "",
+  "source_url": "",
+  "workshop_id": "",
+  "retrieved_at": "",
+  "source_dir": "",
+  "status": "analyzed",
+  "analysis_tier": "initial",
+  "modifications": [],
+  "distilled_to": [],
+  "code_removed": false
+}

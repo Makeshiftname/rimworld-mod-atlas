@@ -1,24 +1,25 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "unlimitedhugs-hugslib",
   "package_id": "UnlimitedHugs.HugsLib",
   "display_name": "HugsLib（`818773962`）— 分析记录",
+  "origin": "collected",
   "authors": [
     "UnlimitedHugs"
   ],
+  "author_evidence": [
+    "README 身份卡：UnlimitedHugs"
+  ],
   "license": "未声明（无 LICENSE；About.xml 无 <license>）",
+  "license_notes": "未声明；27 个 mod 依赖它，授权不明确影响面大。",
+  "source_url": "https://github.com/UnlimitedHugs/RimworldHugsLib",
+  "workshop_id": "818773962",
   "source_dir": "818773962",
   "status": "analyzed",
+  "analysis_tier": "deep",
   "modifications": [],
   "distilled_to": [
     "docs/knowledge/guides/cross-version-structure.md"
   ],
-  "origin": "collected",
-  "code_removed": false,
-  "author_evidence": [
-    "README 身份卡：UnlimitedHugs"
-  ],
-  "license_notes": "未声明；27 个 mod 依赖它，授权不明确影响面大。",
-  "source_url": "https://github.com/UnlimitedHugs/RimworldHugsLib",
-  "workshop_id": "818773962"
+  "code_removed": false
 }

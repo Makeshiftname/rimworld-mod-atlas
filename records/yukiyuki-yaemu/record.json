@@ -1,22 +1,23 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "yukiyuki-yaemu",
   "package_id": "yukiyuki.YAEMU",
   "display_name": "YAEMU / 八重律",
+  "origin": "collected",
   "authors": [
     "yukiyuki"
   ],
+  "author_evidence": [
+    "About.xml `<author>yukiyuki</author>`"
+  ],
   "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
+  "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。",
   "source_dir": "4 八重律",
   "status": "analyzed",
+  "analysis_tier": "deep",
   "modifications": [],
   "distilled_to": [
     "docs/knowledge/guides/mod-static-audit.md"
   ],
-  "origin": "collected",
-  "code_removed": false,
-  "author_evidence": [
-    "About.xml `<author>yukiyuki</author>`"
-  ],
-  "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。"
+  "code_removed": false
 }

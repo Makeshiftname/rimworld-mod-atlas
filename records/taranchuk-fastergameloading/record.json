@@ -1,23 +1,24 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "taranchuk-fastergameloading",
   "package_id": "Taranchuk.FasterGameLoading",
   "display_name": "Faster Game Loading - Continued（`3652938473`）— 分析记录",
+  "origin": "collected",
   "authors": [
     "綠菇（mushroomTW）—— Taranchuk 原版的维护分支"
   ],
-  "license": "MIT（LICENSE，Copyright (c) 2022 Taranchuk）",
-  "source_dir": "3652938473",
-  "status": "analyzed",
-  "modifications": [],
-  "distilled_to": [],
-  "origin": "collected",
-  "code_removed": false,
   "author_evidence": [
     "README 身份卡：綠菇（mushroomTW）；Taranchuk 原版维护分支",
     "LICENSE Copyright (c) 2022 Taranchuk"
   ],
+  "license": "MIT（LICENSE，Copyright (c) 2022 Taranchuk）",
   "license_notes": "当前为 mushroomTW 维护分支；沿用原 packageId。",
   "source_url": "https://github.com/mushroomTW/FasterGameLoading---Continued",
-  "workshop_id": "3652938473"
+  "workshop_id": "3652938473",
+  "source_dir": "3652938473",
+  "status": "analyzed",
+  "analysis_tier": "deep",
+  "modifications": [],
+  "distilled_to": [],
+  "code_removed": false
 }

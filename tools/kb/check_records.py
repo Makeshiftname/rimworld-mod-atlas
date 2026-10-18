@@ -1,11 +1,17 @@
 ﻿#!/usr/bin/env python3
 """Acceptance gate for the records/ area.
 
-Checks:
-  1. Every record has the required anchor sections.
-  2. metadata is complete and matches its directory.
-  3. source paths are classified as present/unavailable, never guessed.
-  4. records/README.md and records/index.json cover exactly the records.
+The record contract has two tiers:
+
+* ``initial``: identity, a quick scope check, explicit verified/unverified
+  lists, and next steps.  It cannot be distilled or carry modifications.
+* ``deep``: the four-anchor analysis, with conditional evidence sections and
+  distillation allowed only while the record is ``analyzed``.
+
+The checker validates structure and metadata, not the truth of prose.  It does
+not keyword-scan for negative claims; conditional evidence (positive control,
+self-correction, scope, unverified boundaries) is a review rule in
+``records/STANDARD.md``.
 """
 from __future__ import annotations
 
@@ -23,10 +29,14 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 RECORDS = ROOT / "records"
 INDEX = RECORDS / "index.json"
 README = RECORDS / "README.md"
-REQUIRED_ANCHORS = ("身份卡", "它是什么", "怎么验的", "可复用结论")
+SCHEMA_VERSION = 3
 MODS_DIR_ENV = os.environ.get("RIMWORLD_MODS_DIR", "").strip()
 DEFAULT_MODS_DIR = Path(MODS_DIR_ENV) if MODS_DIR_ENV else None
-STATUSES = {"raw", "analyzed", "needs-recheck", "superseded", "retired"}
+STATUSES = {"analyzed", "needs-recheck", "superseded", "retired"}
+INITIAL_ANCHORS = ("身份卡", "它是什么", "初步核验", "下一步")
+DEEP_ANCHORS = ("身份卡", "它是什么", "怎么验的", "可复用结论")
+INITIAL_SUBSECTIONS = ("已核验", "未核验")
+DEEP_OPTIONAL_SUBSECTIONS = ("范围", "方法", "阳性对照", "自查纠错", "未核验")
 
 
 def read(path: Path) -> str:
@@ -35,6 +45,66 @@ def read(path: Path) -> str:
 
 def h2_sections(text: str) -> set[str]:
     return {" ".join(m.group(1).split()) for m in re.finditer(r"(?m)^##\s+(.+?)\s*$", text)}
+
+
+def h2_body(text: str, heading: str) -> str:
+    match = re.search(
+        rf"(?ms)^##\s+{re.escape(heading)}\s*$\n(.*?)(?=^##\s+|\Z)",
+        text,
+    )
+    return match.group(1) if match else ""
+
+
+def h3_sections(text: str, parent: str) -> set[str]:
+    body = h2_body(text, parent)
+    return {" ".join(m.group(1).split()) for m in re.finditer(r"(?m)^###\s+(.+?)\s*$", body)}
+
+
+def subsection_body(text: str, parent: str, heading: str) -> str | None:
+    body = h2_body(text, parent)
+    match = re.search(
+        rf"(?ms)^###\s+{re.escape(heading)}\s*$\n(.*?)(?=^###\s+|^##\s+|\Z)",
+        body,
+    )
+    return match.group(1).strip() if match else None
+
+
+def validate_structure(metadata: dict, text: str) -> tuple[list[str], list[str]]:
+    """Validate one record's tier-specific skeleton."""
+    problems: list[str] = []
+    warnings: list[str] = []
+    tier = metadata.get("analysis_tier")
+    sections = h2_sections(text)
+    if tier == "initial":
+        missing = [name for name in INITIAL_ANCHORS if name not in sections]
+        if missing:
+            problems.append(f"initial record missing anchors: {', '.join(missing)}")
+        for forbidden in ("可复用结论", "修改建议"):
+            if forbidden in sections:
+                problems.append(f"initial record must not contain ## {forbidden}")
+        for name in INITIAL_SUBSECTIONS:
+            if name not in h3_sections(text, "初步核验"):
+                problems.append(f"initial record missing ### {name} under ## 初步核验")
+            elif not subsection_body(text, "初步核验", name):
+                problems.append(f"initial record has empty ### {name}")
+        if metadata.get("distilled_to"):
+            problems.append("initial record must not have distilled_to")
+    elif tier == "deep":
+        missing = [name for name in DEEP_ANCHORS if name not in sections]
+        if missing:
+            problems.append(f"deep record missing anchors: {', '.join(missing)}")
+        subs = h3_sections(text, "怎么验的")
+        for name in DEEP_OPTIONAL_SUBSECTIONS:
+            if name in subs and not subsection_body(text, "怎么验的", name):
+                problems.append(f"deep record has empty ### {name} under ## 怎么验的")
+        if metadata.get("distilled_to") and metadata.get("status") != "analyzed":
+            warnings.append(
+                f"deep record keeps distilled_to while status is "
+                f"{metadata.get('status')!r}; review the linked knowledge pages"
+            )
+    else:
+        problems.append("analysis_tier must be 'initial' or 'deep'")
+    return problems, warnings
 
 
 def complete_record_paths(source_dir: str) -> Path | None:
@@ -95,15 +165,23 @@ def main() -> int:
                     f"{directory.name}: registry record.path "
                     f"{record.get('path')!r} != records/{directory.name}"
                 )
-        missing = [key for key in ("schema_version", "id", "package_id", "display_name",
-                                   "authors", "license", "source_dir", "status",
-                                   "modifications", "distilled_to") if key not in metadata]
+        required = (
+            "schema_version", "id", "package_id", "display_name", "authors",
+            "license", "source_dir", "status", "analysis_tier", "modifications",
+            "distilled_to",
+        )
+        missing = [key for key in required if key not in metadata]
         if missing:
             problems.append(f"{directory.name}: record.json missing {', '.join(missing)}")
-        if not isinstance(metadata.get("schema_version"), int):
-            problems.append(f"{directory.name}: schema_version must be an integer")
-        elif metadata["schema_version"] < 2:
-            warnings.append(f"{directory.name}: legacy record schema_version {metadata['schema_version']}")
+        if metadata.get("schema_version") != SCHEMA_VERSION:
+            problems.append(
+                f"{directory.name}: schema_version {metadata.get('schema_version')!r}; "
+                f"expected {SCHEMA_VERSION} (run tools/kb/migrate_records_schema.py --write)"
+            )
+        if "verification_tier" in metadata:
+            problems.append(
+                f"{directory.name}: verification_tier was removed; use analysis_tier"
+            )
         if metadata.get("origin") not in (None, "owned", "collected"):
             problems.append(f"{directory.name}: invalid origin {metadata.get('origin')!r}")
         if metadata.get("status") not in STATUSES:
@@ -146,10 +224,6 @@ def main() -> int:
         source_dir = metadata.get("source_dir", "")
         if source_dir and not safe_relative(source_dir):
             problems.append(f"{directory.name}: unsafe source_dir {source_dir!r}")
-        if "verification_tier" in metadata:
-            tier = metadata["verification_tier"]
-            if tier not in (None, 1, 2, 3, 4):
-                problems.append(f"{directory.name}: verification_tier must be 1-4 or null")
         if "code_removed" in metadata and not isinstance(metadata["code_removed"], bool):
             problems.append(f"{directory.name}: code_removed must be boolean")
         if "source_url" in metadata and not isinstance(metadata["source_url"], str):
@@ -160,9 +234,9 @@ def main() -> int:
             r"\d{4}-\d{2}-\d{2}", str(metadata["retrieved_at"])
         ):
             problems.append(f"{directory.name}: retrieved_at must be YYYY-MM-DD")
-        missing_anchors = [a for a in REQUIRED_ANCHORS if a not in h2_sections(read(readme))]
-        if missing_anchors:
-            problems.append(f"{directory.name}: missing anchors {', '.join(missing_anchors)}")
+        structure_problems, structure_warnings = validate_structure(metadata, read(readme))
+        problems.extend(f"{directory.name}: {item}" for item in structure_problems)
+        warnings.extend(f"{directory.name}: {item}" for item in structure_warnings)
         if source_dir and DEFAULT_MODS_DIR is not None and DEFAULT_MODS_DIR.is_dir() \
                 and complete_record_paths(source_dir) is None:
             warnings.append(f"{directory.name}: source directory unavailable: {source_dir}")

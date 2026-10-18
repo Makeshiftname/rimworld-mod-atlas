@@ -1,20 +1,21 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "yukiyuki-fleshia",
   "package_id": "yukiyuki.FLESHIA",
   "display_name": "FLESHIA / 弗莱西雅",
+  "origin": "collected",
   "authors": [
     "yukiyuki"
   ],
-  "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
-  "source_dir": "6弗莱西雅",
-  "status": "analyzed",
-  "modifications": [],
-  "distilled_to": [],
-  "origin": "collected",
-  "code_removed": false,
   "author_evidence": [
     "About.xml `<author>yukiyuki</author>`"
   ],
-  "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。"
+  "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
+  "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。",
+  "source_dir": "6弗莱西雅",
+  "status": "analyzed",
+  "analysis_tier": "deep",
+  "modifications": [],
+  "distilled_to": [],
+  "code_removed": false
 }

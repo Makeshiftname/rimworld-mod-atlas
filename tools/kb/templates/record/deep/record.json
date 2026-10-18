@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "<stable-id>",
   "package_id": "",
   "display_name": "",
@@ -12,8 +12,8 @@
   "workshop_id": "",
   "retrieved_at": "",
   "source_dir": "",
-  "status": "raw",
-  "verification_tier": null,
+  "status": "analyzed",
+  "analysis_tier": "deep",
   "modifications": [],
   "distilled_to": [],
   "code_removed": false

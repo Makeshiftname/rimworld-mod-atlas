@@ -1,22 +1,23 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "readyforjeff-rjwpeculiarinstitution",
   "package_id": "readyforjeff.RJWPeculiarInstitution",
   "display_name": "Peculiar Institution",
+  "origin": "collected",
   "authors": [
     "readyforjeff"
   ],
+  "author_evidence": [
+    "README 身份卡：readyforjeff"
+  ],
   "license": "无。无 LICENSE、README 无许可声明 → 未声明许可",
+  "license_notes": "未声明；无 LICENSE。",
   "source_dir": "RJW_机制_小妾项圈",
   "status": "analyzed",
+  "analysis_tier": "deep",
   "modifications": [],
   "distilled_to": [
     "docs/knowledge/guides/mod-static-audit.md"
   ],
-  "origin": "collected",
-  "code_removed": false,
-  "author_evidence": [
-    "README 身份卡：readyforjeff"
-  ],
-  "license_notes": "未声明；无 LICENSE。"
+  "code_removed": false
 }

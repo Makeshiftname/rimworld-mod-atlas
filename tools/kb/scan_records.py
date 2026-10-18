@@ -20,8 +20,12 @@ AUTO_START = "<!-- AUTO-GENERATED-START -->"
 AUTO_END = "<!-- AUTO-GENERATED-END -->"
 REQUIRED = (
     "schema_version", "id", "package_id", "display_name", "authors", "license",
-    "source_dir", "status", "modifications", "distilled_to",
+    "source_dir", "status", "analysis_tier", "modifications", "distilled_to",
 )
+ANCHORS = {
+    "initial": ("身份卡", "它是什么", "初步核验", "下一步"),
+    "deep": ("身份卡", "它是什么", "怎么验的", "可复用结论"),
+}
 
 
 def load_records() -> list[dict]:
@@ -39,11 +43,13 @@ def load_records() -> list[dict]:
             raise SystemExit(f"{metadata_path}: missing {', '.join(missing)}")
         if metadata["id"] != directory.name:
             raise SystemExit(f"{metadata_path}: id does not match directory")
+        if metadata.get("analysis_tier") not in ANCHORS:
+            raise SystemExit(f"{metadata_path}: analysis_tier must be initial or deep")
         readme = directory / "README.md"
         if not readme.is_file():
             raise SystemExit(f"missing record README: {directory.name}")
         text = readme.read_text(encoding="utf-8", errors="replace")
-        missing_sections = [name for name in ("身份卡", "它是什么", "怎么验的", "可复用结论")
+        missing_sections = [name for name in ANCHORS[metadata["analysis_tier"]]
                             if f"## {name}" not in text]
         if missing_sections:
             raise SystemExit(f"{readme}: missing sections {', '.join(missing_sections)}")
@@ -54,15 +60,16 @@ def load_records() -> list[dict]:
 
 def build_table(rows: list[dict]) -> str:
     lines = [
-        "| ID | 记录 | packageId | 作者 | 状态 | 提炼 |",
-        "|---|---|---|---|---|---|",
+        "| ID | 档 | 记录 | packageId | 作者 | 状态 | 提炼 |",
+        "|---|---|---|---|---|---|---|",
     ]
     for row in rows:
         authors = "、".join(row.get("authors", [])) or "—"
         pid = row.get("package_id") or "—"
         distilled = len(row.get("distilled_to", []))
+        tier = "初步" if row.get("analysis_tier") == "initial" else "深度"
         lines.append(
-            f"| `{row['id']}` | [{row['display_name']}]({row['_readme']}) | `{pid}` | "
+            f"| `{row['id']}` | {tier} | [{row['display_name']}]({row['_readme']}) | `{pid}` | "
             f"{authors} | {row['status']} | {distilled or '—'} |"
         )
     return "\n".join(lines)

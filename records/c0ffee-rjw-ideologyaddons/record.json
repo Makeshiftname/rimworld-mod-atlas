@@ -1,22 +1,23 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "c0ffee-rjw-ideologyaddons",
   "package_id": "c0ffee.rjw.IdeologyAddons",
   "display_name": "C0ffeeRIA（C0ffee's RJW Ideology Addons）",
+  "origin": "collected",
   "authors": [
     "C0ffee"
   ],
+  "author_evidence": [
+    "About.xml `<author>` 单数：C0ffee"
+  ],
   "license": "无。无 LICENSE、无 README、无 <url> 之外的法律声明",
+  "license_notes": "未声明；上游仓库许可未核实。",
   "source_dir": "RJW_文化_咖啡的人奶文化",
   "status": "analyzed",
+  "analysis_tier": "deep",
   "modifications": [],
   "distilled_to": [
     "docs/knowledge/guides/mod-static-audit.md"
   ],
-  "origin": "collected",
-  "code_removed": false,
-  "author_evidence": [
-    "About.xml `<author>` 单数：C0ffee"
-  ],
-  "license_notes": "未声明；上游仓库许可未核实。"
+  "code_removed": false
 }

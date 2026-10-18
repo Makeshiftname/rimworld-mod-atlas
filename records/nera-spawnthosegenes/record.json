@@ -1,21 +1,22 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "nera-spawnthosegenes",
   "package_id": "Nera.SpawnThoseGenes",
   "display_name": "[BT] SpawnThoseGenes!（`2898044088`）— 分析记录",
+  "origin": "collected",
   "authors": [
     "Nera"
   ],
-  "license": "CC BY 4.0（LICENSE.txt）",
-  "source_dir": "2898044088",
-  "status": "analyzed",
-  "modifications": [],
-  "distilled_to": [],
-  "origin": "collected",
-  "code_removed": false,
   "author_evidence": [
     "README 身份卡：Nera（致谢 Operator）",
     "LICENSE.txt 开头为 CC BY 4.0"
   ],
-  "license_notes": "CC BY 4.0 通常用于内容；对源代码的适用性存疑。"
+  "license": "CC BY 4.0（LICENSE.txt）",
+  "license_notes": "CC BY 4.0 通常用于内容；对源代码的适用性存疑。",
+  "source_dir": "2898044088",
+  "status": "analyzed",
+  "analysis_tier": "deep",
+  "modifications": [],
+  "distilled_to": [],
+  "code_removed": false
 }

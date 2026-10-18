@@ -1,20 +1,21 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "id": "akt-ideology",
   "package_id": "AKT.Ideology",
   "display_name": "AKT_Ideology — 扶她文化（`RJW-文化-扶她文化`）— 分析记录",
+  "origin": "collected",
   "authors": [
     "AKawaiiTent"
   ],
-  "license": "未声明（无 LICENSE；素材二次编辑授权未核实）",
-  "source_dir": "RJW-文化-扶她文化（AKawaiiTent's Futa Ideology）",
-  "status": "analyzed",
-  "modifications": [],
-  "distilled_to": [],
-  "origin": "collected",
-  "code_removed": false,
   "author_evidence": [
     "About.xml 作者栏：AKawaiiTent"
   ],
-  "license_notes": "无 LICENSE；credits.txt 仅说明素材编辑自 VincentCC / Vitalis，未给原许可。"
+  "license": "未声明（无 LICENSE；素材二次编辑授权未核实）",
+  "license_notes": "无 LICENSE；credits.txt 仅说明素材编辑自 VincentCC / Vitalis，未给原许可。",
+  "source_dir": "RJW-文化-扶她文化（AKawaiiTent's Futa Ideology）",
+  "status": "analyzed",
+  "analysis_tier": "deep",
+  "modifications": [],
+  "distilled_to": [],
+  "code_removed": false
 }
