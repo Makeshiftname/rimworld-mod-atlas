@@ -1,6 +1,7 @@
 # 分析一个 mod：Agent 操作流程
 
-> 接手 Agent 先读本页，再按需要读 [`STANDARD.md`](STANDARD.md)。  
+> 接手 Agent 先读本页，再按需要读 [`STANDARD.md`](STANDARD.md)。
+
 > 用户可以直接说：**读 `records/AGENT_WORKFLOW.md`，按其中流程分析 `<mod>`，档位 `<initial/deep>`。**
 
 ## 1. 开工前先确认四件事
