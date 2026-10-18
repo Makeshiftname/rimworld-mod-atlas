@@ -34,16 +34,15 @@ def build_markdown(mods: list[dict]) -> str:
     lines = [
         "# Mod Index — RimWorld 知识库",
         "",
-        "> 元数据表由 `tools/kb/scan_mods.py` 自动生成，请勿手改本区间。",
-        "> 「要点与知识点链接」在文件末尾 `<!-- MANUAL -->` 区间内人工维护。",
+        "> 本索引由 `tools/kb/scan_mods.py` 自动生成，请勿手改。",
         "",
         "## 统计",
         "",
     ]
     cat_stats: dict[str, int] = {}
     for mod in mods:
-        category = mod.get("category", "")
-        cat_stats[category] = cat_stats.get(category, 0) + 1
+        origin = mod.get("origin", "")
+        cat_stats[origin] = cat_stats.get(origin, 0) + 1
     lines.append(
         f"- Mod 总数：**{len(mods)}**（"
         + "、".join(f"`{c}` × {n}" for c, n in sorted(cat_stats.items(), key=lambda x: x[1], reverse=True))
@@ -61,7 +60,7 @@ def build_markdown(mods: list[dict]) -> str:
     for mod in mods:
         versions = ",".join(mod["versions"]) or ("backup" if mod["in_backup"] else "-")
         lines.append(
-            f"| `{mod['id']}` | {mod['number']} | {mod.get('category', '')} | {mod['title']} | "
+            f"| `{mod['id']}` | {mod['number']} | {mod.get('origin', '')} | {mod['title']} | "
             f"{type_label(mod['type'], mod['type_conf'])} "
             f"| {versions} | {tick(mod['has_csharp'])} | {tick(mod['has_languages'])} "
             f"| {tick(mod['has_docs'])} | {tick(mod['has_tests'])} "
@@ -89,19 +88,12 @@ def write_index(mods: list[dict], json_only: bool = False) -> None:
         return
 
     auto = f"{kb.AUTO_START}\n{build_markdown(mods)}\n{kb.AUTO_END}"
-    manual = ""
-    if kb.INDEX_MD.exists():
-        existing = kb.INDEX_MD.read_text(encoding="utf-8", errors="replace")
-        body = kb.extract_manual(existing)
-        if body is not None:
-            manual = f"\n{kb.MANUAL_START}\n{body}\n{kb.MANUAL_END}\n"
-
     header = (
         "# RimWorld Mod 知识库 — Mod 索引\n\n"
-        "> 本文件两段式：上方「索引表」由脚本自动维护；下方「要点」为人工维护的"
-        "知识点与链接，脚本更新时保留不动。\n\n"
+        "> 本文件完全由 `tools/kb/scan_mods.py` 生成，请勿手改。\n"
+        "> 人工维护的单 mod 要点与链接见 [mods-notes.md](mods-notes.md)。\n\n"
     )
-    kb.INDEX_MD.write_text(header + auto + "\n" + manual, encoding="utf-8")
+    kb.INDEX_MD.write_text(header + auto + "\n", encoding="utf-8")
     print(f"wrote {kb.INDEX_MD}")
     print(f"wrote {kb.INDEX_JSON}")
 
@@ -119,7 +111,7 @@ def check_changes(mods: list[dict]) -> int:
     for mod_id in sorted(set(previous_by_id) - set(current_by_id)):
         changes.append(f"  [removed] {mod_id}")
     fields = (
-        "readme_status", "type", "versions", "has_csharp", "has_languages",
+        "origin", "readme_status", "type", "versions", "has_csharp", "has_languages",
         "has_docs", "has_tests", "has_agents", "has_publisher_plus", "dir",
     )
     for mod_id in sorted(set(current_by_id) & set(previous_by_id)):

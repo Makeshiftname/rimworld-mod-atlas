@@ -1,91 +1,112 @@
-﻿#!/usr/bin/env python3
-"""Generate or check the stable mod registry.
+#!/usr/bin/env python3
+"""Propose registry additions without overwriting the identity authority.
 
-The command reads the existing legacy directories, preserves every manually
-approved ID already present in ``mods/registry.json``, and only generates
-missing entries.  It never renames a mod and never writes outside the registry
-unless ``--write`` is supplied.
+``registry.json`` is manually maintained because it contains frozen IDs,
+aliases and retired/record-only decisions.  This helper scans the current
+filesystem and emits a *proposal* that preserves every existing object and
+adds only missing directories.  It never writes ``mods/registry.json``.
 """
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import kb_common as kb  # noqa: E402
-import registry  # noqa: E402
+import registry as stable_registry  # noqa: E402
+
+LEGACY_PARENTS = {"自建": "owned", "收集": "collected"}
+TARGET_PARENTS = {"mods/owned": "owned", "mods/collected": "collected"}
 
 
-def discover_legacy() -> list[dict]:
-    rows = []
-    for mod in kb.scan_all():
-        rows.append({
-            "category": registry.LEGACY_CATEGORIES.get(mod["category"], mod["category"]),
-            "dir": mod["dir"],
-            "legacy_path": f"{mod['category']}/{mod['dir']}",
-            "package_id": mod.get("package_id", ""),
-            "display_name": mod.get("name") or mod.get("title") or mod["dir"],
-            "type": mod.get("type", ""),
-        })
+def scan_dirs() -> list[dict]:
+    rows: list[dict] = []
+    for parent_name, origin in {**LEGACY_PARENTS, **TARGET_PARENTS}.items():
+        parent = kb.REPO_ROOT / parent_name
+        if not parent.is_dir():
+            continue
+        for child in sorted(parent.iterdir()):
+            if not child.is_dir() or child.name.startswith("."):
+                continue
+            probe = kb.probe_mod(child)
+            rows.append({
+                "origin": origin,
+                "legacy_path": f"{parent_name}/{child.name}",
+                "package_id": probe.get("package_id", ""),
+                "display_name": probe.get("name") or probe.get("title") or child.name,
+                "type": probe.get("type", ""),
+                "dirname": child.name,
+            })
     return rows
 
 
 def build_registry(existing: dict | None = None) -> dict:
-    existing = existing or {"schema_version": registry.SCHEMA_VERSION, "mods": []}
-    known = {tuple(e.get("legacy_paths", [])): e for e in existing.get("mods", [])}
-    known_by_pid = {e.get("package_id"): e for e in existing.get("mods", []) if e.get("package_id")}
-    discovered = discover_legacy()
-    counts = Counter(r["package_id"] for r in discovered if r["package_id"])
+    existing = existing or {"schema_version": stable_registry.SCHEMA_VERSION, "objects": []}
+    normalized = stable_registry.normalize_registry(existing)
+    objects = [dict(entry) for entry in normalized["objects"]]
 
-    entries = []
-    used: set[str] = set()
+    known_paths: dict[str, dict] = {}
+    for entry in objects:
+        code = entry.get("code") or {}
+        for path in code.get("legacy_paths", []):
+            known_paths[path] = entry
+        target = code.get("target_path")
+        if target:
+            known_paths[target] = entry
+
+    discovered = scan_dirs()
+    counts = Counter(row["package_id"] for row in discovered if row["package_id"])
+    used = {entry["id"] for entry in objects}
     for row in discovered:
-        old = known.get((row["legacy_path"],)) or known_by_pid.get(row["package_id"])
-        if old:
-            entry = dict(old)
-            entry.setdefault("legacy_paths", [row["legacy_path"]])
-            entry.setdefault("package_id", row["package_id"])
-            entry.setdefault("display_name", row["display_name"])
-            entry.setdefault("category", row["category"])
-            entry.setdefault("type", row["type"])
-            entry.setdefault("aliases", [])
-        else:
-            mod_id = registry.initial_id(row["package_id"], counts, row["dir"])
-            base = mod_id
-            n = 2
-            while mod_id in used:
-                mod_id = f"{base}-{n}"
-                n += 1
-            entry = {
-                "id": mod_id,
-                "category": row["category"],
-                "package_id": row["package_id"],
-                "display_name": row["display_name"],
-                "type": row["type"],
-                "aliases": [],
+        if row["legacy_path"] in known_paths:
+            continue
+        mod_id = stable_registry.initial_id(row["package_id"], counts, row["dirname"])
+        base = mod_id
+        n = 2
+        while mod_id in used:
+            mod_id = f"{base}-{n}"
+            n += 1
+        used.add(mod_id)
+        objects.append({
+            "id": mod_id,
+            "origin": row["origin"],
+            "package_id": row["package_id"],
+            "display_name": row["display_name"],
+            "aliases": [],
+            "code": {
                 "legacy_paths": [row["legacy_path"]],
-            }
-        used.add(entry["id"])
-        entries.append(entry)
-
-    entries.sort(key=lambda e: (e["category"], e["id"]))
-    return {"schema_version": registry.SCHEMA_VERSION, "mods": entries}
+                "target_path": f"mods/{row['origin']}/{mod_id}",
+            },
+            "record": None,
+            "type": row["type"],
+        })
+    objects.sort(key=lambda entry: (entry.get("origin", ""), entry["id"]))
+    return {"schema_version": stable_registry.SCHEMA_VERSION, "objects": objects}
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--write", action="store_true", help="write mods/registry.json")
-    args = ap.parse_args()
-    existing = registry.load_registry()
-    generated = build_registry(existing)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--write",
+        action="store_true",
+        help="write mods/registry.proposed.json (never the authority)",
+    )
+    args = parser.parse_args()
+    existing = stable_registry.load_registry()
+    proposed = build_registry(existing)
     if args.write:
-        registry.save_registry(generated)
-        print(f"wrote {registry.REGISTRY_PATH} ({len(generated['mods'])} mods)")
-        return 0
-    import json
-    print(json.dumps(generated, ensure_ascii=False, indent=2))
+        path = stable_registry.REPO_ROOT / "mods" / "registry.proposed.json"
+        path.write_text(
+            json.dumps(proposed, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(f"wrote proposal {path} ({len(proposed['objects'])} objects)")
+        print("review and merge manually; mods/registry.json was not changed")
+    else:
+        print(json.dumps(proposed, ensure_ascii=False, indent=2))
     return 0
 
 

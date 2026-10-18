@@ -37,8 +37,6 @@ LEGACY_INDEX_JSON = KB_DIR / "indexes/mods.json"
 LEGACY_INDEX_MD = KB_DIR / "indexes/mods.md"
 AUTO_START = "<!-- AUTO-GENERATED-START -->"
 AUTO_END = "<!-- AUTO-GENERATED-END -->"
-MANUAL_START = "<!-- MANUAL-START -->"
-MANUAL_END = "<!-- MANUAL-END -->"
 
 
 def _registry() -> dict:
@@ -129,11 +127,13 @@ def readme_status(readme_path: Path) -> str:
 
 
 def _legacy_metadata(mod_dir: Path, registry_entry: dict | None) -> tuple[str, str, str]:
-    """Return category, legacy number and title for old and target layouts."""
+    """Return origin, legacy number and title for old and target layouts."""
     if registry_entry:
+        code = registry_entry.get("code") or {}
+        legacy_paths = code.get("legacy_paths", [])
         return (
-            registry_entry.get("category", ""),
-            _legacy_number(registry_entry.get("legacy_paths", [""])[0]),
+            registry_entry.get("origin", ""),
+            _legacy_number(legacy_paths[0] if legacy_paths else ""),
             registry_entry.get("display_name") or registry_entry.get("id", mod_dir.name),
         )
     number = NUMBER_RE.match(mod_dir.name)
@@ -151,7 +151,7 @@ def _legacy_number(value: str) -> str:
 
 def probe_mod(mod_dir: Path, registry_entry: dict | None = None) -> dict:
     """Collect structural facts about one mod directory."""
-    category, number, title = _legacy_metadata(mod_dir, registry_entry)
+    origin, number, title = _legacy_metadata(mod_dir, registry_entry)
     mod_id = (registry_entry or {}).get("id", mod_dir.name)
 
     about_top = mod_dir / "About" / "About.xml"
@@ -204,7 +204,7 @@ def probe_mod(mod_dir: Path, registry_entry: dict | None = None) -> dict:
         "id": mod_id,
         "dir": str(mod_dir.relative_to(REPO_ROOT)).replace("\\", "/"),
         "legacy_dir": mod_dir.name,
-        "category": category,
+        "origin": origin,
         "number": number,
         "title": title,
         "has_about": has_about,
@@ -225,6 +225,9 @@ def probe_mod(mod_dir: Path, registry_entry: dict | None = None) -> dict:
         "notes_files": notes_files,
     }
     mod["type"], mod["type_conf"] = classify(mod)
+    if registry_entry and registry_entry.get("type"):
+        mod["type"] = registry_entry["type"]
+        mod["type_conf"] = "high"
     return mod
 
 
@@ -253,17 +256,8 @@ def classify(mod: dict) -> tuple[str, str]:
 def scan_all() -> list[dict]:
     data = _registry()
     rows = []
-    for entry in data.get("mods", []):
+    for entry in data.get("objects", []):
         path = stable_registry.active_path_for(entry)
         if path is not None:
             rows.append(probe_mod(path, entry))
-    return sorted(rows, key=lambda m: (m["category"], m["id"]))
-
-
-def extract_manual(md_text: str) -> str | None:
-    """Extract the MANUAL section body (without the markers) from indexes/mods.md."""
-    start = md_text.find(MANUAL_START)
-    end = md_text.find(MANUAL_END)
-    if start == -1 or end == -1 or end <= start:
-        return None
-    return md_text[start + len(MANUAL_START):end].strip("\n")
+    return sorted(rows, key=lambda m: (m["origin"], m["id"]))

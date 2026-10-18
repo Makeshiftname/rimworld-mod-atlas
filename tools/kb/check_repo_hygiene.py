@@ -55,7 +55,7 @@ def main() -> int:
         package_id = (mod.get("package_id") or "").strip()
         if package_id and PLACEHOLDER_PID.match(package_id):
             warnings.append(f"placeholder packageId '{package_id}' in {mod['id']} (registered, not fixed)")
-    for entry in stable_registry.load_registry().get("mods", []):
+    for entry in stable_registry.load_registry().get("objects", []):
         try:
             stable_registry.active_path_for(entry)
         except stable_registry.RegistryError as exc:
