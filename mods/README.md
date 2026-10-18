@@ -1,8 +1,10 @@
 ﻿# mods — 代码样本
 
-`mods/` 保存可运行的 mod 代码与资源，按授权与可发布边界分为：
+`mods/` 在 Atlas 中只保存本地第三方代码样本；原创生产代码在
+[`rimworld-mod-forge`](https://github.com/Makeshiftname/rimworld-mod-forge)。
+本地目录按授权与可发布边界分为：
 
-- [`owned/`](owned/)：仓库主本人原创，可实际维护与发布。
+- [`owned/`](owned/)：外部原创代码的登记占位；本地目录不再存放生产代码。
 - [`collected/`](collected/)：第三方 mod，仅作学习与本地审计，默认不改动本体。
 
 记录对象的稳定身份写在 [`registry.json`](registry.json)；分析记录在
@@ -17,7 +19,18 @@
 [`docs/knowledge/indexes/mods.md`](../docs/knowledge/indexes/mods.md)，因此删减、
 重排或补档不会改变引用。
 
-新内容直接放进对应大类，并在 registry 的 `code` / `record` 中登记。
+新的第三方样本放进 `collected/`，并在 registry 的 `code` / `record` 中登记。
+新的原创或补丁 mod 放进 forge，在 registry 中使用：
+
+```json
+"code": {
+  "kind": "external",
+  "repo": "https://github.com/Makeshiftname/rimworld-mod-forge",
+  "path": "mods/owned/<stable-id>",
+  "commit": "<固定 SHA>"
+}
+```
+
 已有旧目录先由 [`tools/kb/migrate_mods.py`](../tools/kb/migrate_mods.py)
 生成 plan 和 manifest，确认后才用 `--apply` 一次性迁移；apply 会同步重写
 第一方引用。

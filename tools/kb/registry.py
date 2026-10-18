@@ -1,6 +1,6 @@
 """Stable IDs and the mod identity registry.
 
-The registry is the single authority for repository identities.  Schema v3
+The registry is the single authority for repository identities.  Schema v4
 separates ownership/origin from the optional code and record locations:
 
     {
@@ -9,15 +9,25 @@ separates ownership/origin from the optional code and record locations:
       "package_id": "RunningBugs.AlertUtility",
       "aliases": ["01-standalone-AlertUtility"],
       "code": {
+        "kind": "local",
         "legacy_paths": ["收集/01-standalone-AlertUtility"],
         "target_path": "mods/collected/alert-utility"
       },
       "record": null
     }
 
+External code uses the same identity entry but points at another repository:
+
+    "code": {
+      "kind": "external",
+      "repo": "https://github.com/Makeshiftname/rimworld-mod-forge",
+      "path": "mods/owned/example-mod",
+      "commit": "0123456789abcdef0123456789abcdef01234567"
+    }
+
 Readers still accept the previous v2 shape (``mods`` + ``category`` +
 ``legacy_paths`` + ``record_paths``) so that the transition is expand/migrate/
-verify rather than a flag day.  ``load_registry`` always returns the v3 shape
+verify rather than a flag day.  ``load_registry`` always returns the v4 shape
 in memory; only the on-disk file is migrated.
 """
 from __future__ import annotations
@@ -36,8 +46,9 @@ LEGACY_CATEGORIES = {
 }
 ORIGINS = {"owned", "collected"}
 TARGET_CATEGORIES = ORIGINS
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 LEGACY_SCHEMA_VERSION = 2
+CODE_KINDS = {"local", "external"}
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 _SLUG_RE = re.compile(r"[^a-z0-9]+")
@@ -133,6 +144,18 @@ def _code_for(entry: dict[str, Any], origin: str) -> dict[str, Any] | None:
         if not paths or origin not in ORIGINS:
             return None
         result = {"legacy_paths": list(paths)}
+    kind = str(result.get("kind", "local")).strip()
+    if kind not in CODE_KINDS:
+        raise RegistryError(f"{entry.get('id', '?')}: invalid code.kind {kind!r}")
+    result["kind"] = kind
+    if kind == "external":
+        result["repo"] = str(result.get("repo", "")).strip()
+        result["path"] = _path_string(str(result.get("path", "")))
+        result["commit"] = str(result.get("commit", "")).strip()
+        result.pop("legacy_paths", None)
+        result.pop("target_path", None)
+        return result
+
     result["legacy_paths"] = [
         _path_string(str(path)) for path in result.get("legacy_paths", []) if str(path).strip()
     ]
@@ -262,7 +285,7 @@ def entry_for_legacy_path(data: dict[str, Any], relative_path: str) -> dict[str,
 def target_path_for(entry: dict[str, Any]) -> Path | None:
     normalized = normalize_entry(entry)
     code = normalized.get("code")
-    if code is None:
+    if code is None or code.get("kind") == "external":
         return None
     target = code.get("target_path", "")
     if not target:
@@ -273,6 +296,8 @@ def target_path_for(entry: dict[str, Any]) -> Path | None:
 def legacy_paths_for(entry: dict[str, Any]) -> list[Path]:
     normalized = normalize_entry(entry)
     code = normalized.get("code") or {}
+    if code.get("kind") == "external":
+        return []
     return [REPO_ROOT / path for path in code.get("legacy_paths", [])]
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Migrate mods/registry.json from schema v2 to v3.
+"""Migrate mods/registry.json from schema v2 to v4.
 
 The migration is intentionally one-way on disk, but the reader remains
 backward-compatible.  Run with ``--check`` first; ``--write`` is explicit.

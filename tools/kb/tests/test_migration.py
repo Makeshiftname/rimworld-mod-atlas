@@ -13,7 +13,7 @@ import migrate_mods
 
 def sample_data() -> dict:
     return {
-        "schema_version": 3,
+        "schema_version": 4,
         "objects": [
             {
                 "id": "demo",
@@ -70,6 +70,25 @@ class MigrationTests(unittest.TestCase):
             (root / "mods" / "collected" / "demo").rmdir()
             rows = migrate_mods.build_plan(root, sample_data())
             self.assertEqual(rows[0]["status"], "missing")
+
+    def test_external_code_entries_are_skipped(self):
+        data = sample_data()
+        data["objects"].append({
+            "id": "external-demo",
+            "origin": "owned",
+            "package_id": "Makeshiftname.ExternalDemo",
+            "display_name": "External Demo",
+            "aliases": [],
+            "code": {
+                "kind": "external",
+                "repo": "https://github.com/Makeshiftname/rimworld-mod-forge",
+                "path": "mods/owned/external-demo",
+                "commit": "9f0af55624ced0a14a89d2161ac82a8e3d64b757",
+            },
+            "record": None,
+        })
+        rows = migrate_mods.build_plan(ROOT, data)
+        self.assertEqual([row["id"] for row in rows], ["demo"])
 
     def test_rewrite_is_limited_to_first_party_files(self):
         with tempfile.TemporaryDirectory() as tmp:

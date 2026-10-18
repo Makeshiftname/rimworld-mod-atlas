@@ -26,18 +26,34 @@ docs/knowledge/
    `analysis_tier: deep` 且 `status: analyzed` 的记录才可能进入
    `guides/reference/mechanics`。
 3. **稳定 ID**：目录、记录和知识页引用使用 `mods/registry.json` 登记的稳定 ID；
-   registry 是人工维护的 schema v3 身份表，`code` 与 `record` 分开登记。
+   registry 是人工维护的 schema v4 身份表，`code` 与 `record` 分开登记，
+   `code.kind` 区分本地代码与外部仓库。
 4. **链接相对所在文件解析**：迁移后优先用注册表 ID 或脚本生成的相对路径，不手写旧编号。
 
 ## 更新场景
 
-### A. 新增代码样本
+### A. 新增本地代码样本
 
-1. 放进 `mods/owned/<stable-id>/` 或 `mods/collected/<stable-id>/`。
+1. 放进 `mods/collected/<stable-id>/`。
 2. 在 `mods/registry.json` 登记 `id`、`origin`、`packageId`、别名和
    `code.legacy_paths` / `code.target_path`；作者与许可写进 `record.json`。
 3. 运行 `python tools/kb/scan_mods.py`。
 4. 运行 `python tools/kb/scan_records.py --check` 与 `python tools/kb/check_all.py`。
+
+### A2. 登记外部原创/补丁 mod
+
+生产代码在 `rimworld-mod-forge`，不在 Atlas 复制。registry 使用：
+
+```json
+"code": {
+  "kind": "external",
+  "repo": "https://github.com/Makeshiftname/rimworld-mod-forge",
+  "path": "mods/owned/<stable-id>",
+  "commit": "<固定 SHA>"
+}
+```
+
+`scan_mods.py` 会跳过外部代码；`check_registry.py` 只校验 URL、相对路径和 commit。
 
 ### B. 新增或修改分析记录
 
@@ -55,7 +71,7 @@ docs/knowledge/
 
 ### B2. 删除或退役一个代码样本
 
-1. 从 `mods/` 或旧 `收集/`、`自建/` 删除代码目录。
+1. 从 `mods/collected/` 或旧 `收集/` 删除代码目录。
 2. 保留 `records/<id>/`，在 `record.json` 设置 `code_removed: true`；
    registry 条目可设置 `retired: true`。
 3. 如果该记录来源的知识页仍依赖它，把相关结论标为
@@ -71,7 +87,7 @@ docs/knowledge/
    `## 来源记录` 段。
 4. 运行 `python tools/kb/check_all.py`。
 
-### D. 迁移旧 `收集/`、`自建/` 到 `mods/`
+### D. 迁移旧 `收集/` 到 `mods/collected/`
 
 1. 运行 `python tools/kb/migrate_mods.py --json` 查看包含文件数和冲突的计划。
 2. 确认无 `missing` / `conflict` 后运行 `python tools/kb/migrate_mods.py --apply`；

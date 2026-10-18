@@ -5,7 +5,8 @@
 仓库同时保存三类不同产物，并让它们保持单向、可追踪的关系：
 
 ```text
-mods/{owned,collected}/<stable-id>/   可运行的 mod 代码与资源
+mods/collected/<stable-id>/            本地第三方代码样本
+rimworld-mod-forge (external)          原创与补丁 mod 的生产仓库
         │
         │ 分析
         ▼
@@ -16,18 +17,20 @@ records/<stable-id>/                  单个 mod 的调查档案、证据、建�
 docs/knowledge/                       跨 mod 通用知识
 ```
 
-## 四个区域
+## 区域职责
 
 | 区域 | 职责 | 是否可直接改 |
 |---|---|---|
-| `mods/` | 可运行代码样本；`owned/` 原创，`collected/` 第三方 | 只改 `owned/`；`collected/` 视为只读 |
+| `mods/` | 本地代码样本；`collected/` 第三方，`owned/` 只保留外部登记说明 | `collected/` 视为只读；生产代码在 forge 修改 |
+| registry `code.kind: external` | 指向 forge/forks 的仓库、路径和 commit | 只改元数据，不复制外部代码 |
 | `records/` | 单个 mod 的分析；初步档做分流，深度档保留“它是什么 / 怎么验的 / 可复用结论 / 修改建议” | 可以追加调查与纠错 |
 | `docs/knowledge/` | 经审核提炼的通用知识 | 可以维护，但必须能追溯来源 |
 | `tools/` | 生成索引、迁移路径、运行门禁的 Python 标准库工具 | 可以改，但必须保留 dry-run 与验收 |
 
-`mods/` 暂未迁移现有代码样本：当前 `自建/`、`收集/` 仍在原位，由
+`mods/collected/` 暂未迁移现有 86 个 `收集/` 代码样本，由
 `mods/registry.json` 统一登记旧路径与目标路径。删减完成后运行一次
-manifest 预览，确认后再 `--apply`。
+manifest 预览，确认后再 `--apply`。原创生产代码不在 Atlas 本地保存，
+通过 `code.kind: external` 指向 `rimworld-mod-forge`。
 
 ## 真相源
 
@@ -45,8 +48,10 @@ manifest 预览，确认后再 `--apply`。
 ## 稳定 ID
 
 - 唯一权威来源：`mods/registry.json`。
-- schema v3 把 `origin` 与 `code` / `record` 分开；`record-only` 不再是一个
-  容易与来源混淆的目录类别。
+- schema v4 把 `origin` 与 `code` / `record` 分开；`code.kind` 区分
+  `local` 与 `external`，`record-only` 不再是一个容易与来源混淆的目录类别。
+- 外部代码必须登记 `repo`、`path` 和固定 `commit`；Atlas 不 clone、不扫描
+  外部仓库，只校验元数据。
 - ID 使用小写 ASCII slug；`packageId` 是独立字段和 alias。新 ID 不再机械
   等于 `packageId`，占位 packageId、中文名和无 packageId 对象必须人工命名。
 - 目录名一旦使用稳定 ID 就不再变更；编号、类型、显示名和路径都可以在索引或
@@ -76,15 +81,32 @@ manifest 预览，确认后再 `--apply`。
 
 ## 新增与维护
 
-### 新增一个代码样本
+### 新增一个本地第三方代码样本
 
-1. 放进 `mods/owned/<stable-id>/` 或 `mods/collected/<stable-id>/`。
+1. 放进 `mods/collected/<stable-id>/`。
 2. 在 `mods/registry.json` 登记 `id`、`origin`、`packageId`、别名，以及
    `code.legacy_paths` / `code.target_path`。作者和许可写进 `record.json`，
    不要重复塞进 registry。
 3. 运行 `python tools/kb/scan_mods.py`，把元数据刷新到
    `docs/knowledge/indexes/`。
 4. 运行 `python tools/kb/check_all.py`。
+
+### 新增一个外部原创/补丁 mod
+
+1. 生产代码放进 `rimworld-mod-forge` 或 `rimworld-mod-forks`，不在 Atlas 复制。
+2. 在 `mods/registry.json` 登记稳定 ID、`packageId` 和外部代码位置：
+
+   ```json
+   "code": {
+     "kind": "external",
+     "repo": "https://github.com/Makeshiftname/rimworld-mod-forge",
+     "path": "mods/owned/<stable-id>",
+     "commit": "<固定 SHA>"
+   }
+   ```
+
+3. 需要分析记录时，在 `records/<stable-id>/` 建立记录，并链接回具体 commit。
+4. 运行 `python tools/kb/check_all.py`；`scan_mods.py` 不会扫描外部代码。
 
 ### 新增一份分析记录
 

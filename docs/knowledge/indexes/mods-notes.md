@@ -81,11 +81,12 @@
 - 注：32（special）/ 43（standalone）为**合作作者**（author 含 RunningBugs），非纯第三方。
 - 添加第三方 mod 流程：克隆到 `收集/NN-功能-名称` 目录 → 保留 `LICENSE` 与 `<author>`（原作者）→ 写收藏版 README（来源+许可+学习点）→ `scan_mods.py` 刷新（检测到 `third-party author` 警告属预期）→ `check_links.py` 验收。
 
-### 8. 自建 mod（仓库主本人原创 · 可实际使用）
+### 8. 原创 mod（生产代码在外部仓库）
 
-- **自建/01-xml-RimTalkPersonaTraits** — 轻量级角色扮演向特质包：10 个「对话人设」特质（性格/说话风格/嗜好），
+- **rimtalk-persona-traits** — 轻量级角色扮演向特质包：10 个「对话人设」特质（性格/说话风格/嗜好），
   0 数值、纯描述、纯 XML（无 C#），描述专为 RimTalk 提示词注入优化（`{PAWN_...}` 占位符 + 写明说话方式/话题）。
-  packageId `RunningBugs.RimTalkPersonaTraits`，1.6，中文翻译见 `Languages/`。
-  `自建/` 大类目录 + README 顶部徽标 + 本小节 = 与第三方收录/学习类 mod 区分的**三重自建标注**。
-  详情见 `自建/01-xml-RimTalkPersonaTraits/README.md`。
-- 后续新建可实际使用的原创 mod，放进 `自建/` 大类（`NN-功能-名称`），并在本小节登记。
+  packageId `Makeshiftname.RimTalkPersonaTraits`，当前验证 1.6，中文翻译见 `Languages/`。
+  生产代码与构建配置在
+  [`rimworld-mod-forge/mods/owned/rimtalk-persona-traits`](https://github.com/Makeshiftname/rimworld-mod-forge/tree/main/mods/owned/rimtalk-persona-traits)，
+  Atlas registry 使用 `code.kind: external` 指向该目录。
+- 后续原创 mod 不再放进 Atlas，而是在 `rimworld-mod-forge` 开发；Atlas 只登记身份和可复用分析。

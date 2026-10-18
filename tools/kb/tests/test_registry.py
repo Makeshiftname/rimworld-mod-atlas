@@ -37,7 +37,7 @@ class RegistryTests(unittest.TestCase):
             "targetline",
         )
 
-    def test_v2_registry_normalizes_to_v3(self):
+    def test_v2_registry_normalizes_to_v4(self):
         data = {
             "mods": [
                 {
@@ -69,6 +69,35 @@ class RegistryTests(unittest.TestCase):
         self.assertEqual(registry.entry_kind(entry), "code+record")
         self.assertEqual(entry["code"]["target_path"], "mods/owned/demo")
         self.assertEqual(entry["record"]["path"], "records/demo")
+
+    def test_external_code_is_not_a_local_path(self):
+        entry = registry.normalize_entry({
+            "id": "external-demo",
+            "origin": "owned",
+            "package_id": "Makeshiftname.ExternalDemo",
+            "display_name": "External Demo",
+            "aliases": [],
+            "code": {
+                "kind": "external",
+                "repo": "https://github.com/Makeshiftname/rimworld-mod-forge",
+                "path": "mods/owned/external-demo",
+                "commit": "9f0af55624ced0a14a89d2161ac82a8e3d64b757",
+            },
+            "record": None,
+        })
+        self.assertEqual(entry["code"]["kind"], "external")
+        self.assertIsNone(registry.target_path_for(entry))
+        self.assertEqual([], registry.legacy_paths_for(entry))
+        self.assertIsNone(registry.active_path_for(entry))
+        self.assertEqual("code", registry.entry_kind(entry))
+
+    def test_invalid_code_kind_is_rejected(self):
+        with self.assertRaises(registry.RegistryError):
+            registry.normalize_entry({
+                "id": "bad",
+                "origin": "owned",
+                "code": {"kind": "somewhere"},
+            })
 
     def test_aliases_resolve(self):
         data = {"objects": [{"id": "x", "aliases": ["old-x"]}]}

@@ -31,7 +31,10 @@ maintained:
 
 - `id` is stable and used by records and knowledge links.
 - `origin` is `owned` or `collected`.
-- `code.legacy_paths` and `code.target_path` describe the code sample.
+- `code.kind` is `local` or `external`.
+- Local code uses `code.legacy_paths` and `code.target_path`.
+- External code uses `code.repo`, `code.path` and a pinned `code.commit`;
+  Atlas does not clone or scan that repository.
 - `record` describes the analysis; `code: null` means the object has a record
   but no local code sample.
 - `record.json.analysis_tier` is `initial` or `deep`; initial records cannot
@@ -39,11 +42,11 @@ maintained:
 - `aliases` handle old directory names and renamed IDs.
 
 `gen_registry.py` only writes `mods/registry.proposed.json`; it never overwrites
-the authority. `migrate_registry_schema.py` is the explicit v2 → v3 metadata
+the authority. `migrate_registry_schema.py` is the explicit v2 → v4 metadata
 migration.
 
 ```powershell
-python tools/kb/migrate_registry_schema.py          # check v2 -> v3
+python tools/kb/migrate_registry_schema.py          # check v2 -> v4
 python tools/kb/migrate_registry_schema.py --write  # explicit one-way migration
 python tools/kb/migrate_records_schema.py --write   # records -> schema v3
 python tools/kb/gen_registry.py --write             # proposal only

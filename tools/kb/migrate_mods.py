@@ -32,6 +32,8 @@ def build_plan(root: Path = REPO_ROOT, data: dict | None = None) -> list[dict]:
     rows: list[dict] = []
     for entry in stable_registry.iter_code_entries(data):
         code = entry.get("code") or {}
+        if code.get("kind") == "external":
+            continue
         target = root / code.get("target_path", "")
         legacy = [root / path for path in code.get("legacy_paths", []) if (root / path).exists()]
         if not code.get("target_path"):

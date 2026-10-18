@@ -15,11 +15,12 @@
 
 ## 目录与编辑边界
 
-- `mods/owned/` 与现有 `自建/`：仓库主原创，可按任务修改。
+- `mods/owned/`：不再保存本地生产代码；原创 mod 在 `rimworld-mod-forge`，
+  本仓库只通过 registry 的 `code.kind: external` 登记位置。
 - `mods/collected/` 与现有 `收集/`：第三方供应内容，默认只读；不要改 About/C#/Defs/资源。
 - `records/`：分析档案；保留证据与纠错，不删除反面发现。
 - `docs/knowledge/`：只放经审核的通用结论；单 mod 专属信息留在记录。
-- `mods/registry.json` 是稳定 ID 唯一权威；schema v3 使用 `origin + code + record`，
+- `mods/registry.json` 是稳定 ID 唯一权威；schema v4 使用 `origin + code + record`，
   该文件人工维护，不能由脚本覆盖。
 
 ## 常用命令

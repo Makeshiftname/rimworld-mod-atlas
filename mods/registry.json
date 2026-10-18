@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "objects": [
     {
       "id": "cj-rimtalk",
@@ -1292,16 +1292,19 @@
       "type": "patch"
     },
     {
-      "id": "runningbugs-rimtalkpersonatraits",
+      "id": "rimtalk-persona-traits",
       "origin": "owned",
-      "package_id": "RunningBugs.RimTalkPersonaTraits",
+      "package_id": "Makeshiftname.RimTalkPersonaTraits",
       "display_name": "RimTalk 人设特质包 RimTalk Persona Traits",
-      "aliases": [],
+      "aliases": [
+        "runningbugs-rimtalkpersonatraits",
+        "RunningBugs.RimTalkPersonaTraits"
+      ],
       "code": {
-        "legacy_paths": [
-          "自建/01-xml-RimTalkPersonaTraits"
-        ],
-        "target_path": "mods/owned/runningbugs-rimtalkpersonatraits"
+        "kind": "external",
+        "repo": "https://github.com/Makeshiftname/rimworld-mod-forge",
+        "path": "mods/owned/rimtalk-persona-traits",
+        "commit": "9f0af55624ced0a14a89d2161ac82a8e3d64b757"
       },
       "record": null,
       "type": "xml"

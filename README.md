@@ -8,14 +8,18 @@
 - 我要看某个 mod 的分析 → [`records/README.md`](records/README.md)
 - 我是 Agent，要开始分析一个 mod → [`records/AGENT_WORKFLOW.md`](records/AGENT_WORKFLOW.md)
 - 我要找可运行代码样本 → [`mods/README.md`](mods/README.md)
+- 我要开发原创或补丁 mod → [`rimworld-mod-forge`](https://github.com/Makeshiftname/rimworld-mod-forge)
 - 我想了解目录职责与扩展规则 → [`ARCHITECTURE.md`](ARCHITECTURE.md)
 - 我想看当前迁移阶段与阻断 → [`docs/STATUS.md`](docs/STATUS.md)
 
 ## 当前状态
 
-`mods/` 目标结构、schema v3 稳定 ID 注册表与带引用重写的迁移器已经就位；
-现有 `收集/`、`自建/` 代码样本暂时保留原位，等删减完成后按架构文档一次性迁入
-`mods/`。
+`mods/registry.json` 已升级为 schema v4：本地代码样本使用 `code.kind: local`，
+生产代码可以直接登记为另一个仓库中的 `code.kind: external`。
+原 `自建/01-xml-RimTalkPersonaTraits` 草稿已迁入
+[`rimworld-mod-forge`](https://github.com/Makeshiftname/rimworld-mod-forge)，
+Atlas 不再保留该草稿的生产代码，只保留稳定 ID、记录和知识索引。现有 86 个 `收集/` 代码样本仍在原位，
+等删减完成后按架构文档一次性迁入 `mods/collected/`。
 
 ## 常用门禁
 
@@ -27,4 +31,5 @@ python tools/kb/check_all.py
 
 ## 许可
 
-`自建/` 与未来 `mods/owned/` 下的原创 mod 使用 [MIT 许可](LICENSE)。`收集/` 与未来 `mods/collected/` 下的第三方 mod 保留各自许可，仅供本地学习，不擅自再发布。
+本仓库中的第三方样本和知识材料保留各自许可，仅供学习与本地审计，不擅自再发布。
+Makeshiftname 的原创生产 mod 位于 `rimworld-mod-forge`，使用该仓库自己的 MIT 许可。

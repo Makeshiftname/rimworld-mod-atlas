@@ -5,8 +5,8 @@
 
 ## 当前阶段
 
-- `mods/registry.json` 已升级为 schema v3：`origin + code + record` 分离，
-  旧 v2 文件仍可由读取器兼容。
+- `mods/registry.json` 已升级为 schema v4：`origin + code + record` 分离，
+  `code.kind` 支持 `local` / `external`；旧 v2/v3 文件仍可由读取器兼容。
 - `records/` 已按稳定 ID 存放 28 份分析记录，索引由
   `tools/kb/scan_records.py` 生成；28 份记录的 `license` 字段均已显式填写，
   作者判断与许可说明分别登记在 `author_evidence` / `license_notes`。
@@ -18,10 +18,13 @@
   [`indexes/mods-notes.md`](knowledge/indexes/mods-notes.md)。
 - 知识页的反向来源列表由 `tools/kb/sync_knowledge_sources.py` 从
   `record.json.distilled_to` 生成；门禁校验双向一致，不手写 ID 列表。
-- 现有 `自建/`、`收集/` 代码样本尚未迁移到 `mods/`；迁移必须先通过
+- 原 `自建/01-xml-RimTalkPersonaTraits` 草稿已迁入 `rimworld-mod-forge`，
+  稳定 ID 改为 `rimtalk-persona-traits`，packageId 改为
+  `Makeshiftname.RimTalkPersonaTraits`；Atlas 中只保留外部代码登记。
+- 现有 `收集/` 的 86 个代码样本尚未迁移到 `mods/collected/`；迁移必须先通过
   [`migration` 前置检查](../tools/kb/migrate_mods.py)。
-  当前只读计划为 87 个 `move`、0 个结构错误，合计约 2,589 个文件。
-- 用户已明确暂不删减 mod；本轮未移动、删除或改写任何 `收集/`、`自建/` 代码。
+  当前只读计划为 86 个 `move`、0 个结构错误。
+- 用户已明确暂不删减 mod；本轮未移动、删除或改写任何 `收集/` 代码。
 
 ## 最近验证
 
@@ -32,8 +35,7 @@ python tools/kb/check_all.py
 python -m unittest discover -s tools/kb/tests -v
 ```
 
-2026-10-18 结果：`check_all.py` 退出码 0；30 个单测通过；`收集/`、`自建/`
-代码目录无 diff。
+2026-10-18 结果：`check_all.py` 退出码 0；33 个单测通过；`收集/` 代码目录无 diff。
 
 ## 下一步
 

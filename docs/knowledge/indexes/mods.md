@@ -10,9 +10,9 @@
 
 ## 统计
 
-- Mod 总数：**87**（`collected` × 86、`owned` × 1）
-- 类型分布：`empty` × 1、`lib` × 1、`patch` × 30、`special` × 1、`standalone` × 44、`translation` × 4、`xml` × 6
-- README 状态：`missing` × 1、`ok` × 86
+- Mod 总数：**86**（`collected` × 86）
+- 类型分布：`empty` × 1、`lib` × 1、`patch` × 30、`special` × 1、`standalone` × 44、`translation` × 4、`xml` × 5
+- README 状态：`missing` × 1、`ok` × 85
 
 ## 索引表
 
@@ -104,7 +104,6 @@
 | `runningbugs-worldmapeditor` |  | collected | 世界地图编辑器 World Map Editor | standalone | 1.5,1.6 | ✓ | ✓ | – | – | – | ok |
 | `saltgin-rimtalkeventmemory` |  | collected | RimTalk Event+ | patch | - | ✓ | ✓ | – | – | – | ok |
 | `target-line` |  | collected | 目标线 Target Line | standalone | 1.5,1.6 | ✓ | ✓ | – | – | – | ok |
-| `runningbugs-rimtalkpersonatraits` |  | owned | RimTalk 人设特质包 RimTalk Persona Traits | xml | 1.6 | – | ✓ | – | – | – | ok |
 
 > 图例：C#=有 C# 源码；翻=Languages/ 翻译；Doc=docs/；Tst=Tests/；
 > Pub=`_PublisherPlus.xml`；README=ok/模板占位(template)/空壳(stub)/缺失(missing)。

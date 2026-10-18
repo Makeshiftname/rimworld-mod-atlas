@@ -16,6 +16,7 @@ import re
 import sys
 from collections import Counter
 from pathlib import Path
+from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import registry as stable_registry  # noqa: E402
@@ -28,6 +29,7 @@ PLACEHOLDER_PID = re.compile(
     r"^(runningbugs\.)?(modname|username\.modname)$|^(com\.)?runningbugs\.test$|^modname$",
     re.IGNORECASE,
 )
+COMMIT_RE = re.compile(r"^[0-9a-f]{7,40}$", re.IGNORECASE)
 
 
 def relative(path: Path) -> str:
@@ -37,6 +39,13 @@ def relative(path: Path) -> str:
 def is_safe_relative(value: str) -> bool:
     path = Path(value)
     return bool(value) and not path.is_absolute() and ".." not in path.parts
+
+
+def is_repo_url(value: str) -> bool:
+    if value.startswith("git@"):
+        return True
+    parsed = urlparse(value)
+    return parsed.scheme in {"https", "http", "ssh"} and bool(parsed.netloc)
 
 
 def actual_code_dirs() -> set[str]:
@@ -152,6 +161,21 @@ def validate() -> tuple[list[str], list[str]]:
 
         code = entry.get("code")
         if code:
+            kind = code.get("kind", "local")
+            if kind not in stable_registry.CODE_KINDS:
+                problems.append(f"{mod_id}: invalid code.kind {kind!r}")
+                continue
+            if kind == "external":
+                repo = code.get("repo", "")
+                repo_path = code.get("path", "")
+                commit = code.get("commit", "")
+                if not is_repo_url(repo):
+                    problems.append(f"{mod_id}: external code.repo is not a git URL: {repo!r}")
+                if not is_safe_relative(repo_path):
+                    problems.append(f"{mod_id}: unsafe external code.path {repo_path!r}")
+                if not COMMIT_RE.fullmatch(commit):
+                    problems.append(f"{mod_id}: external code.commit must be a 7-40 char SHA")
+                continue
             paths = code.get("legacy_paths", [])
             target = code.get("target_path", "")
             expected_target = f"mods/{origin}/{mod_id}"

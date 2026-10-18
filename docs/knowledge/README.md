@@ -18,6 +18,7 @@
 | 发布、软链接、工坊版权红线 | [guides/publishing-and-release.md](guides/publishing-and-release.md) |
 | 静态审计一个 mod 的依赖、程序集、翻译、贴图、多版本 | [guides/mod-static-audit.md](guides/mod-static-audit.md) |
 | 查某个 mod 的具体分析记录 | [indexes/mods.md](indexes/mods.md) + [`records/`](../../records/README.md)；先看“档”列判断初步/深度 |
+| 开发原创或补丁 mod | [`rimworld-mod-forge`](https://github.com/Makeshiftname/rimworld-mod-forge) |
 
 ## 四层内容
 

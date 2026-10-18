@@ -57,11 +57,23 @@ rg -n '"package_id": "作者.packageId"' mods/registry.json
 }
 ```
 
+如果生产代码在外部仓库（例如 `rimworld-mod-forge`），登记为：
+
+```json
+"code": {
+  "kind": "external",
+  "repo": "https://github.com/Makeshiftname/rimworld-mod-forge",
+  "path": "mods/owned/example-mod",
+  "commit": "<固定 SHA>"
+}
+```
+
 规则：
 
 - `id` 是小写 ASCII slug，登记后不再改名；旧名放进 `aliases`。
 - `source_dir` 写游戏 `Mods` 目录下的**实际目录名**，不是显示名或旧编号。
-- 第三方 mod 的 `origin` 用 `collected`；仓库主原创用 `owned`。
+- 第三方 mod 的 `origin` 用 `collected`；Makeshiftname 原创用 `owned`。
+- 外部生产代码不复制进 Atlas；只有需要分析时才在 `records/<id>/` 建记录。
 
 ## 4. 建记录目录
 
