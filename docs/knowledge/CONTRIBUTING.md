@@ -41,7 +41,8 @@ docs/knowledge/
 
 ### B. 新增或修改分析记录
 
-1. 先读 [`records/STANDARD.md`](../../records/STANDARD.md)，按任务选择
+1. 先读 [`records/AGENT_WORKFLOW.md`](../../records/AGENT_WORKFLOW.md) 与
+   [`records/STANDARD.md`](../../records/STANDARD.md)，按任务选择
    `tools/kb/templates/record/initial/` 或 `deep/` 模板。
 2. 在 `records/<stable-id>/` 更新 `README.md` 与 `record.json`；初步记录禁止
    `## 可复用结论`、`## 修改建议` 和非空 `distilled_to`。

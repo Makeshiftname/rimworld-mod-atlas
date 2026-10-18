@@ -4,7 +4,8 @@
 
 ## 记录怎么用
 
-1. 先读 [STANDARD.md](STANDARD.md)——两档骨架、条件性证据、状态与提炼规则。
+1. 先读 [AGENT_WORKFLOW.md](AGENT_WORKFLOW.md)（Agent 操作流程）和
+   [STANDARD.md](STANDARD.md)（两档骨架、条件性证据、状态与提炼规则）。
 2. 按稳定 ID 打开记录目录：`records/<id>/README.md`；先看索引里的“档”列，判断是初步还是深度。
 3. 技术结论需要进入知识库时，按 [提炼规则](STANDARD.md#52-提炼) 显式执行，并在
    `record.json` 里登记去向；知识页的 `## 来源记录` 段由

@@ -88,8 +88,8 @@ manifest 预览，确认后再 `--apply`。
 
 ### 新增一份分析记录
 
-1. 读取 `records/STANDARD.md`，选择 `tools/kb/templates/record/initial/`
-   或 `deep/`。
+1. 读取 `records/AGENT_WORKFLOW.md` 与 `records/STANDARD.md`，选择
+   `tools/kb/templates/record/initial/` 或 `deep/`。
 2. 建立 `records/<stable-id>/README.md` 与 `record.json`，填写
    `analysis_tier`。
 3. 运行 `python tools/kb/scan_records.py`。

@@ -6,8 +6,9 @@
 ## 开始前
 
 1. 先读根 [`ARCHITECTURE.md`](ARCHITECTURE.md) 与 [`docs/knowledge/README.md`](docs/knowledge/README.md)。
-2. 单 mod 调查先读 [`records/STANDARD.md`](records/STANDARD.md)，按任务选择
-   `tools/kb/templates/record/initial/` 或 `deep/`。
+2. 单 mod 调查先读 [`records/AGENT_WORKFLOW.md`](records/AGENT_WORKFLOW.md)
+   （操作流程）和 [`records/STANDARD.md`](records/STANDARD.md)（契约），
+   再按任务选择 `tools/kb/templates/record/initial/` 或 `deep/`。
 3. 开始迁移或审查结构前先看 [`docs/STATUS.md`](docs/STATUS.md)。
 4. 需要游戏机制/实现背景时，按知识库主入口选择 `guides/`、`reference/` 或 `mechanics/`。
 5. 不读取整个大目录做无差别审阅；先查索引、注册表和目标记录。

@@ -6,6 +6,7 @@
 
 - 我要做某个 modding 任务 → [`docs/knowledge/README.md`](docs/knowledge/README.md)
 - 我要看某个 mod 的分析 → [`records/README.md`](records/README.md)
+- 我是 Agent，要开始分析一个 mod → [`records/AGENT_WORKFLOW.md`](records/AGENT_WORKFLOW.md)
 - 我要找可运行代码样本 → [`mods/README.md`](mods/README.md)
 - 我想了解目录职责与扩展规则 → [`ARCHITECTURE.md`](ARCHITECTURE.md)
 - 我想看当前迁移阶段与阻断 → [`docs/STATUS.md`](docs/STATUS.md)
