@@ -1,15 +1,24 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "mlie-sdbridges",
   "package_id": "Mlie.SDBridges",
   "display_name": "[sd] Bridges (Continued)",
   "authors": [
     "Mlie",
-    "原作 sulusdacors（工坊 788610933），About.xml 与 README.md 都明写 \"Update of sulusdacors mod\""
+    "sulusdacors"
   ],
   "license": "MIT（LICENSE.md，Copyright (c) 2020 Mlie，无禁再分发声明）→ 可收录、可再分发",
-  "source_dir": "2036488024-SDBridges",
+  "source_dir": "2036488024",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [
+    "docs/knowledge/guides/mod-static-audit.md"
+  ],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "About.xml/README：Update of sulusdacors mod",
+    "LICENSE.md Copyright (c) 2020 Mlie"
+  ],
+  "license_notes": "MIT；贴图素材沿用上游 sulusdacors，未见单独素材许可。"
 }

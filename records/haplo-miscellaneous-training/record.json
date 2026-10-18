@@ -1,14 +1,22 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "haplo-miscellaneous-training",
   "package_id": "Haplo.Miscellaneous.Training",
   "display_name": "Misc. Training",
   "authors": [
-    "Haplo（HaploX1）"
+    "Haplo"
   ],
-  "license": "",
-  "source_dir": "717575199-MiscTraining",
+  "license": "未声明（记录未发现 LICENSE；README 称无授权限制）",
+  "source_dir": "717575199",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [
+    "docs/knowledge/guides/mod-static-audit.md"
+  ],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "README 身份卡：Haplo（HaploX1）"
+  ],
+  "license_notes": "README 的“无授权限制”不是许可文本；再分发前仍需确认。"
 }

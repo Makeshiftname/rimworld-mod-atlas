@@ -1,14 +1,23 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "rim-job-world",
   "package_id": "rim.job.world",
   "display_name": "RimJobWorld（RJW）— 分析记录",
   "authors": [
-    "Ed86（LICENSE 版权行为 semigimp 2017，见「授权」）"
+    "Ed86"
   ],
-  "license": "读 LICENSE（21 行）",
+  "license": "MIT（LICENSE，Copyright (c) 2017 semigimp）",
   "source_dir": "RJW_核心_本体",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [
+    "docs/knowledge/guides/mod-static-audit.md"
+  ],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "README 身份卡：Ed86",
+    "LICENSE 版权行：semigimp 2017"
+  ],
+  "license_notes": "About.xml 作者为 Ed86；LICENSE 版权行为 semigimp 2017。"
 }

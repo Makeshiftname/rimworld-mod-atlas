@@ -399,3 +399,26 @@ mod 内是 `Textures/x`，游戏内是 `Core/Textures/x`，共用一个前缀规
 - 翻译结构 → [translations-localization.md](translations-localization.md)
 - 游戏系统本身由什么构成 → [mechanics/README.md](../mechanics/README.md)
 - 全库检索与验收门槛 → [CONTRIBUTING.md](../CONTRIBUTING.md)
+
+## 来源记录
+
+<!-- AUTO-GENERATED-SOURCE-START -->
+- `abscon-privacy-please` — [分析记录](../../../records/abscon-privacy-please/README.md)
+- `adaptive-ideology-storage` — [分析记录](../../../records/adaptive-ideology-storage/README.md)
+- `adaptive-simplestorage` — [分析记录](../../../records/adaptive-simplestorage/README.md)
+- `aoba-framework` — [分析记录](../../../records/aoba-framework/README.md)
+- `brrainz-harmony` — [分析记录](../../../records/brrainz-harmony/README.md)
+- `c0ffee-rjw-ideologyaddons` — [分析记录](../../../records/c0ffee-rjw-ideologyaddons/README.md)
+- `fix-miho-visualpatch` — [分析记录](../../../records/fix-miho-visualpatch/README.md)
+- `gt-sam-glittertech` — [分析记录](../../../records/gt-sam-glittertech/README.md)
+- `haplo-miscellaneous-training` — [分析记录](../../../records/haplo-miscellaneous-training/README.md)
+- `imranfish-xmlextensions` — [分析记录](../../../records/imranfish-xmlextensions/README.md)
+- `mlie-sdbridges` — [分析记录](../../../records/mlie-sdbridges/README.md)
+- `readyforjeff-rjwpeculiarinstitution` — [分析记录](../../../records/readyforjeff-rjwpeculiarinstitution/README.md)
+- `rim-job-world` — [分析记录](../../../records/rim-job-world/README.md)
+- `rjw-fb` — [分析记录](../../../records/rjw-fb/README.md)
+- `vegapnk-cumpilation` — [分析记录](../../../records/vegapnk-cumpilation/README.md)
+- `yukiyuki-borum` — [分析记录](../../../records/yukiyuki-borum/README.md)
+- `yukiyuki-sankaandsosin` — [分析记录](../../../records/yukiyuki-sankaandsosin/README.md)
+- `yukiyuki-yaemu` — [分析记录](../../../records/yukiyuki-yaemu/README.md)
+<!-- AUTO-GENERATED-SOURCE-END -->

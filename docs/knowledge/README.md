@@ -17,7 +17,7 @@
 | 新建 C# mod 骨架、日志模板 | [guides/project-templates.md](guides/project-templates.md) |
 | 发布、软链接、工坊版权红线 | [guides/publishing-and-release.md](guides/publishing-and-release.md) |
 | 静态审计一个 mod 的依赖、程序集、翻译、贴图、多版本 | [guides/mod-static-audit.md](guides/mod-static-audit.md) |
-| 查某个 mod 的具体分析记录 | [../indexes/mods.md](indexes/mods.md) + [`records/`](../../records/README.md) |
+| 查某个 mod 的具体分析记录 | [indexes/mods.md](indexes/mods.md) + [`records/`](../../records/README.md) |
 
 ## 四层内容
 
@@ -28,7 +28,8 @@
 
 ## 索引与数据
 
-- [`indexes/mods.md`](indexes/mods.md)：全部代码样本的元数据表 + 人工维护的学习要点。
+- [`indexes/mods.md`](indexes/mods.md)：全部代码样本的自动索引。
+- [`indexes/mods-notes.md`](indexes/mods-notes.md)：人工维护的单 mod 要点与阅读入口。
 - [`indexes/mods.json`](indexes/mods.json)：机器可读索引。
 - [`../records/index.json`](../../records/index.json)：分析记录索引。
 - [`../../mods/registry.json`](../../mods/registry.json)：稳定 ID、packageId、旧路径与别名注册表。

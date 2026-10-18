@@ -34,6 +34,20 @@ Languages 放这里，版本目录只放该版本特有内容，避免重复维�
 - 现仓库倾向：**弃用 LoadFolders，改用 `Common/` + 版本目录** 的隐式约定。
 - 遗留：30、54 保留了 `LoadFolders.xml.bak`（曾用后被停用），可见迁移痕迹。
 
+### 何时仍然值得用 LoadFolders
+
+`LoadFolders.xml` 不是原罪；问题在于把版本矩阵写成互相污染的组合。两种收敛写法：
+
+- **`Current/` 兜底未来版本**（Harmony）：1.2/1.3/1.4 共用 `1.4`，1.5 用 `1.5`，
+  1.6 及以后用 `Current`；新增 1.7 时只加一行，不必重编译 DLL。
+- **根目录共享 + 版本目录只放版本特有产物**（HugsLib）：`Defs/`、`Languages/`、
+  `Textures/` 全版本共用，`v1.1`–`v1.6` 只放 `Assemblies/`；每段只写
+  `/ + 版本目录`，不做 N×M 交叉。
+
+判断标准：**LoadFolders 是否在版本边界处收敛，而不是扩散。**
+两个实例见 [Harmony 记录](../../../records/brrainz-harmony/README.md) 与
+[HugsLib 记录](../../../records/unlimitedhugs-hugslib/README.md)。
+
 ## 4. 构建命令
 
 C# mod 在版本目录下构建（`mod.csproj` 位于 `Source/`）：
@@ -139,3 +153,10 @@ dotnet build -c Release -p:GameVersion=1.6   # → ../1.6/Assemblies/
 
 - XML 共享目录：`xml-defs-and-patches.md`
 - 测试（版本目录内 Source 的结构化校验）：`testing-and-validation.md`
+
+## 来源记录
+
+<!-- AUTO-GENERATED-SOURCE-START -->
+- `brrainz-harmony` — [分析记录](../../../records/brrainz-harmony/README.md)
+- `unlimitedhugs-hugslib` — [分析记录](../../../records/unlimitedhugs-hugslib/README.md)
+<!-- AUTO-GENERATED-SOURCE-END -->

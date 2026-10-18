@@ -18,7 +18,8 @@
 ## 2. 身份与目录
 
 - 每份记录目录名来自 [`mods/registry.json`](../mods/registry.json) 的稳定 `id`，不再使用旧编号或“源目录名必须一致”的规则。
-- 记录可以只对应分析对象，不一定在 `mods/` 中有代码样本；这类条目的类别是 `record-only`。
+- 记录可以只对应分析对象，不一定在 `mods/` 中有代码样本；这类条目在注册表中是
+  `code: null` + `record` 非空，不再使用 `record-only` 目录类别。
 - 每份记录目录同时包含 `README.md` 与 `record.json`；`record.json` 是索引和校验读取的元数据来源。
 - `package_id`、作者、授权和来源目录写进 `record.json`；正文仍可补充当时的证据细节。
 - 身份冻结后不随来源目录改名而变；需要重命名时在注册表登记 `aliases`，不迁移已有记录 ID。
@@ -81,7 +82,9 @@
 提炼只在你明确说“提炼”时执行，不自动触发，也不把未审核推断搬进知识页。提炼时：
 
 1. 只选已经复核、脱离单个 mod 仍成立的结论。
-2. 写入最合适的知识层，并在知识页和 `record.json.distilled_to` 中互相登记。
+2. 写入最合适的知识层，并把去向登记到 `record.json.distilled_to`；知识页底部的
+   `## 来源记录` 段由 `tools/kb/sync_knowledge_sources.py --write` 生成，
+   不要手工维护 ID 列表。
 3. 如果结论与其他页面冲突，先修正冲突，不允许长期保留两套说法。
 4. 修改建议仍留在记录中；没有明确授权，不因记录里存在建议就改动第三方 mod。
 
@@ -89,13 +92,24 @@
 
 | 字段 | 含义 |
 |---|---|
-| `schema_version` | 元数据版本 |
+| `schema_version` | 元数据版本；当前为 2 |
 | `id` | 从此不再变化的稳定 ID |
 | `package_id` | 分析对象的 packageId，可为空 |
 | `display_name` | 可读名称 |
-| `authors` | 作者列表 |
-| `license` | 已核实授权；未声明时明确写“未声明” |
+| `origin` | `owned` / `collected`，表示内容来源 |
+| `authors` | 作者列表；作者证据放正文或 `author_evidence` |
+| `author_evidence` | 可选，作者判断的证据列表 |
+| `license` | 已核实授权；未声明时明确写“未声明”，不能留空 |
+| `license_notes` | 可选，许可链、例外和再分发限制 |
+| `source_url` | 可选，原始仓库或工坊页面 |
+| `workshop_id` | 可选，Steam 工坊 ID |
+| `retrieved_at` | 可选，`YYYY-MM-DD` 获取日期 |
 | `source_dir` | 游戏 Mods 目录中的来源目录名 |
-| `status` | `analyzed` / `needs-recheck` / `superseded` |
+| `status` | `raw` / `analyzed` / `needs-recheck` / `superseded` / `retired` |
+| `verification_tier` | `1`–`4`，对应上面四档核验 |
 | `modifications` | 已实际执行的改动，不是建议 |
 | `distilled_to` | 已提炼到的知识页相对路径列表 |
+| `code_removed` | 是否已删除代码但保留记录 |
+
+新记录可直接复制 [`tools/kb/templates/record/`](../tools/kb/templates/record/) 的
+`record.json`；模板不放在 `records/` 下，避免被记录扫描器当成真实记录。

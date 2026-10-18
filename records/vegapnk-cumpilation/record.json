@@ -1,16 +1,25 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "vegapnk-cumpilation",
   "package_id": "vegapnk.cumpilation",
   "display_name": "Cumpilation",
   "authors": [
-    "Vegapnk（About.xml 写 Vegapnk - 1.6 Rewrite by Telanda",
-    "CHANGELOG 每条都署 (Commit by @Telanda-DDS)",
-    "CONTRIBUTING.md 的 Contributors 段只有一人：Telanda - Rimworld 1.6 Migration）"
+    "Vegapnk",
+    "Telanda"
   ],
   "license": "随包 LICENCE（661 行 / 34,452 字节，正文是 GNU AGPL-3.0 全文）。⚠️ 但 README.md 的徽章写 License: GPL3 —— 两者不一致，见「查出来的问题 · 1」",
   "source_dir": "RJW-体液-精液汇编（Cumpilation）",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [
+    "docs/knowledge/guides/mod-static-audit.md"
+  ],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "About.xml：Vegapnk - 1.6 Rewrite by Telanda",
+    "CHANGELOG 每条署 (Commit by @Telanda-DDS)",
+    "CONTRIBUTING Contributors: Telanda"
+  ],
+  "license_notes": "随包 LICENCE 为 AGPL-3.0；README 徽章写 GPL3，二者不一致。"
 }

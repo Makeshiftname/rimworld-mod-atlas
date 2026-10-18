@@ -7,15 +7,24 @@ contain the page).  It prevents reorganisations from leaving orphan docs behind.
 """
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import knowledge_sources
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 KB = ROOT / "docs" / "knowledge"
 README = KB / "README.md"
 LAYERS = ("guides", "reference", "mechanics", "sources")
 LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
+INDEX_FILES = (
+    KB / "indexes" / "mods.md",
+    KB / "indexes" / "mods-notes.md",
+    KB / "indexes" / "mods.json",
+)
 
 
 def local_markdown_links(path: Path) -> set[Path]:
@@ -49,8 +58,29 @@ def reachable_from(start: Path) -> set[Path]:
 
 
 def main() -> int:
-    problems = []
+    problems = knowledge_sources.check_all(ROOT)
     reachable = reachable_from(README)
+    for path in INDEX_FILES:
+        if not path.is_file():
+            problems.append(f"missing knowledge index: {path.relative_to(ROOT)}")
+    for rel, key in (
+        ("docs/knowledge/indexes/mods.json", "id"),
+        ("records/index.json", "id"),
+    ):
+        path = ROOT / rel
+        if not path.is_file():
+            continue
+        try:
+            rows = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            problems.append(f"{rel}: {exc}")
+            continue
+        seen: set[str] = set()
+        for row in rows:
+            value = row.get(key, "")
+            if value in seen:
+                problems.append(f"{rel}: duplicate {key} {value!r}")
+            seen.add(value)
     for layer in LAYERS:
         directory = KB / layer
         if not directory.is_dir():

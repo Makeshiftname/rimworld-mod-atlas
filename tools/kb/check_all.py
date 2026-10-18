@@ -8,12 +8,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 CHECKS = (
+    ("registry", ["tools/kb/check_registry.py"]),
     ("links", ["tools/kb/check_links.py"]),
     ("records", ["tools/kb/check_records.py"]),
-    ("knowledge entries", ["tools/kb/check_knowledge.py"]),
+    ("knowledge entries + sources", ["tools/kb/check_knowledge.py"]),
     ("hygiene", ["tools/kb/check_repo_hygiene.py"]),
     ("mod index drift", ["tools/kb/scan_mods.py", "--check"]),
     ("record index drift", ["tools/kb/scan_records.py", "--check"]),
+    ("unit tests", ["-m", "unittest", "discover", "-s", "tools/kb/tests", "-q"]),
 )
 
 

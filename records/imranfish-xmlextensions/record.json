@@ -1,14 +1,22 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "imranfish-xmlextensions",
   "package_id": "imranfish.xmlextensions",
   "display_name": "XML Extensions（`2574315206`）— 分析记录",
   "authors": [
     "Imranfish"
   ],
-  "license": "",
-  "source_dir": "2574315206-XMLExtensions",
+  "license": "未声明（无 LICENSE；About.xml 无 <license>）",
+  "source_dir": "2574315206",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [
+    "docs/knowledge/guides/mod-static-audit.md"
+  ],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "README 身份卡：Imranfish"
+  ],
+  "license_notes": "基础设施 mod；无许可声明，再分发前需确认。"
 }

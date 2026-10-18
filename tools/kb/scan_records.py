@@ -54,14 +54,16 @@ def load_records() -> list[dict]:
 
 def build_table(rows: list[dict]) -> str:
     lines = [
-        "| ID | 记录 | packageId | 作者 | 状态 |",
-        "|---|---|---|---|---|",
+        "| ID | 记录 | packageId | 作者 | 状态 | 提炼 |",
+        "|---|---|---|---|---|---|",
     ]
     for row in rows:
         authors = "、".join(row.get("authors", [])) or "—"
         pid = row.get("package_id") or "—"
+        distilled = len(row.get("distilled_to", []))
         lines.append(
-            f"| `{row['id']}` | [{row['display_name']}]({row['_readme']}) | `{pid}` | {authors} | {row['status']} |"
+            f"| `{row['id']}` | [{row['display_name']}]({row['_readme']}) | `{pid}` | "
+            f"{authors} | {row['status']} | {distilled or '—'} |"
         )
     return "\n".join(lines)
 

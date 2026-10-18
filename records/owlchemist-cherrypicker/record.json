@@ -1,14 +1,20 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "owlchemist-cherrypicker",
   "package_id": "Owlchemist.CherryPicker",
   "display_name": "Cherry Picker（`3521312241`）— 分析记录",
   "authors": [
     "Owlchemist"
   ],
-  "license": "",
-  "source_dir": "3521312241-CherryPicker",
+  "license": "MIT（仅 GitHub 仓库；工坊包无 LICENSE，版权行 Copyright (c) 2020 jptrrs）",
+  "source_dir": "3521312241",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "About.xml/README：Owlchemist"
+  ],
+  "license_notes": "工坊目录无 LICENSE；GitHub MIT 的版权行不是 Owlchemist，授权归属需澄清。"
 }

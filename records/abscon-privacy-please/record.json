@@ -1,15 +1,23 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "abscon-privacy-please",
   "package_id": "abscon.privacy.please",
   "display_name": "Privacy, Please!（RJW 隐私意识）",
   "authors": [
-    "AbstractConcept（原作者）",
-    "fork 贡献者 AblativeAbsolute（Quirks 子项目 + quirk 图标，changelog 署名）"
+    "AbstractConcept",
+    "AblativeAbsolute"
   ],
   "license": "未声明。无 LICENSE / LICENCE 文件。README 明确写 \"I claim no ownership… This version may be taken down by request from the original author\"",
   "source_dir": "RJW_文化玩法_隐私意识",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [
+    "docs/knowledge/guides/mod-static-audit.md"
+  ],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "README 身份卡：AbstractConcept（原作者）；fork 贡献者 AblativeAbsolute（changelog 署名）"
+  ],
+  "license_notes": "未声明；README 声明原作者可要求下架。"
 }

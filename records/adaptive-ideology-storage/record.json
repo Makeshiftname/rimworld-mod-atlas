@@ -1,14 +1,22 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "adaptive-ideology-storage",
   "package_id": "Adaptive.Ideology.Storage",
   "display_name": "Adaptive Ideology Storage",
   "authors": [
-    "vin —— About.xml 写 <authors><li>vin</li></authors>（复数标签是正确写法，见「怎么验的」纠错 4）"
+    "vin"
   ],
   "license": "无。无 LICENSE / LICENSE.md / README.md / CHANGELOG.md，About.xml 也无 <url>、无 <license>、无 modVersion → 默认保留所有权利",
-  "source_dir": "3301337278-AdaptiveIdeologyStorage",
+  "source_dir": "3301337278",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [
+    "docs/knowledge/guides/mod-static-audit.md"
+  ],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "About.xml `<authors><li>vin</li></authors>`"
+  ],
+  "license_notes": "未声明；默认保留所有权利。"
 }

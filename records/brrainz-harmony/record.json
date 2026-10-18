@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "brrainz-harmony",
   "package_id": "brrainz.harmony",
   "display_name": "Harmony（`2009463077`）— 分析记录",
@@ -7,8 +7,20 @@
     "Andreas Pardeike（Brrainz）"
   ],
   "license": "MIT License（LICENSE，Copyright (c) 2017 Andreas Pardeike）",
-  "source_dir": "2009463077-Harmony",
+  "source_dir": "2009463077",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [
+    "docs/knowledge/guides/mod-static-audit.md",
+    "docs/knowledge/guides/cross-version-structure.md"
+  ],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "README 身份卡：Andreas Pardeike（Brrainz）",
+    "LICENSE Copyright (c) 2017 Andreas Pardeike"
+  ],
+  "license_notes": "MIT；再分发需保留版权声明。",
+  "source_url": "https://github.com/pardeike/HarmonyRimWorld",
+  "workshop_id": "2009463077"
 }

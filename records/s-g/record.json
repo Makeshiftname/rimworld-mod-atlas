@@ -1,15 +1,20 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "s-g",
   "package_id": "s.g",
   "display_name": "P-Music（`725130005`）— 分析记录",
   "authors": [
-    "Peppsen（另有 ZumZum",
-    "SpacekatTommy 参与曲目）"
+    "Peppsen"
   ],
-  "license": "",
-  "source_dir": "725130005-PMusic",
+  "license": "未声明（记录未发现 LICENSE；README 称无禁再分发声明）",
+  "source_dir": "725130005",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "README 身份卡：Peppsen；ZumZum、SpacekatTommy 参与曲目（不列为作者）"
+  ],
+  "license_notes": "无禁再分发声明不等于授权许可；再分发前仍需确认。"
 }

@@ -1,93 +1,137 @@
 [
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "abscon-privacy-please",
     "package_id": "abscon.privacy.please",
     "display_name": "Privacy, Please!（RJW 隐私意识）",
     "authors": [
-      "AbstractConcept（原作者）",
-      "fork 贡献者 AblativeAbsolute（Quirks 子项目 + quirk 图标，changelog 署名）"
+      "AbstractConcept",
+      "AblativeAbsolute"
     ],
     "license": "未声明。无 LICENSE / LICENCE 文件。README 明确写 \"I claim no ownership… This version may be taken down by request from the original author\"",
     "source_dir": "RJW_文化玩法_隐私意识",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：AbstractConcept（原作者）；fork 贡献者 AblativeAbsolute（changelog 署名）"
+    ],
+    "license_notes": "未声明；README 声明原作者可要求下架。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "adaptive-ideology-storage",
     "package_id": "Adaptive.Ideology.Storage",
     "display_name": "Adaptive Ideology Storage",
     "authors": [
-      "vin —— About.xml 写 <authors><li>vin</li></authors>（复数标签是正确写法，见「怎么验的」纠错 4）"
+      "vin"
     ],
     "license": "无。无 LICENSE / LICENSE.md / README.md / CHANGELOG.md，About.xml 也无 <url>、无 <license>、无 modVersion → 默认保留所有权利",
-    "source_dir": "3301337278-AdaptiveIdeologyStorage",
+    "source_dir": "3301337278",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml `<authors><li>vin</li></authors>`"
+    ],
+    "license_notes": "未声明；默认保留所有权利。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "adaptive-simplestorage",
     "package_id": "Adaptive.SimpleStorage",
     "display_name": "Adaptive Simple Storage",
     "authors": [
-      "vin —— 与 收录/3301337278-AdaptiveIdeologyStorage/ 同一作者（<authors><li>vin</li></authors>，复数标签是正确写法）"
+      "vin"
     ],
     "license": "无。无 LICENSE / README.md / LoadFolders.xml；About.xml 无 <url>、无 <license>、无 modVersion",
-    "source_dir": "3297307747-AdaptiveSimpleStorage",
+    "source_dir": "3297307747",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml `<authors><li>vin</li></authors>`"
+    ],
+    "license_notes": "未声明；默认保留所有权利。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "adaptive-storage-framework",
     "package_id": "adaptive.storage.framework",
     "display_name": "Adaptive Storage Framework（`3033901359`）— 分析记录",
     "authors": [
       "Soul",
       "Phaneron",
-      "bradson（主开发）"
+      "bradson"
     ],
-    "license": "",
-    "source_dir": "3033901359-AdaptiveStorage",
+    "license": "MIT（顶层 LICENSE，Copyright (c) 2023 bradson, Soul, Phaneron）；部分源码文件为 MPL-2.0 / .NET Foundation",
+    "source_dir": "3033901359",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡与 About.xml：Soul、Phaneron、bradson"
+    ],
+    "license_notes": "混合许可；取用源码时按文件头处理，不能把整个目录当成单一 MIT。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "akt-ideology",
     "package_id": "AKT.Ideology",
     "display_name": "AKT_Ideology — 扶她文化（`RJW-文化-扶她文化`）— 分析记录",
     "authors": [
       "AKawaiiTent"
     ],
-    "license": "",
+    "license": "未声明（无 LICENSE；素材二次编辑授权未核实）",
     "source_dir": "RJW-文化-扶她文化（AKawaiiTent's Futa Ideology）",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml 作者栏：AKawaiiTent"
+    ],
+    "license_notes": "无 LICENSE；credits.txt 仅说明素材编辑自 VincentCC / Vitalis，未给原许可。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "aoba-framework",
     "package_id": "AOBA.Framework",
     "display_name": "Fortified Features Framework（`3498575851`）— 分析记录",
     "authors": [
       "AOBA"
     ],
-    "license": "",
-    "source_dir": "3498575851-FortifiedFramework",
+    "license": "未声明（无 LICENSE；About.xml 无 <license>）",
+    "source_dir": "3498575851",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml 作者栏：AOBA"
+    ],
+    "license_notes": "未声明不等于可自由转载。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "brrainz-harmony",
     "package_id": "brrainz.harmony",
     "display_name": "Harmony（`2009463077`）— 分析记录",
@@ -95,126 +139,200 @@
       "Andreas Pardeike（Brrainz）"
     ],
     "license": "MIT License（LICENSE，Copyright (c) 2017 Andreas Pardeike）",
-    "source_dir": "2009463077-Harmony",
+    "source_dir": "2009463077",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md",
+      "docs/knowledge/guides/cross-version-structure.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：Andreas Pardeike（Brrainz）",
+      "LICENSE Copyright (c) 2017 Andreas Pardeike"
+    ],
+    "license_notes": "MIT；再分发需保留版权声明。",
+    "source_url": "https://github.com/pardeike/HarmonyRimWorld",
+    "workshop_id": "2009463077"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "c0ffee-rjw-ideologyaddons",
     "package_id": "c0ffee.rjw.IdeologyAddons",
     "display_name": "C0ffeeRIA（C0ffee's RJW Ideology Addons）",
     "authors": [
-      "C0ffee（About.xml 写 <author> 单数）"
+      "C0ffee"
     ],
     "license": "无。无 LICENSE、无 README、无 <url> 之外的法律声明",
     "source_dir": "RJW_文化_咖啡的人奶文化",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml `<author>` 单数：C0ffee"
+    ],
+    "license_notes": "未声明；上游仓库许可未核实。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "fix-miho-visualpatch",
     "package_id": "Fix.Miho.VisualPatch",
     "display_name": "Miho Race Children Texture Fix",
     "authors": [
       "Ay"
     ],
-    "license": "",
-    "source_dir": "1~11岁美狐贴图修正",
+    "license": "未声明（记录未发现 LICENSE 或授权声明）",
+    "source_dir": "1~11岁美狐贴图修正(本体更新修复版)",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：Ay"
+    ],
+    "license_notes": "记录未发现许可文件；不据此推断可再分发。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "gt-sam-glittertech",
     "package_id": "GT.Sam.GlitterTech",
     "display_name": "Glitter Tech Classic（`725576127`）— 分析记录",
     "authors": [
       "Sam"
     ],
-    "license": "",
-    "source_dir": "725576127-GlitterTechClassic",
+    "license": "未声明（记录未发现 LICENSE；README 称无授权限制）",
+    "source_dir": "725576127",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：Sam"
+    ],
+    "license_notes": "README 的“无授权限制”不是许可文本；再分发前仍需确认。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "haplo-miscellaneous-training",
     "package_id": "Haplo.Miscellaneous.Training",
     "display_name": "Misc. Training",
     "authors": [
-      "Haplo（HaploX1）"
+      "Haplo"
     ],
-    "license": "",
-    "source_dir": "717575199-MiscTraining",
+    "license": "未声明（记录未发现 LICENSE；README 称无授权限制）",
+    "source_dir": "717575199",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：Haplo（HaploX1）"
+    ],
+    "license_notes": "README 的“无授权限制”不是许可文本；再分发前仍需确认。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "imranfish-xmlextensions",
     "package_id": "imranfish.xmlextensions",
     "display_name": "XML Extensions（`2574315206`）— 分析记录",
     "authors": [
       "Imranfish"
     ],
-    "license": "",
-    "source_dir": "2574315206-XMLExtensions",
+    "license": "未声明（无 LICENSE；About.xml 无 <license>）",
+    "source_dir": "2574315206",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：Imranfish"
+    ],
+    "license_notes": "基础设施 mod；无许可声明，再分发前需确认。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "mlie-sdbridges",
     "package_id": "Mlie.SDBridges",
     "display_name": "[sd] Bridges (Continued)",
     "authors": [
       "Mlie",
-      "原作 sulusdacors（工坊 788610933），About.xml 与 README.md 都明写 \"Update of sulusdacors mod\""
+      "sulusdacors"
     ],
     "license": "MIT（LICENSE.md，Copyright (c) 2020 Mlie，无禁再分发声明）→ 可收录、可再分发",
-    "source_dir": "2036488024-SDBridges",
+    "source_dir": "2036488024",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml/README：Update of sulusdacors mod",
+      "LICENSE.md Copyright (c) 2020 Mlie"
+    ],
+    "license_notes": "MIT；贴图素材沿用上游 sulusdacors，未见单独素材许可。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "nera-spawnthosegenes",
     "package_id": "Nera.SpawnThoseGenes",
     "display_name": "[BT] SpawnThoseGenes!（`2898044088`）— 分析记录",
     "authors": [
-      "Nera（致谢 Operator）"
+      "Nera"
     ],
-    "license": "",
-    "source_dir": "2898044088-SpawnThoseGenes",
+    "license": "CC BY 4.0（LICENSE.txt）",
+    "source_dir": "2898044088",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：Nera（致谢 Operator）",
+      "LICENSE.txt 开头为 CC BY 4.0"
+    ],
+    "license_notes": "CC BY 4.0 通常用于内容；对源代码的适用性存疑。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "owlchemist-cherrypicker",
     "package_id": "Owlchemist.CherryPicker",
     "display_name": "Cherry Picker（`3521312241`）— 分析记录",
     "authors": [
       "Owlchemist"
     ],
-    "license": "",
-    "source_dir": "3521312241-CherryPicker",
+    "license": "MIT（仅 GitHub 仓库；工坊包无 LICENSE，版权行 Copyright (c) 2020 jptrrs）",
+    "source_dir": "3521312241",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml/README：Owlchemist"
+    ],
+    "license_notes": "工坊目录无 LICENSE；GitHub MIT 的版权行不是 Owlchemist，授权归属需澄清。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "readyforjeff-rjwpeculiarinstitution",
     "package_id": "readyforjeff.RJWPeculiarInstitution",
     "display_name": "Peculiar Institution",
@@ -225,175 +343,277 @@
     "source_dir": "RJW_机制_小妾项圈",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：readyforjeff"
+    ],
+    "license_notes": "未声明；无 LICENSE。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "rim-job-world",
     "package_id": "rim.job.world",
     "display_name": "RimJobWorld（RJW）— 分析记录",
     "authors": [
-      "Ed86（LICENSE 版权行为 semigimp 2017，见「授权」）"
+      "Ed86"
     ],
-    "license": "读 LICENSE（21 行）",
+    "license": "MIT（LICENSE，Copyright (c) 2017 semigimp）",
     "source_dir": "RJW_核心_本体",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：Ed86",
+      "LICENSE 版权行：semigimp 2017"
+    ],
+    "license_notes": "About.xml 作者为 Ed86；LICENSE 版权行为 semigimp 2017。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "rjw-fb",
     "package_id": "rjw.FB",
     "display_name": "RimJobWorld - FB（RJW 做爱感想·颜值）",
     "authors": [
-      "Ed86 —— RJW 本体作者本人，属官方附属"
+      "Ed86"
     ],
     "license": "未声明。无 LICENSE / LICENCE 文件",
     "source_dir": "rjw-做爱感想-颜值",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：Ed86（RJW 本体作者）"
+    ],
+    "license_notes": "未声明；无 LICENSE。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "s-g",
     "package_id": "s.g",
     "display_name": "P-Music（`725130005`）— 分析记录",
     "authors": [
-      "Peppsen（另有 ZumZum",
-      "SpacekatTommy 参与曲目）"
+      "Peppsen"
     ],
-    "license": "",
-    "source_dir": "725130005-PMusic",
+    "license": "未声明（记录未发现 LICENSE；README 称无禁再分发声明）",
+    "source_dir": "725130005",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：Peppsen；ZumZum、SpacekatTommy 参与曲目（不列为作者）"
+    ],
+    "license_notes": "无禁再分发声明不等于授权许可；再分发前仍需确认。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "taranchuk-fastergameloading",
     "package_id": "Taranchuk.FasterGameLoading",
     "display_name": "Faster Game Loading - Continued（`3652938473`）— 分析记录",
     "authors": [
       "綠菇（mushroomTW）—— Taranchuk 原版的维护分支"
     ],
-    "license": "",
-    "source_dir": "3652938473-FasterGameLoading",
+    "license": "MIT（LICENSE，Copyright (c) 2022 Taranchuk）",
+    "source_dir": "3652938473",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：綠菇（mushroomTW）；Taranchuk 原版维护分支",
+      "LICENSE Copyright (c) 2022 Taranchuk"
+    ],
+    "license_notes": "当前为 mushroomTW 维护分支；沿用原 packageId。",
+    "source_url": "https://github.com/mushroomTW/FasterGameLoading---Continued",
+    "workshop_id": "3652938473"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "unlimitedhugs-hugslib",
     "package_id": "UnlimitedHugs.HugsLib",
     "display_name": "HugsLib（`818773962`）— 分析记录",
     "authors": [
       "UnlimitedHugs"
     ],
-    "license": "",
-    "source_dir": "818773962-HugsLib",
+    "license": "未声明（无 LICENSE；About.xml 无 <license>）",
+    "source_dir": "818773962",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/cross-version-structure.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "README 身份卡：UnlimitedHugs"
+    ],
+    "license_notes": "未声明；27 个 mod 依赖它，授权不明确影响面大。",
+    "source_url": "https://github.com/UnlimitedHugs/RimworldHugsLib",
+    "workshop_id": "818773962"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "vegapnk-cumpilation",
     "package_id": "vegapnk.cumpilation",
     "display_name": "Cumpilation",
     "authors": [
-      "Vegapnk（About.xml 写 Vegapnk - 1.6 Rewrite by Telanda",
-      "CHANGELOG 每条都署 (Commit by @Telanda-DDS)",
-      "CONTRIBUTING.md 的 Contributors 段只有一人：Telanda - Rimworld 1.6 Migration）"
+      "Vegapnk",
+      "Telanda"
     ],
     "license": "随包 LICENCE（661 行 / 34,452 字节，正文是 GNU AGPL-3.0 全文）。⚠️ 但 README.md 的徽章写 License: GPL3 —— 两者不一致，见「查出来的问题 · 1」",
     "source_dir": "RJW-体液-精液汇编（Cumpilation）",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml：Vegapnk - 1.6 Rewrite by Telanda",
+      "CHANGELOG 每条署 (Commit by @Telanda-DDS)",
+      "CONTRIBUTING Contributors: Telanda"
+    ],
+    "license_notes": "随包 LICENCE 为 AGPL-3.0；README 徽章写 GPL3，二者不一致。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "yukiyuki-abyss",
     "package_id": "yukiyuki.ABYSS",
     "display_name": "ABYSS / 阿比斯",
     "authors": [
       "yukiyuki"
     ],
-    "license": "",
+    "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
     "source_dir": "5 阿比斯",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml `<author>yukiyuki</author>`"
+    ],
+    "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "yukiyuki-asebi",
     "package_id": "yukiyuki.ASEBI",
     "display_name": "美南烛 / ASEBI",
-    "authors": [],
-    "license": "",
-    "source_dir": "美南烛",
+    "authors": [
+      "yukiyuki"
+    ],
+    "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
+    "source_dir": "1 美南烛",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml `<author>yukiyuki</author>`"
+    ],
+    "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "yukiyuki-borum",
     "package_id": "yukiyuki.BORUM",
     "display_name": "BORUM / 雪绒兽",
     "authors": [
       "yukiyuki"
     ],
-    "license": "",
+    "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
     "source_dir": "2 雪绒兽",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml `<author>yukiyuki</author>`"
+    ],
+    "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "yukiyuki-fleshia",
     "package_id": "yukiyuki.FLESHIA",
     "display_name": "FLESHIA / 弗莱西雅",
     "authors": [
       "yukiyuki"
     ],
-    "license": "",
+    "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
     "source_dir": "6弗莱西雅",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml `<author>yukiyuki</author>`"
+    ],
+    "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "yukiyuki-sankaandsosin",
     "package_id": "yukiyuki.SANKAandSOSIN",
     "display_name": "SANKA and SOSIN / 素心和葬歌",
     "authors": [
       "yukiyuki"
     ],
-    "license": "",
+    "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
     "source_dir": "3 素心和葬歌",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml `<author>yukiyuki</author>`"
+    ],
+    "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。"
   },
   {
-    "schema_version": 1,
+    "schema_version": 2,
     "id": "yukiyuki-yaemu",
     "package_id": "yukiyuki.YAEMU",
     "display_name": "YAEMU / 八重律",
     "authors": [
       "yukiyuki"
     ],
-    "license": "",
+    "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
     "source_dir": "4 八重律",
     "status": "analyzed",
     "modifications": [],
-    "distilled_to": []
+    "distilled_to": [
+      "docs/knowledge/guides/mod-static-audit.md"
+    ],
+    "origin": "collected",
+    "code_removed": false,
+    "author_evidence": [
+      "About.xml `<author>yukiyuki</author>`"
+    ],
+    "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。"
   }
 ]

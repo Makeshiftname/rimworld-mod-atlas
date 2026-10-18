@@ -1,16 +1,22 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "adaptive-storage-framework",
   "package_id": "adaptive.storage.framework",
   "display_name": "Adaptive Storage Framework（`3033901359`）— 分析记录",
   "authors": [
     "Soul",
     "Phaneron",
-    "bradson（主开发）"
+    "bradson"
   ],
-  "license": "",
-  "source_dir": "3033901359-AdaptiveStorage",
+  "license": "MIT（顶层 LICENSE，Copyright (c) 2023 bradson, Soul, Phaneron）；部分源码文件为 MPL-2.0 / .NET Foundation",
+  "source_dir": "3033901359",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "README 身份卡与 About.xml：Soul、Phaneron、bradson"
+  ],
+  "license_notes": "混合许可；取用源码时按文件头处理，不能把整个目录当成单一 MIT。"
 }

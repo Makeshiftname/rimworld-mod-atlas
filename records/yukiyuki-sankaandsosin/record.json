@@ -1,14 +1,22 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "id": "yukiyuki-sankaandsosin",
   "package_id": "yukiyuki.SANKAandSOSIN",
   "display_name": "SANKA and SOSIN / 素心和葬歌",
   "authors": [
     "yukiyuki"
   ],
-  "license": "",
+  "license": "禁止再分发（About.xml 明写 Redistribution of this MOD data is prohibited）",
   "source_dir": "3 素心和葬歌",
   "status": "analyzed",
   "modifications": [],
-  "distilled_to": []
+  "distilled_to": [
+    "docs/knowledge/guides/mod-static-audit.md"
+  ],
+  "origin": "collected",
+  "code_removed": false,
+  "author_evidence": [
+    "About.xml `<author>yukiyuki</author>`"
+  ],
+  "license_notes": "仅保存分析结论，不收录 Def 原文与贴图。"
 }
