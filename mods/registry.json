@@ -1304,7 +1304,7 @@
         "kind": "external",
         "repo": "https://github.com/Makeshiftname/rimworld-mod-forge",
         "path": "mods/owned/rimtalk-persona-traits",
-        "commit": "4644bf2ab4e89f3f7d3ff5070b97c48962756b6b"
+        "commit": "306a4d3865f5b53c358ed7f98ab76b9d5b43d453"
       },
       "record": null,
       "type": "xml"
