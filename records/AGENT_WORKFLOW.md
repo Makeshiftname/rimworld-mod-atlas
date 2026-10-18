@@ -6,7 +6,8 @@
 
 ## 1. 开工前先确认四件事
 
-1. **目标 mod 在哪里**：游戏 `Mods` 目录下的实际目录名，或仓库内的代码样本路径。
+1. **目标 mod 在哪里**：游戏 `Mods` 目录下的实际目录名、Atlas 内的本地代码样本路径，
+   或 registry 中 `code.kind: external` 指向的 Forge/Forks 路径。
 2. **稳定 ID 是什么**：先查 [`mods/registry.json`](../mods/registry.json)，不要临时拼目录名。
 3. **用哪一档**：`initial` 或 `deep`。用户没指定时默认 `initial`。
 4. **这次分析的范围**：至少覆盖身份、来源、许可、版本、依赖和明显结构；不要无差别读取整个仓库。
@@ -52,6 +53,7 @@ rg -n '"package_id": "作者.packageId"' mods/registry.json
 
 ```json
 "code": {
+  "kind": "local",
   "legacy_paths": ["收集/01-standalone-Example"],
   "target_path": "mods/collected/example-mod"
 }
@@ -91,7 +93,8 @@ records/<stable-id>/README.md
 records/<stable-id>/record.json
 ```
 
-`record.json` 至少填好：
+`record.json` 至少填好（这里的 `schema_version: 3` 是记录 schema，不是
+registry 的 schema v4）：
 
 - `schema_version: 3`
 - `id` / `package_id` / `display_name`
@@ -183,7 +186,7 @@ $env:RIMWORLD_MODS_DIR = 'F:\Games\GBL\rimworld\Mods'
 ```text
 读 records/AGENT_WORKFLOW.md 和 records/STANDARD.md，按 initial 档分析 <mod 名称>。
 
-工作目录：F:\Git Repository\rimworld-RimModNotes-worktrees\refactor
+工作目录：F:\Git Repository\rimworld-mod-atlas
 稳定 ID：<stable-id>
 来源目录：<RIMWORLD_MODS_DIR 下的实际目录名，或仓库内路径>
 
@@ -203,7 +206,7 @@ $env:RIMWORLD_MODS_DIR = 'F:\Games\GBL\rimworld\Mods'
 ```text
 读 records/AGENT_WORKFLOW.md 和 records/STANDARD.md，按 deep 档分析 <mod 名称>。
 
-工作目录：F:\Git Repository\rimworld-RimModNotes-worktrees\refactor
+工作目录：F:\Git Repository\rimworld-mod-atlas
 稳定 ID：<stable-id>
 来源目录：<RIMWORLD_MODS_DIR 下的实际目录名，或仓库内路径>
 

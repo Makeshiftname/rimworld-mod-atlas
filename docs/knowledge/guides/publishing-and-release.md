@@ -11,7 +11,9 @@
 # Linux/macOS
 ln -s /path/to/NN-ModName "$HOME/.steam/steam/steamapps/common/RimWorld/Mods/NN-ModName"
 # Windows（管理员 PowerShell）
-New-Item -ItemType SymbolicLink -Path "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NN-ModName" -Target "F:\Git Repository\rimworld-RimModNotes\NN-ModName"
+$modsDir = $env:RIMWORLD_MODS_DIR
+$modRoot = "F:\Git Repository\rimworld-mod-forge\mods\owned\<stable-id>"
+New-Item -ItemType SymbolicLink -Path "$modsDir\<stable-id>" -Target $modRoot
 ```
 
 注意游戏内加载顺序：依赖/被补丁的 mod 要排在被 patch 的 mod 之后
