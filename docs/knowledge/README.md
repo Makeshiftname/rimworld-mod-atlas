@@ -19,11 +19,12 @@
 | 卡顿 / GUI 性能剖析 | [performance-and-gui.md](performance-and-gui.md) |
 | 新建 C# mod 的骨架与日志模板 | [project-templates.md](project-templates.md) |
 | 发布 / 软链接 / 工坊红线 | [publishing-and-release.md](publishing-and-release.md) |
+| 静态审计：核验一个 mod 的依赖 / 程序集 / 翻译 / 贴图 / 多版本到底做了什么 | [mod-static-audit.md](mod-static-audit.md) |
 | 查游戏机制/数值、找 wiki 外部资料 | [wiki-sources.md](wiki-sources.md) |
 
 ## 参考手册层（`ref/`）
 
-上面 10 篇是**实操笔记**——从本仓库 mod 的实际代码里提炼，讲「在本仓库怎么用」。
+上面 11 篇是**实操笔记**——从本仓库 mod 的实际代码里提炼，讲「在本仓库怎么用」。
 
 `ref/` 是另一层：**参考手册**——蒸馏 rimworldwiki 官方 vetted 教程区，
 讲「这个机制/字段/流程的完整定义是什么」，**不含仓库特定结论**。

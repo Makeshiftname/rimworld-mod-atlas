@@ -36,6 +36,7 @@
 - 卡顿/GUI 性能 → `docs/knowledge/performance-and-gui.md`
 - 新建 C# mod 骨架/日志模板 → `docs/knowledge/project-templates.md`
 - 发布/软链接/工坊红线 → `docs/knowledge/publishing-and-release.md`
+- 静态审计一个 mod（依赖装况/程序集类型/翻译覆盖/贴图可达/多版本是否真能加载）→ `docs/knowledge/mod-static-audit.md`
 
 **ref/ 层**（写 mod 前查实现）：见 [ref/README.md](docs/knowledge/ref/README.md)。
 
