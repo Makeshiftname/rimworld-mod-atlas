@@ -8,10 +8,13 @@
 - 我要看某个 mod 的分析 → [`records/README.md`](records/README.md)
 - 我要找可运行代码样本 → [`mods/README.md`](mods/README.md)
 - 我想了解目录职责与扩展规则 → [`ARCHITECTURE.md`](ARCHITECTURE.md)
+- 我想看当前迁移阶段与阻断 → [`docs/STATUS.md`](docs/STATUS.md)
 
 ## 当前状态
 
-`mods/` 目标结构、稳定 ID 注册表与迁移器已经就位；现有 `收集/`、`自建/` 代码样本暂时保留原位，等删减完成后按架构文档一次性迁入 `mods/`。
+`mods/` 目标结构、schema v3 稳定 ID 注册表与带引用重写的迁移器已经就位；
+现有 `收集/`、`自建/` 代码样本暂时保留原位，等删减完成后按架构文档一次性迁入
+`mods/`。
 
 ## 常用门禁
 

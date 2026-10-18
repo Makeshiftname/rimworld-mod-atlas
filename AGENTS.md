@@ -7,8 +7,9 @@
 
 1. 先读根 [`ARCHITECTURE.md`](ARCHITECTURE.md) 与 [`docs/knowledge/README.md`](docs/knowledge/README.md)。
 2. 单 mod 调查先读 [`records/STANDARD.md`](records/STANDARD.md)。
-3. 需要游戏机制/实现背景时，按知识库主入口选择 `guides/`、`reference/` 或 `mechanics/`。
-4. 不读取整个大目录做无差别审阅；先查索引、注册表和目标记录。
+3. 开始迁移或审查结构前先看 [`docs/STATUS.md`](docs/STATUS.md)。
+4. 需要游戏机制/实现背景时，按知识库主入口选择 `guides/`、`reference/` 或 `mechanics/`。
+5. 不读取整个大目录做无差别审阅；先查索引、注册表和目标记录。
 
 ## 目录与编辑边界
 
@@ -16,7 +17,8 @@
 - `mods/collected/` 与现有 `收集/`：第三方供应内容，默认只读；不要改 About/C#/Defs/资源。
 - `records/`：分析档案；保留证据与纠错，不删除反面发现。
 - `docs/knowledge/`：只放经审核的通用结论；单 mod 专属信息留在记录。
-- `mods/registry.json` 是稳定 ID 唯一权威；编号、类型和排序写入生成索引，不塞进目录身份。
+- `mods/registry.json` 是稳定 ID 唯一权威；schema v3 使用 `origin + code + record`，
+  该文件人工维护，不能由脚本覆盖。
 
 ## 常用命令
 
@@ -24,8 +26,9 @@
 python tools/kb/check_all.py                 # 所有门禁
 python tools/kb/scan_mods.py                 # 刷新代码样本索引
 python tools/kb/scan_records.py              # 刷新记录索引
-python tools/kb/migrate_mods.py              # mods/ 迁移 dry-run
-python tools/kb/migrate_mods.py --apply      # 确认后执行迁移
+python tools/kb/migrate_mods.py --json       # mods/ 迁移计划（含文件数）
+python tools/kb/migrate_mods.py --manifest migration.json
+python tools/kb/migrate_mods.py --apply      # 确认后移动并重写第一方引用
 ```
 
 ## 构建与测试
@@ -36,7 +39,8 @@ python tools/kb/migrate_mods.py --apply      # 确认后执行迁移
 
 ## 维护规则
 
-- 生成物由脚本重建，不手改：`registry.json`、`indexes/mods.md`、`indexes/mods.json`、`records/index.json`。
+- 生成物由脚本重建，不手改：`indexes/mods.md`、`indexes/mods.json`、`records/index.json`。
+- `indexes/mods-notes.md` 是人工笔记；`registry.json` 和 `record.json` 是身份/证据文件。
 - 修改结构后运行 `check_all.py`；链接、记录身份、目录卫生、索引漂移都必须通过。
 - 第三方 mod 的 `packageId` 应进入 `<loadAfter>` 而非 `<modDependencies>`（仅当它是补丁前置而非硬依赖）。
 - 改动 `About.xml` 后同步对应描述与记录。
